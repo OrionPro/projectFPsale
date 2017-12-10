@@ -1,0 +1,173 @@
+/*
+Stylus variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon_home_width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon_home = x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet = width height image $spritesheet_sprites;
+*/
+$android_name = 'android';
+$android_x = 20px;
+$android_y = 44px;
+$android_offset_x = -20px;
+$android_offset_y = -44px;
+$android_width = 16px;
+$android_height = 20px;
+$android_total_width = 64px;
+$android_total_height = 64px;
+$android_image = '~sprite/sprite.png';
+$android = 20px 44px -20px -44px 16px 20px 64px 64px '~sprite/sprite.png' 'android';
+$firefox_name = 'firefox';
+$firefox_x = 0px;
+$firefox_y = 0px;
+$firefox_offset_x = 0px;
+$firefox_offset_y = 0px;
+$firefox_width = 20px;
+$firefox_height = 20px;
+$firefox_total_width = 64px;
+$firefox_total_height = 64px;
+$firefox_image = '~sprite/sprite.png';
+$firefox = 0px 0px 0px 0px 20px 20px 64px 64px '~sprite/sprite.png' 'firefox';
+$google_name = 'google';
+$google_x = 22px;
+$google_y = 0px;
+$google_offset_x = -22px;
+$google_offset_y = 0px;
+$google_width = 20px;
+$google_height = 20px;
+$google_total_width = 64px;
+$google_total_height = 64px;
+$google_image = '~sprite/sprite.png';
+$google = 22px 0px -22px 0px 20px 20px 64px 64px '~sprite/sprite.png' 'google';
+$ie_name = 'ie';
+$ie_x = 22px;
+$ie_y = 22px;
+$ie_offset_x = -22px;
+$ie_offset_y = -22px;
+$ie_width = 20px;
+$ie_height = 19px;
+$ie_total_width = 64px;
+$ie_total_height = 64px;
+$ie_image = '~sprite/sprite.png';
+$ie = 22px 22px -22px -22px 20px 19px 64px 64px '~sprite/sprite.png' 'ie';
+$opera_name = 'opera';
+$opera_x = 0px;
+$opera_y = 22px;
+$opera_offset_x = 0px;
+$opera_offset_y = -22px;
+$opera_width = 20px;
+$opera_height = 20px;
+$opera_total_width = 64px;
+$opera_total_height = 64px;
+$opera_image = '~sprite/sprite.png';
+$opera = 0px 22px 0px -22px 20px 20px 64px 64px '~sprite/sprite.png' 'opera';
+$pc_name = 'pc';
+$pc_x = 44px;
+$pc_y = 21px;
+$pc_offset_x = -44px;
+$pc_offset_y = -21px;
+$pc_width = 20px;
+$pc_height = 18px;
+$pc_total_width = 64px;
+$pc_total_height = 64px;
+$pc_image = '~sprite/sprite.png';
+$pc = 44px 21px -44px -21px 20px 18px 64px 64px '~sprite/sprite.png' 'pc';
+$safari_name = 'safari';
+$safari_x = 0px;
+$safari_y = 44px;
+$safari_offset_x = 0px;
+$safari_offset_y = -44px;
+$safari_width = 18px;
+$safari_height = 20px;
+$safari_total_width = 64px;
+$safari_total_height = 64px;
+$safari_image = '~sprite/sprite.png';
+$safari = 0px 44px 0px -44px 18px 20px 64px 64px '~sprite/sprite.png' 'safari';
+$yandex_name = 'yandex';
+$yandex_x = 44px;
+$yandex_y = 0px;
+$yandex_offset_x = -44px;
+$yandex_offset_y = 0px;
+$yandex_width = 20px;
+$yandex_height = 19px;
+$yandex_total_width = 64px;
+$yandex_total_height = 64px;
+$yandex_image = '~sprite/sprite.png';
+$yandex = 44px 0px -44px 0px 20px 19px 64px 64px '~sprite/sprite.png' 'yandex';
+$spritesheet_width = 64px;
+$spritesheet_height = 64px;
+$spritesheet_image = '~sprite/sprite.png';
+$spritesheet_sprites = $android $firefox $google $ie $opera $pc $safari $yandex;
+$spritesheet = 64px 64px '~sprite/sprite.png' $spritesheet_sprites;
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  spriteWidth($icon_home)
+}
+
+.icon-email {
+  sprite($icon_email)
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+spriteWidth($sprite) {
+  width: $sprite[4];
+}
+
+spriteHeight($sprite) {
+  height: $sprite[5];
+}
+
+spritePosition($sprite) {
+  background-position: $sprite[2] $sprite[3];
+}
+
+spriteImage($sprite) {
+  background-image: url($sprite[8]);
+}
+
+sprite($sprite) {
+  spriteImage($sprite)
+  spritePosition($sprite)
+  spriteWidth($sprite)
+  spriteHeight($sprite)
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of Stylus
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+sprites($spritesheet_sprites);
+*/
+sprites($sprites) {
+  for $sprite in $sprites {
+    $sprite_name = $sprite[9];
+    .{$sprite_name} {
+      sprite($sprite);
+    }
+  }
+}

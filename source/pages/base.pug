@@ -1,0 +1,88 @@
+doctype html
+html(class="no-js" lang="ru")
+	head
+		meta(charset = 'utf-8')
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title
+			block title
+		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
+		<!--[if lt IE 9]>
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+		<![endif]-->
+		style(type='text/css').
+			html .loader {
+				background: #fff;
+				bottom: 0;
+				height: 100%;
+				left: 0;
+				position: fixed;
+				right: 0;
+				top: 0;
+				width: 100%;
+				z-index: 9999
+			}
+			html .loader .loader_inner {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: #fff;
+				height: 200px;
+				width: 200px;
+				margin-top: -100px;
+				margin-left: -100px;
+				left: 50%;
+				top: 50%;
+				position: absolute
+			}
+	// Весь внутренний контент страницы
+	// второй класс у body это анимация на модалке (animated-transition-effects гуглануть или спросить меня, убрав класс вернётся обычная анимация модалки, без изысков)
+	body
+		div
+			.loader
+				.loader_inner
+					include ../img/preloader.svg
+		block modal
+			include modal
+		// Элемент cd-transition-layer это тоже для прикольной анимации модалки
+		.cd-transition-layer
+			.bg-layer
+		nav(canvas="" class="")
+			.mnu_btn
+				label(id="nav-button-label")
+					#nav-lines
+						i.nav-line
+						i.nav-line
+						i.nav-line
+						i.nav-line
+
+		div(canvas='container')
+			block header
+				header(class="header")
+					.container
+						.row
+							.header__logo
+								a(href="/" class="logo" title="Логотип")
+									img(src=require("../../img/logo.png"))
+							nav.header__nav
+								ul
+									-var links = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Прокси-чекер', href:'#'},{title:'Мой IP', href:'#'}, {title:'Компания', href:'#'},{title:'Доп. услуги', href:'#'}];
+									each i in links
+										li
+											a(href=i.href)= i.title
+			block main
+			block footer
+				// Секция footer
+				footer.footer
+		div(off-canvas='id-1 left shift')
+			nav.header_nav_mobile
+				ul.menu
+					-var obj1 = [{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'7 38 425 961 68', href:'tel:73842596168'},{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'Примеры', href:'#'}];
+					each i in obj1
+						li
+							a(href=i.href)= i.title
+		div(off-canvas='id-2 right push')
+		div(off-canvas='id-3 top overlay')
+		div(off-canvas='id-4 bottom shift')
+
+

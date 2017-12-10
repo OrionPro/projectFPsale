@@ -1,0 +1,128 @@
+@import "fonts.styl"
+@import 'sprite.styl'
+
+$main_color = #f1c654
+$main_txt_color = #0e0e0e
+$auxiliary_txt_color = #443133
+$main_bg_color = #fff
+
+
+$font_main_regular = "RobotoRegular",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+$font_OpenSansRegular = "OpenSansRegular",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+$font_OpenSansSemiBold = "OpenSansSemiBold",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+
+// Миксины font и fz переделывают px в rem
+absolute-center()
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%,-50%)
+
+absolute-all(num)
+	position absolute
+	top num
+	bottom num
+	right num
+	left num
+
+font($color, $fz, $ff, $lh = 1.2)
+	color: $color
+	font-size: $fz px
+	font-size: ($fz/16) rem
+	font-family: $ff
+	line-height: $lh
+
+fz($font_px)
+	font-size: $font_px px
+	font-size: ($font_px/16) rem
+
+pseudo($display = block, $pos = absolute, $content = '')
+	content: $content
+	display: $display
+	position: $pos
+
+css-triangle($color, $direction, $size = 6px, $position = absolute, $round = false)
+	pseudo($pos: $position)
+	width: 0
+	height: 0
+	if $round
+		border-radius: 3px
+	if $direction == down
+		border-left: $size solid transparent
+		border-right: $size solid transparent
+		border-top: $size solid $color
+		margin-top: 0 - round( $size / 2.5 )
+	else if $direction == up
+		border-left: $size solid transparent
+		border-right: $size solid transparent
+		border-bottom: $size solid $color
+		margin-bottom: 0 - round( $size / 2.5 )
+	else if $direction == right
+		border-top: $size solid transparent
+		border-bottom: $size solid transparent
+		border-left: $size solid $color
+		margin-right: -$size
+	else if  $direction == left
+		border-top: $size solid transparent
+		border-bottom: $size solid transparent
+		border-right: $size solid $color
+		margin-left: -$size
+
+size(a, b = false)
+	width a
+	if b
+		height b
+	else
+		height a
+
+truncate($truncation-boundary)
+	max-width: $truncation-boundary
+	white-space: nowrap
+	overflow: hidden
+	text-overflow: ellipsis
+.main_btn
+	min-width: 272px
+	height: 49px
+	padding: 0 5px
+	border: 1px solid transparent
+	background-color: $main_color
+	text-transform: none
+	border-radius: 5px
+	font(#fff, 16, $font_main_regular)
+	line-height: 45px
+	transition: 0.5s
+	&:hover
+		background-color: #fff
+		border: 1px solid $main_color
+		color: $main_color
+		text-decoration: none
+		outline: 0
+	&:active
+		background-color: #fff
+		border: 1px solid $main_color
+		color: $main_color
+		text-decoration: none
+		outline: 0
+	&:focus
+		background-color: #fff
+		border: 1px solid $main_color
+		color: $main_color
+		text-decoration: none
+		outline: 0
+
+.center
+	text-align: center
+.left
+	text-align: left
+.right
+	text-align: right
+
+
+.flex-center
+	display: flex
+	align-items: center
+	justify-content: center
+
+
+
+
