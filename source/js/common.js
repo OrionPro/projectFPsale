@@ -72,7 +72,74 @@ function customScrollbar() {
 		}
 	});
 }
+// Функция копирования текста в элементе
+function copyToClipboard(elem) {
+	// create hidden text element, if it doesn't already exist
+	var targetId = "_hiddenCopyText_";
+	var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+	var origSelectionStart, origSelectionEnd;
+	if (isInput) {
+		// can just use the original source element for the selection and copy
+		target = elem;
+		origSelectionStart = elem.selectionStart;
+		origSelectionEnd = elem.selectionEnd;
+	} else {
+		// must use a temporary form element for the selection and copy
+		target = elem;
+		if (!target) {
+			var target = document.createElement("textarea");
+			target.style.position = "absolute";
+			target.style.left = "-9999px";
+			target.style.top = "0";
+			target.id = targetId;
+			document.body.appendChild(target);
+		}
+		target.textContent = elem.textContent;
+	}
+	// select the content
+	var currentFocus = document.activeElement;
+	target.focus();
+	target.setSelectionRange(0, target.value.length);
+
+	// copy the selection
+	var succeed;
+	try {
+		succeed = document.execCommand("copy");
+	} catch (e) {
+		succeed = false;
+	}
+	// restore original focus
+	if (currentFocus && typeof currentFocus.focus === "function") {
+		currentFocus.focus();
+	}
+
+	if (isInput) {
+		// restore prior selection
+		elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+	} else {
+		// clear temporary content
+		target.textContent = "";
+	}
+	return succeed;
+}
+
 $(document).ready(function () {
+	//main__table-wrap ищем соседнюю ссылку в td.ip и берём text кладём в input
+	$('.main__table-wrap td.ip input').each(function () {
+		const linckValue = this.parentNode.childNodes[0].data;
+		$(this).val(linckValue);
+	});
+	$('.main__table-wrap td.ip a').on(function (e) {
+		e.preventDefault();
+	});
+	//копируем то что в input
+
+	$(".copy-buffer").on("click", function (e) {
+		e.preventDefault();
+		var copyElem = this.previousElementSibling;
+		copyToClipboard(copyElem);
+	});
+
 	customScrollbar();
 	// вызов tabs
 	tabs({
