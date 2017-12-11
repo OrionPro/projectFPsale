@@ -129,7 +129,7 @@ $(document).ready(function () {
 		const linckValue = this.parentNode.childNodes[0].data;
 		$(this).val(linckValue);
 	});
-	$('.main__table-wrap td.ip a').on(function (e) {
+	$('.main__table-wrap table tbody td.ip a').on('click', function (e) {
 		e.preventDefault();
 	});
 	//копируем то что в input
@@ -166,11 +166,11 @@ $(document).ready(function () {
 		$('.check i, .radio i').css("margin-top", "2px")
 	}
 	if (get_name_browser() == "Google Chrome") {
-		console.log("Google Chrome");
+		//console.log("Google Chrome");
 
 	}
 	if (get_name_browser() == "Safari") {
-		console.log("Safari");
+		//console.log("Safari");
 		// heightItemSafari({
 		// 	itemHeight: '.unique-design__wrap .unique-design__item:not(".unique-design__wrap .unique-design__item.title") img',
 		// 	item:  '.unique-design__wrap .unique-design__item.title'
