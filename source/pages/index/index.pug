@@ -101,9 +101,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.blue.stripes
+											span(style="width: 50%")
+											i 184 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -123,9 +123,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.blue.stripes
+											span(style="width: 70%")
+											i 84 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -145,9 +145,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.blue.stripes
+											span(style="width: 40%")
+											i 284 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -167,9 +167,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.blue.stripes
+											span(style="width: 40%")
+											i 284 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -189,9 +189,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.blue.stripes
+											span(style="width: 40%")
+											i 284 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -211,9 +211,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.orange.stripes
+											span(style="width: 90%")
+											i 1584 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -233,9 +233,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.green.stripes
+											span(style="width: 10%")
+											i 10 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -255,9 +255,9 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.blue.stripes
+											span(style="width: 40%")
+											i 284 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
@@ -277,15 +277,79 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
-										.progress
-											// для примера просто картинку вставил
-											img(src=require("../../img/progress.jpg"))
+										.progress-bar.blue.stripes
+											span(style="width: 40%")
+											i 284 мс
 									td.check
 										| 3 мин. назад
 										i.fa.fa-repeat
+					.main__pagination
+						ul.pagination
+							li
+								a(href="#" class="active") 1
+							li
+								a(href="#") 2
+							li
+								a(href="#") 3
+							li
+								span(class="ellipsis") ...
+							li
+								a(href="#") 20
+							li
+								a(href="#") 21
+							li
+								a(href="#")
+									i.fa.fa-long-arrow-right
+							li
+								a(href="#") Последняя
+					.main__update-proxy-list
+						a(href="#") Обновить список прокси
 				.col-lg-4
 					.main__filter
-
+						.main__top-select
+							.select2-container
+								select.select2
+									option
+									option Algeria
+									option Ukraine
+									option Japan
+									option United Kingdom
+							button
+								i.fa.fa-plus
+						.main__filter-type.main__filter-default
+							h4 Тип:
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-circle-o
+								i.fa.fa-2.fa-circle
+								span HTTP
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-circle-o
+								i.fa.fa-2.fa-circle
+								span HTTPS
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-circle-o
+								i.fa.fa-2.fa-circle
+								span Socks5
+						.main__filter-anonymity.main__filter-default
+							h4 Анонимность:
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-circle-o
+								i.fa.fa-2.fa-circle
+								span HTTP
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-circle-o
+								i.fa.fa-2.fa-circle
+								span HTTPS
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-circle-o
+								i.fa.fa-2.fa-circle
+								span Socks5
 	// Секция main_content
 	section.main_content
 		.container
@@ -312,7 +376,7 @@ block main
 				i.fa.fa-2.fa-check-square-o
 				span второй чек
 			h3 Пример Select на плагине Select2
-				h4 с тегами
+				p с тегами
 				.select2-container
 					select.select2-tags.form-control(multiple)
 						option angular
@@ -320,7 +384,7 @@ block main
 						option vui
 						option(disabled) ember
 						option backbone
-				h4 обычный
+				p обычный
 				.select2-container
 					select.select2
 						option angular

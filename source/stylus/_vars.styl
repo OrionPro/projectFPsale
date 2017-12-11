@@ -81,32 +81,31 @@ truncate($truncation-boundary)
 	overflow: hidden
 	text-overflow: ellipsis
 .main_btn
-	min-width: 272px
-	height: 49px
-	padding: 0 5px
-	border: 1px solid transparent
-	background-color: $main_color
+	min-width: 330px
+	height: 40px
+	border: 1px solid #f1c654
+	border-radius: 20px
 	text-transform: none
-	border-radius: 5px
-	font(#fff, 16, $font_main_regular)
-	line-height: 45px
+	background-color: #fff
+	font($main_txt_color, 14, $font_main_regular)
+	line-height: 40px
 	transition: 0.5s
 	&:hover
-		background-color: #fff
+		background-color: $main_color
 		border: 1px solid $main_color
-		color: $main_color
+		color: $main_txt_color
 		text-decoration: none
 		outline: 0
 	&:active
-		background-color: #fff
+		background-color: $main_color
 		border: 1px solid $main_color
-		color: $main_color
+		color: $main_txt_color
 		text-decoration: none
 		outline: 0
 	&:focus
-		background-color: #fff
+		background-color: $main_color
 		border: 1px solid $main_color
-		color: $main_color
+		color: $main_txt_color
 		text-decoration: none
 		outline: 0
 

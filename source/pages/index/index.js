@@ -27,12 +27,26 @@ $(document).ready(function () {
 			theme: 'tooltipster-shadow'
 		});
 	}
-
+//.select2-container--default .select2-results>.select2-results__options
 	// инициализация select2
+	function formatCountry (state) {
+		if (!state.id) {
+			return state.text;
+		}
+		var baseUrl = "img";
+		var $state = $(
+			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g,'') + '.jpg" class="img-flag" /> ' + state.text + '</span>'
+		);
+		return $state;
+	};
+
 	$(".select2").select2({
 		//minimumResultsForSearch: -1, // выключам поле ввода поиска
 		tags: false,
-		width: null
+		placeholder: "Выберите страну",
+		width: null,
+		templateResult: formatCountry,
+		templateSelection: formatCountry
 	});
 	$(".select2-tags").select2({
 		tags: true,
