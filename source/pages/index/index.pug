@@ -306,92 +306,125 @@ block main
 						a(href="#") Обновить список прокси
 				.col-lg-4
 					.main__filter
-						.main__top-select
-							.select2-container
-								select.select2
-									option
-									option Algeria
-									option Ukraine
-									option Japan
-									option United Kingdom
-							button
-								i.fa.fa-plus
-						.main__filter-type.main__filter-default
-							h4 Тип:
-							label.check.noselect
-								input(type='checkbox')
-								i.fa.fa-1.fa-circle-o
-								i.fa.fa-2.fa-circle
-								span HTTP
-							label.check.noselect
-								input(type='checkbox')
-								i.fa.fa-1.fa-circle-o
-								i.fa.fa-2.fa-circle
-								span HTTPS
-							label.check.noselect
-								input(type='checkbox')
-								i.fa.fa-1.fa-circle-o
-								i.fa.fa-2.fa-circle
-								span Socks5
-						.main__filter-anonymity.main__filter-default
-							h4 Анонимность:
-							label.check.noselect
-								input(type='checkbox')
-								i.fa.fa-1.fa-circle-o
-								i.fa.fa-2.fa-circle
-								span HTTP
-							label.check.noselect
-								input(type='checkbox')
-								i.fa.fa-1.fa-circle-o
-								i.fa.fa-2.fa-circle
-								span HTTPS
-							label.check.noselect
-								input(type='checkbox')
-								i.fa.fa-1.fa-circle-o
-								i.fa.fa-2.fa-circle
-								span Socks5
-	// Секция main_content
-	section.main_content
+						form
+							.main__top-select
+								.select2-container
+									select.select2
+										option
+										option Algeria
+										option Ukraine
+										option Japan
+										option United Kingdom
+								button
+									i.fa.fa-plus
+							.main__filter-type.main__filter--default
+								h4 Тип:
+								label.check.noselect
+									input(type='checkbox')
+									i.fa.fa-1.fa-circle-o
+									i.fa.fa-2.fa-circle
+									span HTTP
+								label.check.noselect
+									input(type='checkbox')
+									i.fa.fa-1.fa-circle-o
+									i.fa.fa-2.fa-circle
+									span HTTPS
+								label.check.noselect
+									input(type='checkbox')
+									i.fa.fa-1.fa-circle-o
+									i.fa.fa-2.fa-circle
+									span Socks5
+							.main__filter-anonymity.main__filter--default
+								h4 Анонимность:
+								.main__filter-anonymity-inner
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span Анонимный
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span Элитный
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span Прозрачный
+							.main__filter--default
+								h4 Экспорт:
+								.main__filter-link-item
+									a(href="#") IP:Port
+								.main__filter-link-item
+									a(href="#") Excel
+								.main__filter-link-item
+									a(href="#") В новом окне
+							.main__btn-wrap
+								button(type="submit" class="main_btn") Применить фильтр
+							.main__clean-the-filter
+								a(href="#") Очистить фильтр
+							.main__subscribe-to-update-filter
+								a(href="#") Подписаться на обновление списка
+							.main__filter-divider
+							.main__filter-info
+								p
+									| Бесплатно предоставляется к просмотру только
+									| первая страница списка.
+								p
+									| Купите доступ или войдите, чтобы получить
+									| полный доступ к сервису.
+							.main__btn-wrap
+								button(type="button" class="main_btn") Получить полный доступ
+							.main__filter-divider
+							.main__filter-info.info-attention
+								i.fa.fa-exclamation-circle
+								.main__filter-info-inner
+									p
+										| Бесплатные прокси исключают любую
+										| возможность работы с социальными сетями,
+										| парсинга поисковых систем и работы с
+										| приватным софтом.
+									p
+										| Мы не несем ответственности за использова-
+										| ние списка бесплатных прокси.
+										| Список IP предоставляется в ознакоми-
+										| тельных целях.
+							.main__btn-wrap.personal
+								button(type="button" class="main_btn") Купить персональные прокси
+								i.fa.fa-question-circle(title="Налетай! Покупай персональные прокси под новый год и не забывай купить на следующий!")
+	// Секция info-blocks
+	section.info-blocks
 		.container
-			div Пример checkbox
-			label.check.noselect
-				input(type='checkbox')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span первый чек
-			label.check.noselect
-				input(type='checkbox')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span второй чек
-			div Пример radio button
-			label.radio.noselect
-				input(type='radio', name='radio')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span первый чек
-			label.radio.noselect
-				input(type='radio', name='radio', checked='')
-				i.fa.fa-1.fa-square-o
-				i.fa.fa-2.fa-check-square-o
-				span второй чек
-			h3 Пример Select на плагине Select2
-				p с тегами
-				.select2-container
-					select.select2-tags.form-control(multiple)
-						option angular
-						option react
-						option vui
-						option(disabled) ember
-						option backbone
-				p обычный
-				.select2-container
-					select.select2
-						option angular
-						option react
-						option vui
-						option(disabled) ember
-						option backbone
-
-
-
+			.info-blocks__item
+				.row
+					.col-lg-9
+						.info-blocks__item-txt-block.info-blocks__item-txt-block1
+							i.fa.fa-exclamation-circle
+							p
+								| Бесплатно предоставляется к просмотру только первая страница списка. Купите доступ или войдите, чтобы получить полный доступ к сервису.
+					.col-lg-3
+						.info-blocks__btn.info-blocks__btn1
+							button(type="button" class="main_btn") Получить полный доступ
+			.info-blocks__item
+				.row
+					.col-lg-9
+						.info-blocks__item-txt-block.info-blocks__item-txt-block2
+							i.fa.fa-exclamation-circle
+							p
+								| Избавьте себя от ограничений и неудобств, риска быть забаненым или неудобства в постоянной смене IP адреса.
+								| Персональные прокси для работы с социальными сетями, avito, keykollector и прочие цели использования.
+					.col-lg-3
+						.info-blocks__btn.info-blocks__btn2
+							button(type="button" class="main_btn") Купить безопасность
+	// Секция answer-your-questions
+	section.answer-your-questions
+		.container
+			h2 Отвечаем на ваши вопросы
+			.accordion
+				.accordion_title
+					p Название
+					span
+						i.fa.fa-chevron-down
+				.accordion_content
+					p Контент

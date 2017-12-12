@@ -71,6 +71,8 @@ body
 h1
 	margin-bottom: 30px
 	font($main_txt_color, 24, $font_OpenSansSemiBold)
+h2
+	font($main_txt_color, 22, $font_OpenSansSemiBold)
 p,ul
 	padding: 0
 	margin: 0
@@ -391,7 +393,35 @@ label
 		-o-transition: .5s
 		transition: .5s
 		top: 14px
-
+// Пример checkbox
+label.check, label.radio
+	display: inline-flex
+	align-items: center
+	cursor: pointer
+	font-size: 14px
+	user-select: none
+	margin: 0
+	.fa-1
+		color: $main_txt_color
+	.fa-2
+		color: $main_color
+	i
+		width: 11px
+		display: inline-flex
+		margin-right: 6px
+	span
+		display: inline-flex
+		font-size: 14px
+	input[type=checkbox],
+	input[type=radio]
+		display: none
+		&:not(:checked)  ~ .fa-2
+			display: none
+		&:checked + i
+			&.fa-1
+				display: none
+			&.fa-2
+				display: inline-flex
 // внешний вид табов и анимация
 .tabs-items-wrap
 	margin-bottom: 10px
@@ -908,9 +938,10 @@ img.img-flag
 			color $main_color
 			font-size: 14px
 			transition: 0.5s
-.main__filter-default
+.main__filter--default
 	display: flex
 	margin-bottom: 25px
+	font-size: 14px
 	h4
 		margin: 0
 		margin-right: 15px
@@ -920,45 +951,139 @@ img.img-flag
 	align-items: center
 	.check
 		margin-right: 35px
-.main__filter-anonymity
-// Секция main_content
-.main_content
+.main__filter-anonymity-inner
+	display: flex
+	flex-direction: column
+	label
+		margin-bottom: 5px
+.main__filter-link-item
+	margin-right: 35px
+	&:last-of-type
+		margin-right: 0
+	a
+		color $main_color
+		text-decoration underline
+		&:hover
+			color $main_txt_color
+		&:active
+			color $main_txt_color
+		&:focus
+			color $main_txt_color
+.main__btn-wrap
+	margin-bottom: 10px
+	&.personal
+		display: flex
+		align-items: center
+		button
+			min-width: 300px
+			margin-right: 10px
+		i
+			font-size: 14px
+			color $main_color
+			cursor: pointer
+.main__clean-the-filter
 	text-align: center
-	.select2-container
-		width: 200px
-
-// Пример checkbox
-label.check, label.radio
-	display: inline-flex
-	align-items: center
-	cursor: pointer
-	font-size: 14px
-	user-select: none
-	margin: 0
-	.fa-1
-		color: $main_txt_color
-	.fa-2
-		color: $main_color
-	i
-		width: 11px
-		display: inline-flex
-		margin-right: 6px
-	span
-		display: inline-flex
+	margin-bottom: 20px
+	a
 		font-size: 14px
-	input[type=checkbox],
-	input[type=radio]
-		display: none
-		&:not(:checked)  ~ .fa-2
-			display: none
-		&:checked + i
-			&.fa-1
-				display: none
-			&.fa-2
-				display: inline-flex
-// Секция 
-
-//	Секция
+		color $main_txt_color
+		text-decoration underline
+		&:hover
+			color: $main_color
+		&:active
+			color: $main_color
+		&:focus
+			color: $main_color
+.main__subscribe-to-update-filter
+	text-align: center
+	margin-bottom: 20px
+	a
+		font-size: 14px
+		color $main_color
+		text-decoration underline
+		&:hover
+			color: $main_txt_color
+		&:active
+			color: $main_txt_color
+		&:focus
+			color: $main_txt_color
+.main__filter-divider
+	width: 330px
+	height: 1px
+	margin: 0 auto 15px
+	border: 1px dashed #d6d6d6
+.main__filter-info
+	margin-bottom: 20px
+	font-size: 14px
+	i
+		margin-right: 10px
+		color $main_color
+.main__filter-info.info-attention
+	display: flex
+// Секция .info-blocks
+.info-blocks
+	background-color: #fff
+	padding-bottom: 40px
+.info-blocks__item
+	margin-bottom: 30px
+	&:last-of-type
+		margin-bottom: 0
+.info-blocks__item-txt-block
+	min-height: 53px
+	padding-top: 10px
+	padding-bottom: 10px
+	display: flex
+	align-items: center
+	padding-left: 10px
+	font-size: 14px
+	background-color: white
+	border: 1px solid #e0e0e0
+	border-radius: 5px
+	i
+		margin-right: 5px
+		color $main_color
+.info-blocks__btn
+	height: 100%
+	display: flex
+	align-items: center
+	button
+		min-width 100%
+//	Секция .answer-your-questions
+.answer-your-questions
+	padding-top: 40px
+	background-color: #fff
+	h2
+		font-size: 24px
+.accordion_title {
+	height: 30px;
+	line-height: 30px;
+	padding-left: 30px;
+	cursor: pointer;
+	background-color: #fff;
+	position: relative;
+	color: $main_txt_color
+}
+.accordion_title span {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+.accordion_title span i {
+	transform-origin: 50% 50% 0px;
+	transition: 0.5s;
+}
+.accordion_title span.active i {
+	transform: rotate(180deg)
+}
+.accordion_content {
+	display: none;
+}
+.accordion_content p{
+	margin: 0;
+	padding-left: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
 //	Секция 
 //	Секция 
 //	Секция

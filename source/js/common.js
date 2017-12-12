@@ -35,6 +35,27 @@ function tabs(obj) {
 
 	[].forEach.call(buttons,item => item.addEventListener('click',func));
 }
+//accordion
+function accordion(obj) {
+	let titleClick =  obj.titleClick,
+		allContent = obj.allContent;
+
+	$(titleClick).click(function() {
+		let content = $(this).next();
+		if (content.is(":visible")) { //если нажали на title аккордеона,
+			content.slideUp(500, function() { //и если контент аккордеона видимый, то
+			}); //убираем его
+			$(this).children().removeClass("active"); //убираем активный класс у стрелки к примеру
+
+		} else {
+			$(allContent).slideUp("slow"); //если невидимый, прячем все скрытые
+			$(titleClick).children() //убираем активный класс у стрелки к примеру
+				.removeClass("active");
+			content.slideToggle("slow"); //открываем скрытый блок у того что нажали
+			$(this).children().addClass("active"); //добавляем активный класс у стрекли к примеру
+		}
+	});
+}
 // Определения браузера
 function get_name_browser() {
 	// получаем данные userAgent
@@ -56,7 +77,7 @@ function get_name_browser() {
 // решаем вопрос с min-height 100% у safari до версии 11
 function heightItemSafari(obj) {
 	let heightItem =  $(obj.itemHeight).height();
-	$(obj.item).css("min-height", heightItem);
+	$(obj.item).css("min-height", heightItem + obj.itemHeightBorder);
 }
 // Создаём цикл для инициализации mCustomScrollbar в нужных select
 function customScrollbar() {
@@ -139,6 +160,11 @@ $(document).ready(function () {
 		var copyElem = this.previousElementSibling;
 		copyToClipboard(copyElem);
 	});
+	// вызов accordion
+	accordion({
+		titleClick: '.accordion .accordion_title',
+		allContent: '.accordion .accordion_content'
+	});
 
 	customScrollbar();
 	// вызов tabs
@@ -170,11 +196,16 @@ $(document).ready(function () {
 
 	}
 	if (get_name_browser() == "Safari") {
-		//console.log("Safari");
-		// heightItemSafari({
-		// 	itemHeight: '.unique-design__wrap .unique-design__item:not(".unique-design__wrap .unique-design__item.title") img',
-		// 	item:  '.unique-design__wrap .unique-design__item.title'
-		// });
+		heightItemSafari({
+			itemHeight: '.info-blocks__item-txt-block1',
+			itemHeightBorder: 2,
+			item:  '.info-blocks__btn1'
+		});
+		heightItemSafari({
+			itemHeight: '.info-blocks__item-txt-block2',
+			itemHeightBorder: 2,
+			item:  '.info-blocks__btn2'
+		});
 	}
 	// для инициализации tooltips
 	// $( document ).tooltip({

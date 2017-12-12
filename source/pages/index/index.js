@@ -15,7 +15,7 @@ $(document).ready(function () {
 		topSpacing: 0,
 		widthFromWrapper: false
 	});
-	$(".main__setting-up-a-proxy-in-the-browser-items a").tooltipster({
+	$(".main__setting-up-a-proxy-in-the-browser-items a, .main__btn-wrap.personal i").tooltipster({
 		theme: 'tooltipster-shadow',
 		maxWidth: 280,
 		delay: 100
