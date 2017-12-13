@@ -13,7 +13,7 @@ require("../libs/libs").mCustomScrollbar();
 
 import '../js/validation';
 import '../js/modal';
-import  '../js/_functions.js';
+import '../js/_functions.js';
 import Clipboard from 'clipboard';
 import '../stylus/main.styl';
 
@@ -22,28 +22,29 @@ function tabs(obj) {
 	const buttons = document.querySelectorAll(obj.btn);
 	const bodyTabs = document.querySelectorAll(obj.tabsBody);
 
-	let func = function(){
+	let func = function () {
 		"use strict";
-		for( let i = buttons.length; i--; ){
+		for (let i = buttons.length; i--;) {
 			buttons[i].classList.remove(obj.classBtn);
 			bodyTabs[i].classList.remove(obj.classBody);
 		}
 		this.classList.add(obj.classBtn);
-		let item = [].indexOf.call(buttons,this);
+		let item = [].indexOf.call(buttons, this);
 		bodyTabs[item].classList.add(obj.classBody)
 	};
 
-	[].forEach.call(buttons,item => item.addEventListener('click',func));
+	[].forEach.call(buttons, item => item.addEventListener('click', func));
 }
+
 //accordion
 function accordion(obj) {
-	const titleClick =  obj.titleClick,
+	const titleClick = obj.titleClick,
 		allContent = obj.allContent;
 
-	$(titleClick).click(function() {
+	$(titleClick).click(function () {
 		let content = $(this).next();
 		if (content.is(":visible")) { //если нажали на title аккордеона,
-			content.slideUp(500, function() { //и если контент аккордеона видимый, то
+			content.slideUp(500, function () { //и если контент аккордеона видимый, то
 			}); //убираем его
 			$(allContent).removeClass('active');
 			$(this).removeClass("active");
@@ -61,6 +62,7 @@ function accordion(obj) {
 		}
 	});
 }
+
 // Определения браузера
 function get_name_browser() {
 	// получаем данные userAgent
@@ -79,11 +81,13 @@ function get_name_browser() {
 	// для популярных браузеров
 	return 'Не определен';
 }
+
 // решаем вопрос с min-height 100% у safari до версии 11
 function heightItemSafari(obj) {
-	let heightItem =  $(obj.itemHeight).height();
+	let heightItem = $(obj.itemHeight).height();
 	$(obj.item).css("min-height", heightItem + obj.itemHeightBorder);
 }
+
 // Создаём цикл для инициализации mCustomScrollbar в нужных select
 function customScrollbar() {
 	$(document).find('.select .drop').each(function () {
@@ -98,6 +102,7 @@ function customScrollbar() {
 		}
 	});
 }
+
 //копируем то что в data-clipboard-text в параграфе copy-buffer
 const clipboard = new Clipboard('.main__table-wrap table tbody td.ip a:hover .copy-buffer');
 
@@ -105,15 +110,15 @@ $(document).ready(function () {
 	//main__table-wrap ищем соседнюю ссылку в td.ip и берём text кладём в input
 	$('.main__table-wrap td.ip p').each(function () {
 		const linckValue = this.parentNode.childNodes[0].data;
-		$(this).attr('data-clipboard-text',linckValue);
+		$(this).attr('data-clipboard-text', linckValue);
 	});
 	$('.main__table-wrap table tbody td.ip a').on('click', function (e) {
 		e.preventDefault();
 	});
 
-	if(window.matchMedia("(min-width: 992px)").matches) {
+	if (window.matchMedia("(min-width: 992px)").matches) {
 		if (get_name_browser() == "Safari") {
-			clipboard.on('success', function(e) {
+			clipboard.on('success', function (e) {
 				e.clearSelection();
 				e.trigger.classList.add('active');
 				setTimeout(function () {
@@ -133,27 +138,21 @@ $(document).ready(function () {
 	customScrollbar();
 	// вызов tabs
 	tabs({
-		btn:'.tabs-items-wrap > .tabs-item',
-		tabsBody:'.tabs-wrap',
-		classBody:'active',
+		btn: '.tabs-items-wrap > .tabs-item',
+		tabsBody: '.tabs-wrap',
+		classBody: 'active',
 		classBtn: 'active'
 	});
 	tabs({
-		btn:'.tabs-items-wrap-inner > .tabs-item',
-		tabsBody:'.tabs-wrap-inner',
+		btn: '.tabs-items-wrap-inner > .tabs-item',
+		tabsBody: '.tabs-wrap-inner',
 		classBody: 'active',
-		classBtn:'active'
+		classBtn: 'active'
 	});
 	// клик .header__authorization вызов окна авторизации
 	$('.header__authorization a').on('click', function (e) {
 		e.preventDefault();
-		console.log($('.header__autorization-dropdown').is(':visible'));
-
-		if($('.header__autorization-dropdown').is(':visible')) {
-			$('.header__autorization-dropdown').removeClass('header__autorization-dropdown--active');
-		} else {
-			$('.header__autorization-dropdown').addClass('header__autorization-dropdown--active');
-		}
+		$('.header__autorization-dropdown').toggleClass('header__autorization-dropdown--active');
 	});
 
 	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {
@@ -173,12 +172,12 @@ $(document).ready(function () {
 		heightItemSafari({
 			itemHeight: '.info-blocks__item-txt-block1',
 			itemHeightBorder: 2,
-			item:  '.info-blocks__btn1'
+			item: '.info-blocks__btn1'
 		});
 		heightItemSafari({
 			itemHeight: '.info-blocks__item-txt-block2',
 			itemHeightBorder: 2,
-			item:  '.info-blocks__btn2'
+			item: '.info-blocks__btn2'
 		});
 	}
 	// для инициализации tooltips
@@ -231,9 +230,9 @@ $(document).ready(function () {
 });
 
 $(window).resize(function () {
-	if(window.matchMedia("(min-width: 992px)").matches) {
+	if (window.matchMedia("(min-width: 992px)").matches) {
 		if (get_name_browser() == "Safari") {
-			clipboard.on('success', function(e) {
+			clipboard.on('success', function (e) {
 				e.clearSelection();
 				e.trigger.classList.add('active');
 				setTimeout(function () {
@@ -243,9 +242,9 @@ $(window).resize(function () {
 			});
 		}
 	}
-	if(window.matchMedia("(max-width: 992px)").matches) {
+	if (window.matchMedia("(max-width: 992px)").matches) {
 		if (get_name_browser() == "Safari") {
-			clipboard.on('success', function(e) {
+			clipboard.on('success', function (e) {
 				e.trigger.classList.remove('active');
 			});
 		}
@@ -256,4 +255,4 @@ $(window).scroll(function () {
 
 });
 
-export { customScrollbar };
+export {customScrollbar};
