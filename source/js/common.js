@@ -50,6 +50,7 @@ function accordion(obj) {
 			$(this).children().removeClass("active"); //убираем активный класс у стрелки к примеру
 
 		} else {
+			$(titleClick).removeClass('active');
 			$(allContent).slideUp("slow"); //если невидимый, прячем все скрытые
 			$(allContent).addClass('active');
 			$(titleClick).children() //убираем активный класс у стрелки к примеру
@@ -97,6 +98,8 @@ function customScrollbar() {
 		}
 	});
 }
+//копируем то что в data-clipboard-text в параграфе copy-buffer
+const clipboard = new Clipboard('.main__table-wrap table tbody td.ip a:hover .copy-buffer');
 
 $(document).ready(function () {
 	//main__table-wrap ищем соседнюю ссылку в td.ip и берём text кладём в input
@@ -107,17 +110,18 @@ $(document).ready(function () {
 	$('.main__table-wrap table tbody td.ip a').on('click', function (e) {
 		e.preventDefault();
 	});
-	//копируем то что в data-clipboard-text в параграфе copy-buffer
-	const clipboard = new Clipboard('.main__table-wrap table tbody td.ip a:hover .copy-buffer');
-	if (get_name_browser() == "Safari") {
-		clipboard.on('success', function(e) {
-			e.clearSelection();
-			e.trigger.classList.add('active');
-			setTimeout(function () {
-				e.trigger.classList.remove('active');
-			}, 1500);
 
-		});
+	if(window.matchMedia("(min-width: 992px)").matches) {
+		if (get_name_browser() == "Safari") {
+			clipboard.on('success', function(e) {
+				e.clearSelection();
+				e.trigger.classList.add('active');
+				setTimeout(function () {
+					e.trigger.classList.remove('active');
+				}, 1500);
+
+			});
+		}
 	}
 
 	// вызов accordion
@@ -140,7 +144,17 @@ $(document).ready(function () {
 		classBody: 'active',
 		classBtn:'active'
 	});
+	// клик .header__authorization вызов окна авторизации
+	$('.header__authorization a').on('click', function (e) {
+		e.preventDefault();
+		console.log($('.header__autorization-dropdown').is(':visible'));
 
+		if($('.header__autorization-dropdown').is(':visible')) {
+			$('.header__autorization-dropdown').removeClass('header__autorization-dropdown--active');
+		} else {
+			$('.header__autorization-dropdown').addClass('header__autorization-dropdown--active');
+		}
+	});
 
 	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {
 		// $(".from_what_is_seo .from_what_is_seo_bot_decor svg").css("bottom", "-217px");
@@ -217,7 +231,25 @@ $(document).ready(function () {
 });
 
 $(window).resize(function () {
+	if(window.matchMedia("(min-width: 992px)").matches) {
+		if (get_name_browser() == "Safari") {
+			clipboard.on('success', function(e) {
+				e.clearSelection();
+				e.trigger.classList.add('active');
+				setTimeout(function () {
+					e.trigger.classList.remove('active');
+				}, 1500);
 
+			});
+		}
+	}
+	if(window.matchMedia("(max-width: 992px)").matches) {
+		if (get_name_browser() == "Safari") {
+			clipboard.on('success', function(e) {
+				e.trigger.classList.remove('active');
+			});
+		}
+	}
 });
 
 $(window).scroll(function () {

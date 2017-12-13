@@ -41,7 +41,7 @@ $(document).ready(function () {
 		return $state;
 	};
 
-	$(".select2").select2({
+	$(".select2-country").select2({
 		//minimumResultsForSearch: -1, // выключам поле ввода поиска
 		tags: false,
 		placeholder: "Выберите страну",

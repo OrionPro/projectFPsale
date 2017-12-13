@@ -35,8 +35,6 @@ html(class="no-js" lang="ru")
 				top: 50%;
 				position: absolute
 			}
-	// Весь внутренний контент страницы
-	// второй класс у body это анимация на модалке (animated-transition-effects гуглануть или спросить меня, убрав класс вернётся обычная анимация модалки, без изысков)
 	body
 		div
 			.loader
@@ -70,6 +68,20 @@ html(class="no-js" lang="ru")
 									each i in links
 										li
 											a(href=i.href)= i.title
+							.header__authorization
+								a(href="#") ВОЙТИ
+								.header__autorization-dropdown
+									form
+										p.title
+											| Авторизация
+										.input_wrap
+											i.fa.fa-check
+											input(name="name" type="text" placeholder="Имя")
+										.input_wrap
+											i.fa.fa-check
+											input(name="email" type="email" placeholder="Ваш E-mail")
+										button(type="submit" class="main_btn") Войти
+
 			block main
 			block footer
 				// Секция footer
