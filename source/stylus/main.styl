@@ -631,6 +631,24 @@ nav[canvas]
 						height: 5px
 					i
 						margin-right: 3px
+					span
+						width: 270px
+						padding-left: 10px
+						padding-right: 10px
+						border: 1px solid #e0e0e0
+						border-radius: 5px
+						background-color: #ffffff
+						position: absolute
+						top: -20px
+						left: 0
+						opacity: 0
+						visibility hidden
+						transition: 0.5s
+						z-index: 30
+					&.active span
+						top: -35px
+						opacity: 1
+						visibility visible
 				i
 					&.fa
 						color: $main_color
@@ -638,11 +656,6 @@ nav[canvas]
 					img
 						margin-right: 3px
 				&.ip
-					input
-						position: absolute
-						left: -9999px;
-						opacity: 0
-						z-index: -1
 					a
 						text-decoration none
 						position: relative
@@ -1040,6 +1053,7 @@ img.img-flag
 	border: 1px solid #e0e0e0
 	border-radius: 5px
 	i
+		flex-shrink 0
 		margin-right: 5px
 		color $main_color
 .info-blocks__btn
@@ -1055,13 +1069,28 @@ img.img-flag
 	h2
 		font-size: 24px
 .accordion_title {
-	height: 30px;
-	line-height: 30px;
-	padding-left: 30px;
+	height: 37px;
+	border: 1px solid #e0e0e0;
+	border-bottom none;
+	border-radius: 5px
+	padding-left: 10px;
 	cursor: pointer;
+	display: flex;
+	align-items: center
 	background-color: #fff;
 	position: relative;
-	color: $main_txt_color
+	color: $main_txt_color;
+	box-shadow: 0px 15px 25px 0px rgba(208,208,208,0.9);
+	transition: box-shadow 0.5s, background 0.5s, border-radius 0.5s;
+	&:hover {
+		background-color: #f6f6f6
+	}
+	&.active {
+		border-bottom-left-radius 0
+		border-bottom-right-radius 0
+		box-shadow: 0px 0px 0px 0px rgba(208,208,208,0.9)
+	}
+
 }
 .accordion_title span {
 	position: absolute;
@@ -1077,6 +1106,16 @@ img.img-flag
 }
 .accordion_content {
 	display: none;
+	background-color: #fff;
+	position: relative
+	border: 1px solid #e0e0e0
+	border-top: none
+	box-shadow: 0px 0px 0x 0px rgba(208,208,208,0.9)
+	z-index: 10
+	transition: box-shadow 0.5s
+	&.active {
+		box-shadow: 0px 15px 25px 0px rgba(208,208,208,0.9)
+	}
 }
 .accordion_content p{
 	margin: 0;
@@ -1084,6 +1123,7 @@ img.img-flag
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+
 //	Секция 
 //	Секция 
 //	Секция

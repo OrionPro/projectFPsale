@@ -13,8 +13,8 @@ require("../libs/libs").mCustomScrollbar();
 
 import '../js/validation';
 import '../js/modal';
-import '../js/_functions.js';
-
+import  '../js/_functions.js';
+import Clipboard from 'clipboard';
 import '../stylus/main.styl';
 
 // табы tabs
@@ -37,7 +37,7 @@ function tabs(obj) {
 }
 //accordion
 function accordion(obj) {
-	let titleClick =  obj.titleClick,
+	const titleClick =  obj.titleClick,
 		allContent = obj.allContent;
 
 	$(titleClick).click(function() {
@@ -45,13 +45,17 @@ function accordion(obj) {
 		if (content.is(":visible")) { //если нажали на title аккордеона,
 			content.slideUp(500, function() { //и если контент аккордеона видимый, то
 			}); //убираем его
+			$(allContent).removeClass('active');
+			$(this).removeClass("active");
 			$(this).children().removeClass("active"); //убираем активный класс у стрелки к примеру
 
 		} else {
 			$(allContent).slideUp("slow"); //если невидимый, прячем все скрытые
+			$(allContent).addClass('active');
 			$(titleClick).children() //убираем активный класс у стрелки к примеру
 				.removeClass("active");
 			content.slideToggle("slow"); //открываем скрытый блок у того что нажали
+			$(this).addClass("active");
 			$(this).children().addClass("active"); //добавляем активный класс у стрекли к примеру
 		}
 	});
@@ -93,73 +97,29 @@ function customScrollbar() {
 		}
 	});
 }
-// Функция копирования текста в элементе
-function copyToClipboard(elem) {
-	// create hidden text element, if it doesn't already exist
-	var targetId = "_hiddenCopyText_";
-	var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
-	var origSelectionStart, origSelectionEnd;
-	if (isInput) {
-		// can just use the original source element for the selection and copy
-		target = elem;
-		origSelectionStart = elem.selectionStart;
-		origSelectionEnd = elem.selectionEnd;
-	} else {
-		// must use a temporary form element for the selection and copy
-		target = elem;
-		if (!target) {
-			var target = document.createElement("textarea");
-			target.style.position = "absolute";
-			target.style.left = "-9999px";
-			target.style.top = "0";
-			target.id = targetId;
-			document.body.appendChild(target);
-		}
-		target.textContent = elem.textContent;
-	}
-	// select the content
-	var currentFocus = document.activeElement;
-	target.focus();
-	target.setSelectionRange(0, target.value.length);
-
-	// copy the selection
-	var succeed;
-	try {
-		succeed = document.execCommand("copy");
-	} catch (e) {
-		succeed = false;
-	}
-	// restore original focus
-	if (currentFocus && typeof currentFocus.focus === "function") {
-		currentFocus.focus();
-	}
-
-	if (isInput) {
-		// restore prior selection
-		elem.setSelectionRange(origSelectionStart, origSelectionEnd);
-	} else {
-		// clear temporary content
-		target.textContent = "";
-	}
-	return succeed;
-}
 
 $(document).ready(function () {
 	//main__table-wrap ищем соседнюю ссылку в td.ip и берём text кладём в input
-	$('.main__table-wrap td.ip input').each(function () {
+	$('.main__table-wrap td.ip p').each(function () {
 		const linckValue = this.parentNode.childNodes[0].data;
-		$(this).val(linckValue);
+		$(this).attr('data-clipboard-text',linckValue);
 	});
 	$('.main__table-wrap table tbody td.ip a').on('click', function (e) {
 		e.preventDefault();
 	});
-	//копируем то что в input
+	//копируем то что в data-clipboard-text в параграфе copy-buffer
+	const clipboard = new Clipboard('.main__table-wrap table tbody td.ip a:hover .copy-buffer');
+	if (get_name_browser() == "Safari") {
+		clipboard.on('success', function(e) {
+			e.clearSelection();
+			e.trigger.classList.add('active');
+			setTimeout(function () {
+				e.trigger.classList.remove('active');
+			}, 1500);
 
-	$(".copy-buffer").on("click", function (e) {
-		e.preventDefault();
-		var copyElem = this.previousElementSibling;
-		copyToClipboard(copyElem);
-	});
+		});
+	}
+
 	// вызов accordion
 	accordion({
 		titleClick: '.accordion .accordion_title',

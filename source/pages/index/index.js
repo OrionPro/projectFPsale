@@ -1,4 +1,5 @@
 import '../../js/common';
+
 //import '../../libs/owl.carousel.min';
 //import Swiper from 'swiper/dist/js/swiper.js';
 import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
