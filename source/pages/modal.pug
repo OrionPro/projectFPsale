@@ -3,47 +3,32 @@
 	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
 	form
 		p.modal-title.
-			Введите данные
+			Подписаться на обновление списка
 		p.modal-paragraph.
-			и мы Вам перезвоним
+			Укажите, пожалуйста, Ваш рабочий email адрес для того, что бы мы во-
+			время уведомляли Вас о обновлении нашего списка бесплатных IP адресов.
 		div
 			.input_wrap
 				i.fa.fa-check
-				input(name="name" type="text" placeholder="Имя")
-			.input_wrap
-				i.fa.fa-check
-				input(name="phone" type="tel" placeholder="Введите свой телефон")
-			.input_wrap
-				i.fa.fa-check
-				input(name="phone_mask" type="tel" class="mask" placeholder="+38(___) ___-__-__")
-			.input_wrap
-				i.fa.fa-check
-				input(name="email" type="email" placeholder="E-mail")
-			.input_wrap
-				i.fa.fa-check
-				textarea(name="textarea" type="text" placeholder="Описание заяки")
-			.select
-				.slct_arrow
-					i.fa.fa-angle-down
-				a(href="#" class="slct") Выбор заголовков:
-				ul.drop
-					li Вы крутые
-					li Вы крутые
-					li Я в Вас влюбился
-					li Я в Вас влюбился
-					li Быстрей Вас только Флеш
-					li Быстрей Вас только Флеш
-					li Быстрей Вас только Флеш
-				input(type="hidden" name="services")
-			.select
-				.slct_arrow
-					i.fa.fa-angle-down
-				a(href="#" class="slct") Выбор заголовков:
-				ul.drop
-					li Вы крутые
-					li Я в Вас влюбился
-					li Быстрей Вас только Флеш
-				input(type="hidden" name="services")
+				input(name="email" type="email" placeholder="Ваш E-mail")
+		p
+			| Присылать уведомления:
+		.select2-wrap
+			select.select2.select2-modal(name="modal-select-notification")
+				option После каждого уведомления (каждые 30 минут)
+				option После каждого уведомления (каждый час)
+				option После каждого уведомления (каждые 2 часа)
+				option После каждого уведомления (каждые 3 часа)
+				option После каждого уведомления (каждые 4 часа)
+		p
+			| Интересующая Вас страна:
+		.select2-wrap
+			select.select2.select2-country(name="modal-select-country")
+				option
+				option Algeria
+				option Ukraine
+				option Japan
+				option United Kingdom
 		input(type="hidden" name="form_name" value="")
 		input(type="hidden" name="form_type" value="modal")
 		input(type="submit" value="Отправить")

@@ -45,14 +45,20 @@ $(document).ready(function () {
 		//minimumResultsForSearch: -1, // выключам поле ввода поиска
 		tags: false,
 		placeholder: "Выберите страну",
-		width: null,
+		width: '100%',
 		templateResult: formatCountry,
 		templateSelection: formatCountry
+	});
+
+	$(".select2-modal").select2({
+		minimumResultsForSearch: -1, // выключам поле ввода поиска
+		tags: false,
+		width: '100%'
 	});
 	$(".select2-tags").select2({
 		tags: true,
 		placeholder: "Выберите один или несколько тегов",
-		width: null // если null то будет шириной родителя
+		width: '100%' // если null то будет шириной родителя
 	});
 	// Инициализация маски в input
 	$(".mask").mask("+38(999) 999-99-99");
