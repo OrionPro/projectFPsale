@@ -620,6 +620,11 @@ nav[canvas]
 	background-color: #fff
 	padding-top: 45px
 	padding-bottom: 70px
+@keyframes table-ip-check
+	from
+		transform rotate(0deg)
+	to
+		transform rotate(360deg)
 .main__table-wrap
 	table
 		width: 100%
@@ -660,8 +665,13 @@ nav[canvas]
 				padding: 13px 10px
 				line-height: 1.5
 				&.check
-					i
+					a
 						margin-left: 10px
+						&:hover i
+							animation: table-ip-check 0.5s infinite linear
+							animation-fill-mode: none
+						i
+							transform-origin: 50% 50%
 				.copy-buffer
 					width: 186px
 					height: 37px
@@ -859,8 +869,14 @@ nav[canvas]
 	a
 		display: inline-flex
 		margin-right: 5px
+		&.active i
+			transform scale(0.8)
+			filter grayscale(100%)
+		&.big i
+			transform scale(1.2)
 	i
 		display: inline-block
+		transition: 0.5s
 		&.google
 			sprite($google)
 		&.firefox
@@ -877,6 +893,7 @@ nav[canvas]
 			sprite($android)
 		&.pc
 			sprite($pc)
+
 .main__setting-up-a-proxy-in-the-browser-wrap
 	margin-bottom: 40px
 .main__setting-up-a-proxy-in-the-browser-link

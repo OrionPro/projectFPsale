@@ -16,6 +16,17 @@ $(document).ready(function () {
 		topSpacing: 0,
 		widthFromWrapper: false
 	});
+	// блок .main__setting-up-a-proxy-in-the-browser-items затемнение всех браузеров кроме того на который навели
+	$('.main__setting-up-a-proxy-in-the-browser-items a').hover(function () {
+		$('.main__setting-up-a-proxy-in-the-browser-items a').addClass('active');
+		$(this).removeClass('active');
+		$(this).addClass('big');
+	}, function () {
+		$('.main__setting-up-a-proxy-in-the-browser-items a').removeClass('active');
+		$('.main__setting-up-a-proxy-in-the-browser-items a').removeClass('big');
+	});
+
+	// инициализация tooltipster
 	$(".main__setting-up-a-proxy-in-the-browser-items a, .main__btn-wrap.personal i").tooltipster({
 		theme: 'tooltipster-shadow',
 		maxWidth: 280,
@@ -30,17 +41,18 @@ $(document).ready(function () {
 	}
 //.select2-container--default .select2-results>.select2-results__options
 	// инициализация select2
-	function formatCountry (state) {
+	function formatCountry(state) {
 		if (!state.id) {
 			return state.text;
 		}
 		var baseUrl = "img";
 		var $state = $(
-			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g,'') + '.jpg" class="img-flag" /> ' + state.text + '</span>'
+			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '.jpg" class="img-flag" /> ' + state.text + '</span>'
 		);
 		return $state;
 	};
-	function formatLanguage (state) {
+
+	function formatLanguage(state) {
 		if (!state.id) {
 			return state.text;
 		}
@@ -62,8 +74,8 @@ $(document).ready(function () {
 		minimumResultsForSearch: -1, // выключам поле ввода поиска
 		tags: false,
 		width: '100%',
-		templateResult:  formatLanguage,
-		templateSelection:  formatLanguage
+		templateResult: formatLanguage,
+		templateSelection: formatLanguage
 	});
 
 	$(".select2-modal").select2({
