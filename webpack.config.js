@@ -22,7 +22,8 @@ const common = merge([
 	{
 		entry: {
 			'index': PATHS.source + '/pages/index/index.js',
-			'blog': PATHS.source + '/pages/index/index.js'
+			'blog': PATHS.source + '/pages/index/index.js',
+			'hide-ip': PATHS.source + '/pages/index/index.js'
 		},
 		// убрать это если не нужен source-map (а на продакшене он в принципе не нужен)
 		//devtool: 'source-map',
@@ -54,6 +55,12 @@ const common = merge([
 				chunks: ['index'],
 				template: PATHS.source + '/pages/blog/blog.pug'
 			}),
+			new HtmlWebpackPlugin({
+				filename: 'hide-ip.html',
+				chunks: ['index'],
+				template: PATHS.source + '/pages/hide-ip/hide-ip.pug'
+			})
+			,
 			//new webpack.optimize.CommonsChunkPlugin({
 			//	name: 'common'
 			//}),

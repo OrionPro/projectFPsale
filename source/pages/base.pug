@@ -86,6 +86,57 @@ html(class="no-js" lang="ru")
 			block footer
 				// Секция footer
 				footer.footer
+					.container
+						.row
+							.col-lg-4
+								.footer__default-item
+									.footer__item-title
+										p.title Инструменты
+									.footer__item-divider
+									.footer__item-nav
+										nav
+											ul
+												li
+													a(href="#") Персональные прокси
+												li
+													a(href="#") Прокси IPv6
+												li
+													a(href="#") Прокси-чекер
+										nav
+											ul
+												li
+													a(href="#") Сканер портов
+												li
+													a(href="#") Мой IP-адрес
+												li
+													a(href="#") API
+							.col-lg-4
+								.footer__default-item
+									.footer__item-title
+										p.title Компания
+									.footer__item-divider
+									.footer__item-nav
+										nav
+											ul
+												li
+													a(href="#") Статьи
+												li
+													a(href="#") Контакты
+										nav
+											ul
+												li
+													a(href="#") Партнерская программа
+												li
+													a(href="#") Сервис аккаунтов
+							.col-lg-3.offset-lg-1
+								.footer__default-item
+									.footer__item-title
+										p.title Выбрать язык
+									.footer__item-divider
+									// в опциях языка в data-language можно указать то название картинки, которое будет в папке img лежать - нужный флаг
+									select.select2.select2-language(name="modal-select-language")
+										option(data-language="flag_ukraine") Русский
+										option(data-language="flag_ukraine") Английский
 		div(off-canvas='id-1 left shift')
 			nav.header_nav_mobile
 				ul.menu

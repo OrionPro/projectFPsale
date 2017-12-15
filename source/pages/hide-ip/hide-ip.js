@@ -2,7 +2,7 @@ import '../../js/common';
 
 //import '../../libs/owl.carousel.min';
 //import Swiper from 'swiper/dist/js/swiper.js';
-import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
+import '../../pages/hide-ip/hide-ip.pug.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
 
 //import '../../js/animate';
@@ -40,16 +40,7 @@ $(document).ready(function () {
 		);
 		return $state;
 	};
-	function formatLanguage (state) {
-		if (!state.id) {
-			return state.text;
-		}
-		var baseUrl = "img";
-		var $state = $(
-			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-language') + '.jpg" class="img-flag" /> ' + state.text + '</span>'
-		);
-		return $state;
-	};
+
 	$(".select2-country").select2({
 		//minimumResultsForSearch: -1, // выключам поле ввода поиска
 		tags: false,
@@ -57,13 +48,6 @@ $(document).ready(function () {
 		width: '100%',
 		templateResult: formatCountry,
 		templateSelection: formatCountry
-	});
-	$(".select2-language").select2({
-		minimumResultsForSearch: -1, // выключам поле ввода поиска
-		tags: false,
-		width: '100%',
-		templateResult:  formatLanguage,
-		templateSelection:  formatLanguage
 	});
 
 	$(".select2-modal").select2({

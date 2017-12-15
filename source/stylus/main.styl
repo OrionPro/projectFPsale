@@ -112,7 +112,7 @@ li
 // Общие стили на select2
 .select2-wrap
 	width: 100%
-select2-container--default
+.select2-container--default
 	&.select2-container--open
 		.select2-selection--single
 			.select2-selection__arrow
@@ -152,6 +152,8 @@ select2-container--default
 		outline-color: transparent
 .select2-container--default .select2-results__option
 	transition: 0.3s
+	font-size: 14px
+	padding-left: 28px
 .select2-container--default .select2-results__option--highlighted[aria-selected]
 	background-color: $main_color
 .hidden
@@ -1179,9 +1181,39 @@ img.img-flag
 
 // Секия footer 
 .footer
-	height: 236px
+	padding-top: 35px
+	padding-bottom: 35px
 	background-color: #f6f6f6
+	nav
+		font-size: 14px
+		margin-right: 40px
+		&:last-of-type
+			margin-right: 0
+		ul
+			width: 170px
+			li
+				margin-bottom: 15px
+				a
+					color $main_txt_color
+					transition: 0.5s
+					&:hover
+						color $main_color
+						text-decoration: none
+					&:active
+						text-decoration: none
+					&:focus
+						outline: 0
+						text-decoration: none
 
-
-
+.footer__item-title
+	.title
+		margin-bottom: 5px
+		font-size: 16px
+		font-family: $font_OpenSansSemiBold
+.footer__item-divider
+	height: 2px
+	margin-bottom: 15px
+	background-color: #f0c654
+.footer__item-nav
+	display: flex
 
