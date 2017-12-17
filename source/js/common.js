@@ -13,9 +13,11 @@ require("../libs/libs").mCustomScrollbar();
 
 import '../js/validation';
 import '../js/modal';
-import '../js/_functions.js';
 import Clipboard from 'clipboard';
 import '../stylus/main.styl';
+import '../js/_functions.js';
+
+
 
 // табы tabs
 function tabs(obj) {
@@ -154,11 +156,13 @@ $(document).ready(function () {
 		if ($(target).closest(".header__authorization").length)
 			return;
 		$('.header__autorization-dropdown').removeClass('header__autorization-dropdown--active');
+		$('input:not("[type=submit], [type=hidden], .select2-search__field")').removeClass('tooltipster-show').tooltipster('close');
 		event.stopPropagation();
 	});
 	$('.header__authorization a').on('click', function (e) {
 		e.preventDefault();
 		$('.header__autorization-dropdown').toggleClass('header__autorization-dropdown--active');
+		$('input:not("[type=submit], [type=hidden], .select2-search__field")').removeClass('tooltipster-show').tooltipster('close');
 	});
 
 	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {

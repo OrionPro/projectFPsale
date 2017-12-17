@@ -457,6 +457,12 @@ label.check, label.radio
 		opacity: 0
 	to
 		opacity: 1
+@keyframes fade-out
+	from
+		opacity: 1
+	to
+		opacity: 0
+		visibility hidden
 @keyframes fade-bot
 	from
 		opacity: 0
@@ -599,16 +605,17 @@ nav[canvas]
 	position: absolute
 	bottom: -200px
 	right: 0
-	opacity: 0
-	visibility hidden
 	background-color: white
 	border: 1px solid #e0e0e0
 	border-radius: 5px
 	font-size: 14px
 	transition: 0.5s
+	animation: fade-out
+	animation-duration: 0.5s
+	animation-fill-mode: forwards
 	&.header__autorization-dropdown--active
-		opacity: 1
-		visibility visible
+		animation: fade
+		animation-duration: 0.5s
 	.title
 		margin-bottom: 10px
 		font-family: $font_OpenSansSemiBold
