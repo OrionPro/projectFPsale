@@ -149,6 +149,7 @@ li
 	&:active
 		outline-color: transparent
 	&:focus
+		outline none
 		outline-color: transparent
 .select2-container--default .select2-results__option
 	transition: 0.3s
@@ -156,6 +157,19 @@ li
 	padding-left: 28px
 .select2-container--default .select2-results__option--highlighted[aria-selected]
 	background-color: $main_color
+.select2-container--default .select2-results>.select2-results__options
+	//внешний вид скроллбара
+	scrollbar-base-color: $main_color   //для IE
+	scrollbar-arrow-color: $main_color	//для IE
+	//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+	&::-webkit-scrollbar
+		width: 5px
+	&::-webkit-scrollbar-thumb
+		background-color: $main_color
+		&:hover
+			background-color: darken($main_color, 10%)
+	&::-webkit-scrollbar-track-piece
+		background-color: lighten($main_color, 60%)
 .hidden
 	display: none
 // Модальное окно
@@ -353,7 +367,7 @@ label
 .nav-line
 	display: block
 	height: 3px
-	background: #fff
+	background: $main_color
 	position: absolute
 	left: 0
 	width: 100%
@@ -458,6 +472,7 @@ label.check, label.radio
 	transition: transform 0.4s
 	overflow: auto
 	-webkit-overflow-scrolling: touch
+	background-color: #f6f6f6
 [off-canvas*=left]
 	width: 255px
 [canvas=container]
@@ -491,9 +506,13 @@ nav[canvas]
 	ul
 		&.menu
 			margin: 0
-			padding: 0
+			padding: 20px 10px 10px 20px
 			display: block
 			list-style: none
+			li
+				margin-bottom: 5px
+				a
+					color: $main_txt_color
 
 // Header
 .header
@@ -911,6 +930,7 @@ nav[canvas]
 .main__proxy-list
 	display: flex
 	fz(14)
+	position: relative
 	dl
 		display: flex
 		margin-right: 30px
@@ -936,6 +956,13 @@ nav[canvas]
 				text-decoration: none
 		dt
 			margin-right: 10px
+.main__scroll-table
+	display: none
+@keyframes arrow-right
+	from
+		margin-left: 10px
+	to
+		margin-left: 20px
 img.img-flag
 	width: 18px
 	height: 15px

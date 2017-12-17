@@ -150,6 +150,12 @@ $(document).ready(function () {
 		classBtn: 'active'
 	});
 	// клик .header__authorization вызов окна авторизации
+	$(document).click(function ({target} = event) {
+		if ($(target).closest(".header__authorization").length)
+			return;
+		$('.header__autorization-dropdown').removeClass('header__autorization-dropdown--active');
+		event.stopPropagation();
+	});
 	$('.header__authorization a').on('click', function (e) {
 		e.preventDefault();
 		$('.header__autorization-dropdown').toggleClass('header__autorization-dropdown--active');

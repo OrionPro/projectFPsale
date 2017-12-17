@@ -24,21 +24,56 @@
 			margin-bottom: 20px
 			.modal_form_input_wrap
 				display: inline-block
+	.footer
+		nav
+			margin-right: auto
+	.header__logo
+		width: 165px
+		img
+			max-width: 100%
+			height: auto
+	.header__nav
+		ul
+			li
+				a
+					font-size: 14px
+					margin-right: 20px
+	.main__proxy-list
+		flex-wrap wrap
+		dl.last
+			margin-left: inherit
+	.main__btn-wrap
+		button
+			min-width 100%
+		&.personal
+			button
+				min-width: 90%
+	.main__filter-divider
+		width: 100%
+	.main__filter-type
+		align-items: left
 
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
+	.header
+		height: 100px
 	.header__nav
 		display: none
 	.header__logo
 		display: block
-		margin-top: 0
-	.header__modal
-		margin-top: 40px
+	.header__authorization
+		margin-left: auto
 	nav[canvas]
 		display: block
 	.info-blocks__item-txt-block
 		margin-bottom: 20px
+	.footer
+		.select2-wrap
+			width: 270px
+	.main__update-proxy-list
+		margin-bottom: 30px
+
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -62,13 +97,22 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
-	
+	.header
+		height: 100%
+		padding-bottom: 10px
+		padding-top: 10px
+		.row
+			flex-direction: column
+	.header__logo
+		margin: 0 auto 10px
+	.header__authorization
+		margin: auto
 	.header__title
 		h1
 			font-size: 30px
 			margin-top: 40px
-	.header__modal
-		margin-top: 40px
+	.header__autorization-dropdown
+		right calc(50% - 140px)
 	[off-canvas*=left]
 		width: 255px
 	.react
@@ -82,7 +126,25 @@
 		padding: 20px 10px 20px 10px
 		textarea
 			min-height: 80px
-	// Extra small devices (portrait phones, less than 576px)
+	.main__setting-up-a-proxy-in-the-browser
+		margin-bottom: 20px
+	.main__proxy-list
+		margin-bottom: 30px
+	.main__table-wrap
+		overflow: auto
+		margin-bottom: 20px
+		table
+			width: 700px
+	.main__scroll-table
+		display: block
+		position: absolute
+		bottom: -15px
+		left: 0
+		i
+			margin-left: 10px
+			color $main_color
+			animation arrow-right 0.5s infinite alternate
+// Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
 
@@ -109,6 +171,17 @@
 				font-size: 20px
 	.footer__item-nav
 		flex-direction: column
+	.main__pagination .pagination li a.active
+		font-size: 12px
+/* Custom */
+@media only screen and (max-width : 380px)
+	/**/
+	.main__pagination
+		.pagination
+			li
+				margin-bottom: 15px
+				a.active
+					font-size: 10px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/
