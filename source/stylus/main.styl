@@ -73,6 +73,8 @@ h1
 	font($main_txt_color, 24, $font_OpenSansSemiBold)
 h2
 	font($main_txt_color, 22, $font_OpenSansSemiBold)
+h3
+	font($main_txt_color, 20, $font_OpenSansSemiBold)
 p,ul
 	padding: 0
 	margin: 0
@@ -1132,7 +1134,6 @@ img.img-flag
 	padding-bottom: 40px
 	background-color: #fff
 	h2
-		font-size: 24px
 		margin-bottom: 30px
 .accordion {
 	margin-bottom: 30px;
@@ -1223,8 +1224,91 @@ img.img-flag
 		font-size: 14px
 	ul
 		margin-bottom: 15px
-//	Секция 
-//	Секция
+//	Секция your-ip
+.your-ip
+	padding-top: 35px
+	padding-bottom: 35px
+	text-align: center
+	background: #fff url(../img/your-ip__bg.png) center top no-repeat
+.your-ip__wrap
+	display: flex
+	align-items: center
+	justify-content: center
+	margin-bottom: 30px
+	i
+		font-size: 17.5px
+		color: $main_color
+		cursor: pointer
+		transition: 0.5s
+		&:hover
+			color: $main_txt_color
+.your-ip__title
+	margin-bottom: 20px
+	font-size: 17.5px
+	font-family: $font_OpenSansSemiBold
+.your-ip__numbers
+	margin-right: 20px
+	font-size: 50px
+	font-family: $font_OpenSansSemiBold
+	color: #161616
+//	Секция .hide-ip-table
+.hide-ip-table
+	padding-top: 35px
+	padding-bottom: 35px
+	background: #fff
+	.title
+		margin-bottom: 15px
+		font-size: 16px
+		font-family: $font_OpenSansSemiBold
+.hide-ip-table__table-wrap
+	table
+		width: 100%
+		margin-bottom: 40px
+		border: 1px solid #e0e0e0
+		tbody
+			font-size: 14px
+			font-family $font_OpenSansRegular
+			td
+				padding: 17px 30px
+				border-bottom: 1px solid #e0e0e0
+				&:first-of-type
+					width: 170px
+					padding: 17px 20px
+					background-color: #f6f6f6
+					font-size: 16px
+					border: none
+					font-family $font_OpenSansSemiBold
+					box-shadow: 5px 0px 15px 0px rgba(208,208,208,0.9)
+					position: relative
+					&:after
+						content: ""
+						display: block
+						position: absolute
+						bottom: 0
+						left: 0
+						width: 100%
+						height: 8px
+						background: #f6f6f6
+						z-index: 10
+				i
+					width: 20px
+					display: inline-block
+					margin-right: 10px
+.hide-ip-table__your-location
+	padding: 20px
+	background: #f6f6f6
+	p
+		margin-bottom: 17px
+	.hide-ip-table__your-location-title
+		font-size: 16px
+		font-family $font_OpenSansSemiBold
+		margin-bottom: 20px
+.hide-ip-table__your-location-map
+	margin-bottom: 25px
+	text-align: center
+.hide-ip-table__your-location-btn
+	button
+		min-width: 100%
 //	Секция
 //	Секция
 //	Секция

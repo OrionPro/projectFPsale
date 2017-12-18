@@ -105,8 +105,8 @@ function customScrollbar() {
 	});
 }
 
-//копируем то что в data-clipboard-text в параграфе copy-buffer
-const clipboard = new Clipboard('.main__table-wrap table tbody td.ip a:hover .copy-buffer');
+//копируем то что в data-clipboard-text в параграфе copy-buffer либо в любом другом месте где применяется этот класс
+const clipboard = new Clipboard('.copy-buffer');
 
 $(document).ready(function () {
 	//main__table-wrap ищем соседнюю ссылку в td.ip и берём text кладём в input
@@ -130,7 +130,16 @@ $(document).ready(function () {
 			});
 		}
 	}
-
+	// переносим из .your-ip__numbers в .copy-buffer
+	function yourIpNumbers () {
+		const yourIpWrap = document.querySelector('.your-ip__wrap');
+		if(yourIpWrap) {
+			const copyBuffer = document.querySelector('.your-ip__wrap .copy-buffer') || 0;
+			const elemValue = document.querySelector('.your-ip__wrap .your-ip__numbers').textContent || 0;
+			copyBuffer.setAttribute('data-clipboard-text', elemValue);
+		}
+	}
+	yourIpNumbers();
 	// вызов accordion
 	accordion({
 		titleClick: '.accordion .accordion_title',

@@ -11,6 +11,106 @@ block main
 					| Прокси-сервер – это, ваш посредник в сети, выполняющий целый ряд задач и делающий ваши интернет-путешествия более свободными и
 					| защищёнными. В вашем распоряжении есть список бесплатных прокси серверов, а так же услуга персональных прокси, что является нашей
 					| основной деятельностью.
+	section.your-ip
+		.container
+			p.your-ip__title
+				| Ваш IP-адрес:
+			.your-ip__wrap
+				span.your-ip__numbers
+					| 37.57.19.30
+				i.fa.fa-copy.copy-buffer(data-clipboard-text="")
+			.your-ip__btn
+				button(type="buttom" class="main_btn") Изменить свой IP-адрес
+	section.hide-ip-table
+		.container
+			p.title И это лишь малая часть информации, которую можно отследить по вашему IP-адресу:
+			.row
+				.col-md-9
+					.hide-ip-table__table-wrap
+						table
+							tbody
+								tr
+									td
+										| Хост
+									td
+										i
+											img(src=require("../../img/hide-ip-table__table.png"))
+										| 30.19.57.37.triolan.net
+									tr
+										td
+											| Система
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table2.png"))
+											| Win8.1
+									tr
+										td
+											| Ваш браузер
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table3.png"))
+											| Chrome 62.0
+									tr
+										td
+											| Откуда Вы
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table4.png"))
+											| Ukraine (UA), Kharkivs'ka Oblast', Kharkiv
+									tr
+										td
+											| Провайдер
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table5.png"))
+											| Triolan
+									tr
+										td
+											| DNS
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table6.png"))
+											| 37.57.0.210  Ukraine
+									tr
+										td
+											| Анонимайзер
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table7.png"))
+											| Нет
+									tr
+										td
+											| Прокси
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table8.png"))
+											| Нет
+									tr
+										td
+											| Протокол
+										td
+											i
+												img(src=require("../../img/hide-ip-table__table9.png"))
+											| HTTP/1.1
+
+				.col-md-3
+					.hide-ip-table__your-location
+						p.hide-ip-table__your-location-title
+							| Ваше расположение на карте!
+						.hide-ip-table__your-location-map
+							a(href="#")
+								img(src=require("../../img/hide-ip-table__your-location-map.jpg") class="img-fluid")
+						p.hide-ip-table__your-location-title
+							| Вы можете скрыть все это!
+						p
+							| Достаточно воспользоваться
+							| нашим простым, удобным и
+							| надежным инструментом.
+							| Скройте личные данные, защити-
+							| те трафик и снимите все лимиты
+							| со своего интернета!
+						.hide-ip-table__your-location-btn
+							button(type="button" class="main_btn") Скрыть IP-aдрес
 	// Секция why-our-proxies-are-better
 	section.why-our-proxies-are-better
 		.container
