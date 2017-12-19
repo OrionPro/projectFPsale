@@ -120,7 +120,10 @@ $(document).ready(function () {
 
 	if (window.matchMedia("(min-width: 992px)").matches) {
 		if (get_name_browser() == "Safari") {
+			console.log('это сафари');
+
 			clipboard.on('success', function (e) {
+				console.log('success');
 				e.clearSelection();
 				e.trigger.classList.add('active');
 				setTimeout(function () {
@@ -134,8 +137,8 @@ $(document).ready(function () {
 	function yourIpNumbers () {
 		const yourIpWrap = document.querySelector('.your-ip__wrap');
 		if(yourIpWrap) {
-			const copyBuffer = document.querySelector('.your-ip__wrap .copy-buffer') || 0;
-			const elemValue = document.querySelector('.your-ip__wrap .your-ip__numbers').textContent || 0;
+			const copyBuffer = document.querySelector('.your-ip__wrap .copy-buffer');
+			const elemValue = document.querySelector('.your-ip__wrap .your-ip__numbers').textContent;
 			copyBuffer.setAttribute('data-clipboard-text', elemValue);
 		}
 	}

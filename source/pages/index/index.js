@@ -33,6 +33,13 @@ $(document).ready(function () {
 		maxWidth: 280,
 		delay: 100
 	});
+	$(".your-ip__wrap i.copy-buffer").tooltipster({
+		theme: 'tooltipster-shadow',
+		maxWidth: 280,
+		trigger: 'click',
+		delay: 100,
+		timer: 2000
+	});
 	// инициализация tooltipster
 	if (window.matchMedia("(min-width: 992px)").matches) {
 		$(".header__modal a").tooltipster({

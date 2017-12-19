@@ -18,14 +18,14 @@ block main
 			.your-ip__wrap
 				span.your-ip__numbers
 					| 37.57.19.30
-				i.fa.fa-copy.copy-buffer(data-clipboard-text="")
+				i.fa.fa-copy.copy-buffer(data-clipboard-text="" title="Скопировано в буфер")
 			.your-ip__btn
-				button(type="buttom" class="main_btn") Изменить свой IP-адрес
+				button(type="buttom" class="main_btn2") Изменить свой IP-адрес
 	section.hide-ip-table
 		.container
 			p.title И это лишь малая часть информации, которую можно отследить по вашему IP-адресу:
 			.row
-				.col-md-9
+				.col-md-7.col-lg-9
 					.hide-ip-table__table-wrap
 						table
 							tbody
@@ -93,7 +93,7 @@ block main
 												img(src=require("../../img/hide-ip-table__table9.png"))
 											| HTTP/1.1
 
-				.col-md-3
+				.col-md-5.col-lg-3
 					.hide-ip-table__your-location
 						p.hide-ip-table__your-location-title
 							| Ваше расположение на карте!
@@ -110,7 +110,22 @@ block main
 							| те трафик и снимите все лимиты
 							| со своего интернета!
 						.hide-ip-table__your-location-btn
-							button(type="button" class="main_btn") Скрыть IP-aдрес
+							button(type="button" class="main_btn2") Скрыть IP-aдрес
+			.hide-ip-table__bottom-info-block
+				.hide-ip-table__bottom-info-block-txt-wrap
+					i.fa.fa-exclamation-circle
+					.hide-ip-table__bottom-info-block-txt
+						p
+							| Как видите, по IP предоставляется довольно подробная информация.
+						p.margin-bottom
+							| При подключении к интернету, компьютеру присваивают номер, именуемый IP (Internet Protocol Address). Следует заметить, что присваивают не произвольно, а
+							| тот айпи, который доступен провайдеру и свободен. IP изменяется после отключения при повторном подключении. Такие IP называются динамическими.
+							| Если хотите, чтобы был неизменный, постоянный IP, нужно заказать нединамический адрес. Чтобы выяснить, IP у компьютера в сети: статический или
+							| динамический, обратитесь к Вашему провайдеру. Обычно, нединамический предоставляется за отдельную плату. Его еще называют внешним. Часто
+							| отслеживается специализированными онлайн программами, определяя сопутствующую инфу о владельце. Внутренним IP или локальным называют индивидуа-
+							| льный адрес ПК (ноутбука) в локальной сети.
+				.hide-ip-table__bottom-info-block-btn-wrap
+					button(type="button" class="main_btn") Скрыть IP-дрес
 	// Секция why-our-proxies-are-better
 	section.why-our-proxies-are-better
 		.container
