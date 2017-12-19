@@ -120,16 +120,13 @@ $(document).ready(function () {
 
 	if (window.matchMedia("(min-width: 992px)").matches) {
 		if (get_name_browser() == "Safari") {
-			console.log('это сафари');
+			$('.your-ip__wrap i').attr('title', 'Нажмите ⌘-С чтобы скопировать');
 
-			clipboard.on('success', function (e) {
-				console.log('success');
-				e.clearSelection();
-				e.trigger.classList.add('active');
+			$('.main__table-wrap table tbody td .copy-buffer').on('click', function () {
+				$(this).addClass('active');
 				setTimeout(function () {
-					e.trigger.classList.remove('active');
+					$('.main__table-wrap table tbody td .copy-buffer').removeClass('active');
 				}, 1500);
-
 			});
 		}
 	}
