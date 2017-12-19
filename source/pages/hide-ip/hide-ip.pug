@@ -20,10 +20,13 @@ block main
 					| 37.57.19.30
 				i.fa.fa-copy.copy-buffer(data-clipboard-text="" title="Скопировано в буфер")
 			.your-ip__btn
-				button(type="buttom" class="main_btn2") Изменить свой IP-адрес
+				button(type="button" class="main_btn2 open-popup-link" data-effect="mfp-zoom-in" data-mfp-src="#popup2") Изменить свой IP-адрес
 	section.hide-ip-table
 		.container
 			p.title И это лишь малая часть информации, которую можно отследить по вашему IP-адресу:
+			.hide-ip-table__scroll-table
+				| Листайте таблицу
+				i.fa.fa-arrow-right
 			.row
 				.col-md-7.col-lg-9
 					.hide-ip-table__table-wrap

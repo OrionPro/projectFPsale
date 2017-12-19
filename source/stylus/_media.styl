@@ -73,7 +73,19 @@
 			width: 270px
 	.main__update-proxy-list
 		margin-bottom: 30px
-
+	.main__table-wrap
+		&.proxy-checker-table
+			overflow: auto
+			table
+				width: 1170px
+	.hide-ip-table__scroll-table
+		&.proxy-checker-table
+			display: block
+			margin-bottom: 20px
+			i
+				margin-left: 10px
+				color $main_color
+				animation arrow-right 0.5s infinite alternate
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -180,6 +192,22 @@
 	.your-ip__btn
 		button
 			min-width 270px
+	.hide-ip-table__table-wrap
+		overflow: auto
+
+		margin-bottom: 10px
+		table
+			width: 500px
+	.hide-ip-table__scroll-table
+		display: block
+		margin-bottom: 20px
+		i
+			margin-left: 10px
+			color $main_color
+			animation arrow-right 0.5s infinite alternate
+	.hide-ip-table__bottom-info-block-btn-wrap
+		button
+			min-width: 100%
 /* Custom */
 @media only screen and (max-width : 380px)
 	/**/

@@ -33,30 +33,39 @@
 		input(type="hidden" name="form_type" value="modal")
 		input(type="submit" value="Отправить")
 	.overlay
+#popup2.mfp-hide.white-popup.mfp-with-anim.popup2
+	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
+	form
+		p.modal-title.
+			Заголовок
+		p.modal-paragraph.
+			Укажите, пожалуйста, Ваш рабочий email адрес для того, что бы мы во-
+			время уведомляли Вас о обновлении нашего списка бесплатных IP адресов.
+		div
+			.input_wrap
+				i.fa.fa-check
+				input(name="email" type="email" placeholder="Ваш E-mail")
+		.select2-wrap
+			select.select2.select2-lease(name="modal-select-notification")
+				option
+				option 1 месяц
+				option 2 месяца
+				option 3 месяца
+				option 6 месяцев
+				option 12 месяцев
+		.select2-wrap.select2-wrap__purse
+			select.select2.select2-purse(name="modal-select-purse")
+				option
+				option(data-purse="yandex-money") yandex-money
+				option(data-purse="yandex-money") web-money
+				option(data-purse="yandex-money") qiwi
+		input(type="hidden" name="form_name" value="")
+		input(type="hidden" name="form_type" value="modal")
+		input(type="submit" value="Оплатить")
+	.overlay
 // Модальное окно success
 #popup-success.mfp-hide.white-popup.mfp-with-anim.popup
 	p.success_mail Заявка отправлена
-// вариант меню на мобильном
-#popup3.mfp-hide.white-popup.mfp-with-anim.popup
-	nav.header_nav_mobile
-		ul
-			li
-				a(href='#') Примеры кухонь
-			li
-				a(href='#') Преимущества
-			li
-				a(href='#') Отзывы
-			li
-				a(href='tel:73842596168') +7 3842 59 61 68
-			li
-				a(href='#') Примеры кухонь
-			li
-				a(href='#') Преимущества
-			li
-				a(href='#') Отзывы
-			li
-				a(href='#') Примеры кухонь
-			li
-				a(href='#') Преимущества
+
 
 
