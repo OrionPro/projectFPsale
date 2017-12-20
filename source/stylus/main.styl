@@ -682,6 +682,7 @@ nav[canvas]
 	to
 		transform rotate(360deg)
 .main__table-wrap
+	margin-bottom: 30px
 	//внешний вид скроллбара
 	scrollbar-base-color: $main_color   //для IE
 	scrollbar-arrow-color: $main_color	//для IE
@@ -696,9 +697,9 @@ nav[canvas]
 		background-color: lighten($main_color, 60%)
 	table
 		width: 100%
-		margin-bottom: 30px
 		border: 1px solid #e0e0e0
 		&.proxy-checker-table
+			margin-bottom: 16px
 			tbody
 				tr
 					td
@@ -1329,6 +1330,7 @@ img.img-flag
 		font-size: 16px
 		font-family: $font_OpenSansSemiBold
 .hide-ip-table__table-wrap
+	margin-bottom: 40px
 	//внешний вид скроллбара
 	scrollbar-base-color: $main_color   //для IE
 	scrollbar-arrow-color: $main_color	//для IE
@@ -1343,7 +1345,6 @@ img.img-flag
 		background-color: lighten($main_color, 60%)
 	table
 		width: 100%
-		margin-bottom: 40px
 		border: 1px solid #e0e0e0
 		tbody
 			font-size: 14px
@@ -1416,6 +1417,7 @@ img.img-flag
 	&.proxy-checker
 		.main__title
 			margin-bottom: 10px
+// Блок proxy-checker
 .proxy-checker__list
 	margin-bottom: 40px
 	p
@@ -1447,6 +1449,114 @@ img.img-flag
 		color #0e0e0e
 	.margin-bottom
 		margin-bottom: 20px
+// блок proxy-checker__enter-the-proxy-list
+.proxy-checker__enter-the-proxy-list
+	margin-bottom: 60px
+	font-size: 14px
+	textarea
+		width: 100%
+		height: 142px
+		padding-top: 20px
+		padding-left: 20px
+		border: 1px solid #e0e0e0
+		transition: 0.5s
+		&:hover
+			outline: 0
+		&:active
+			outline: 0
+			border: 1px solid $main_color
+		&:focus
+			outline: 0
+			border: 1px solid $main_color
+
+	button
+		min-width 270px
+	form
+		&>.row
+			margin-bottom: 30px
+.proxy-checker__enter-the-proxy-list-title
+	margin-bottom: 20px
+	font-family: $font_OpenSansSemiBold
+.proxy-checker__enter-the-proxy-list-check-title
+	margin-right: 30px
+	font-family: $font_OpenSansSemiBold
+.proxy-checker__enter-the-proxy-list-check
+	display: flex
+.proxy-checker__enter-the-proxy-list-check-list
+	display: flex
+	flex-direction: column
+	.check
+		margin-bottom: 15px
+// блок proxy-checker__test-results
+.proxy-checker__test-results
+	font-size: 14px
+	dl
+		display: flex
+		margin: 0
+		dt
+			margin-right: 5px
+		dd
+			margin: 0
+		span
+			font-family: $font_OpenSansSemiBold
+			&.workers
+				color #019315
+			&.not-workers
+				color #ae0025
+.proxy-checker__test-results-title
+	font-family: $font_OpenSansSemiBold
+.proxy-checker__test-results-items
+	margin-bottom: 30px
+	button
+		min-width 100%
+	.last
+		margin-left: auto
+.proxy-checker__test-results-item
+	display: flex
+	align-items: flex-end
+
+//блок .proxy-checker__download-scan-results
+.proxy-checker__download-scan-results
+	margin-bottom: 0
+	.row
+		align-items: center
+.proxy-checker__download-scan-results-title
+	font-size: 16px
+	font-family: $font_OpenSansSemiBold
+.proxy-checker__download-scan-results-item
+	img
+		margin-right: 10px
+	a
+		font-size: 14px
+		color: $main_txt_color
+		text-decoration: none
+		transition: 0.5s
+		&:hover
+			color: $main_color
+			text-decoration: none
+		&:active
+			text-decoration: none
+		&:focus
+			text-decoration: none
+
+//	Секция .looking-for-stable-personal-proxies
+.looking-for-stable-personal-proxies
+	padding-top: 35px
+	padding-bottom: 35px
+	background-color: #f6f6f6
+	text-align: center
+	h2
+		margin-bottom: 40px
+.looking-for-stable-personal-proxies__btn
+	text-align: center
+//	Секция security-and-anonymity
+.security-and-anonymity
+	padding-top: 35px
+	padding-bottom: 35px
+	background: #f6f6f6 url(../img/your-ip__bg.png) center top no-repeat
+	text-align: center
+	h2
+		margin-bottom: 40px
 //	Секция
 //	Секция
 

@@ -21,10 +21,7 @@ const PATHS = {
 const common = merge([
 	{
 		entry: {
-			'index': PATHS.source + '/pages/index/index.js',
-			'blog': PATHS.source + '/pages/index/index.js',
-			'hide-ip': PATHS.source + '/pages/index/index.js',
-			'proxy-checker': PATHS.source + '/pages/index/index.js'
+			'index': PATHS.source + '/pages/index/index.js'
 		},
 		// убрать это если не нужен source-map (а на продакшене он в принципе не нужен)
 		//devtool: 'source-map',
@@ -65,6 +62,11 @@ const common = merge([
 				filename: 'proxy-checker.html',
 				chunks: ['index'],
 				template: PATHS.source + '/pages/proxy-checker/proxy-checker.pug'
+			}),
+			new HtmlWebpackPlugin({
+				filename: 'port-scanner.html',
+				chunks: ['index'],
+				template: PATHS.source + '/pages/port-scanner/port-scanner.pug'
 			})
 			,
 			//new webpack.optimize.CommonsChunkPlugin({

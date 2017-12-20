@@ -52,7 +52,19 @@
 		width: 100%
 	.main__filter-type
 		align-items: left
-
+	.main__table-wrap
+		&.proxy-checker-table
+			overflow: auto
+			table
+				width: 1170px
+	.hide-ip-table__scroll-table
+		&.proxy-checker-table
+			display: block
+			margin-bottom: 10px
+			i
+				margin-left: 10px
+				color $main_color
+				animation arrow-right 0.5s infinite alternate
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
@@ -73,19 +85,18 @@
 			width: 270px
 	.main__update-proxy-list
 		margin-bottom: 30px
-	.main__table-wrap
-		&.proxy-checker-table
-			overflow: auto
-			table
-				width: 1170px
-	.hide-ip-table__scroll-table
-		&.proxy-checker-table
-			display: block
+	.proxy-checker__enter-the-proxy-list
+		textarea
 			margin-bottom: 20px
-			i
-				margin-left: 10px
-				color $main_color
-				animation arrow-right 0.5s infinite alternate
+	.proxy-checker__test-results-items
+		button
+			min-width: 270px
+	.proxy-checker__test-results-title
+		margin-bottom: 15px
+	.proxy-checker__test-results-item
+		margin-bottom: 10px
+	.proxy-checker__download-scan-results-title
+		margin-bottom: 10px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -149,6 +160,7 @@
 		margin-bottom: 20px
 		table
 			width: 700px
+			margin-bottom: 16px
 	.main__scroll-table
 		display: block
 		position: absolute
@@ -160,6 +172,8 @@
 			animation arrow-right 0.5s infinite alternate
 	.your-ip__numbers
 		font-size: 30px
+	.proxy-checker__download-scan-results-item
+		margin-bottom: 10px
 // Extra small devices (portrait phones, less than 576px)
 @media only screen and (max-width : 575px)
 	/**/
@@ -200,7 +214,7 @@
 			width: 500px
 	.hide-ip-table__scroll-table
 		display: block
-		margin-bottom: 20px
+		margin-bottom: 10px
 		i
 			margin-left: 10px
 			color $main_color
@@ -217,6 +231,12 @@
 				margin-bottom: 15px
 				a.active
 					font-size: 10px
+	.looking-for-stable-personal-proxies__btn
+		button
+			min-width 270px
+	.security-and-anonymity
+		button
+			min-width 270px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

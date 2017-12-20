@@ -1,0 +1,164 @@
+extends ../base
+block title
+	| Index page
+block main
+	// Секция main
+	section.main.proxy-checker
+		.container
+			.main__title
+				h1 Сканер портов
+			.proxy-checker__list
+				p
+					| Показывает какие порты открыты на вашем или чужом компьютере и за что они отвечают. Проверка производится через сканер nmap и
+					| показывает, насколько открыт ваш доступ ПК для внешнего мира.
+			.hide-ip-table__scroll-table.proxy-checker-table
+				| Листайте таблицу
+				i.fa.fa-arrow-right
+			.main__table-wrap.port-scanner
+				table.port-scanner-table
+					thead
+						th
+							| Номер
+						th
+							| Port
+						th
+							| Протокол
+						th
+							| Описание
+					tbody
+						tr
+							td
+								| 1
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 2
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 3
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 4
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 5
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 6
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 7
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 8
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 9
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 10
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+						tr
+							td
+								| 11
+							td
+								img(src=require("../../img/imgport.png"))
+							td
+								| FTP Data
+							td
+								| File Transfer Protocol — протокол передачи файлов. Порт для данных.
+			.proxy-checker__download-scan-results
+				.row
+					.col-md-12.col-lg-4.col-xl-3
+						.proxy-checker__download-scan-results-title
+							| Скачать результаты проверки:
+					.col-md-4.col-lg-2.col-xl-2
+						.proxy-checker__download-scan-results-item
+							img(src=require("../../img/proxy-checker__download-scan-results-item.png"))
+							a(href="#") скачать в .txt
+					.col-md-4.col-lg-3.col-xl-2
+						.proxy-checker__download-scan-results-item
+							img(src=require("../../img/proxy-checker__download-scan-results-item2.png"))
+							a(href="#") таблицей в .scv
+					.col-md-4.col-lg-3.col-xl-3
+						.proxy-checker__download-scan-results-item
+							img(src=require("../../img/proxy-checker__download-scan-results-item3.png"))
+							a(href="#") открыть в новой вкладке
+	// Секция security-and-anonymity
+	section.security-and-anonymity
+		.container
+			h2 VPN — ваша безопасность и анонимность в интернете
+		.security-and-anonymity__btn
+			button(type="button" class="main_btn2") Подробнее
+	// Секция why-our-proxies-are-better
+	section.why-our-proxies-are-better.proxy-checker
+		.container
+			h2 Подробнее о сканере портов.
+			p
+				| Сканер портов — программное обеспечение, созданное для обнаружения хостов сети, в которых открыт нужный порт или набор портов. Сканеры портов, как правило,
+				| используются системными администраторами для выявленя слабых мест их сетей.
+				|
+			p
+				| Наш сервис предлагает воспользоваться самой известной системной программой nmap, адаптированной нами специально под веб.
+				|
+			p
+				| Для проверки своего компьютера используйте кнопку «вставить мой IP-адрес» рядом с формой сканера. Мы также позволяем проверять любые сторонние IP-адреса, но
+				| только в качестве ознакомления! Категорически запрещается использовать данный сканер для противоправных действий.

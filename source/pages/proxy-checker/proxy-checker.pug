@@ -43,6 +43,70 @@ block main
 						b IP:PORT:USER:PASS
 					p
 						b P.S.: Если вы купили прокси у нас, то они приватные!
+			.proxy-checker__enter-the-proxy-list
+				.proxy-checker__enter-the-proxy-list-title
+					| Введите список прокси сюда:
+				form
+					.row
+						.col-lg-8
+							textarea
+						.col-lg-4
+							.proxy-checker__enter-the-proxy-list-check
+								.proxy-checker__enter-the-proxy-list-check-title
+									| Отображать:
+								.proxy-checker__enter-the-proxy-list-check-list
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span HTTP | HTTPS
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span SOCKS 4
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span SOCKS 5
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span Нерабочие
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-circle-o
+										i.fa.fa-2.fa-circle
+										span Непроверенные
+					button(type="submit" class="main_btn") Проверить прокси
+			.proxy-checker__test-results
+				.proxy-checker__test-results-title
+					| Результаты проверки:
+				.row.proxy-checker__test-results-items
+					.col-md-3.col-lg-2.proxy-checker__test-results-item
+						dl
+							dt
+								| Проверено:
+							dd
+								span 3
+								|
+								| из 5
+					.col-md-3.col-lg-2.proxy-checker__test-results-item
+						dl
+							dt
+								| Рабочих:
+							dd
+								span.workers 2
+					.col-md-3.col-lg-2.proxy-checker__test-results-item
+						dl
+							dt
+								| Нерабочих:
+							dd
+								span.not-workers 1
+					.col-md-12.col-lg-3.last
+						button(type="button" class="main_btn2") Купить рабочие прокси
 			.hide-ip-table__scroll-table.proxy-checker-table
 				| Листайте таблицу
 				i.fa.fa-arrow-right
@@ -158,6 +222,29 @@ block main
 							td
 								p
 									| Рабочий
+			.proxy-checker__download-scan-results
+				.row
+					.col-md-12.col-lg-4.col-xl-3
+						.proxy-checker__download-scan-results-title
+							| Скачать результаты проверки:
+					.col-md-4.col-lg-2.col-xl-2
+						.proxy-checker__download-scan-results-item
+							img(src=require("../../img/proxy-checker__download-scan-results-item.png"))
+							a(href="#") скачать в .txt
+					.col-md-4.col-lg-3.col-xl-2
+						.proxy-checker__download-scan-results-item
+							img(src=require("../../img/proxy-checker__download-scan-results-item2.png"))
+							a(href="#") таблицей в .scv
+					.col-md-4.col-lg-3.col-xl-3
+						.proxy-checker__download-scan-results-item
+							img(src=require("../../img/proxy-checker__download-scan-results-item3.png"))
+							a(href="#") открыть в новой вкладке
+	// Секция Looking for stable personal proxies
+	section.looking-for-stable-personal-proxies
+		.container
+			h2 Нужны стабильные персональные прокси?
+		.looking-for-stable-personal-proxies__btn
+			button(type="button" class="main_btn2") Подробнее
 	// Секция why-our-proxies-are-better
 	section.why-our-proxies-are-better.proxy-checker
 		.container
