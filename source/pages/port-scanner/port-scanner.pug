@@ -11,6 +11,20 @@ block main
 				p
 					| Показывает какие порты открыты на вашем или чужом компьютере и за что они отвечают. Проверка производится через сканер nmap и
 					| показывает, насколько открыт ваш доступ ПК для внешнего мира.
+			.row
+				.col-lg-4
+					form
+						.port-scanner__enter-the-IP-address-or-domain
+							label(for="enter-the-IP-address-or-domain") Введите IP-адрес или домен:
+							input(id="enter-the-IP-address-or-domain")
+							a(href="#") Вставить мой IP-адрес
+							label Тип сканируемых портов:
+							select(class="select2")
+								option Популярные порты
+								option Скрытые порты
+					button(class="main_btn2") Начать сканирование
+				.col-lg-8
+
 			.hide-ip-table__scroll-table.proxy-checker-table
 				| Листайте таблицу
 				i.fa.fa-arrow-right
