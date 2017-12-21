@@ -11,7 +11,7 @@ block main
 				p
 					| Показывает какие порты открыты на вашем или чужом компьютере и за что они отвечают. Проверка производится через сканер nmap и
 					| показывает, насколько открыт ваш доступ ПК для внешнего мира.
-			.row
+			.row.port-scanner
 				.col-lg-4
 					form
 						.port-scanner__enter-the-IP-address-or-domain
@@ -19,16 +19,39 @@ block main
 							input(id="enter-the-IP-address-or-domain")
 							a(href="#") Вставить мой IP-адрес
 							label Тип сканируемых портов:
-							select(class="select2")
+							select(class="select2 select2-modal")
 								option Популярные порты
 								option Скрытые порты
 					button(class="main_btn2") Начать сканирование
 				.col-lg-8
+					.port-scanner__test-results
+						p.title
+							| Результаты проверки:
+						.port-scanner__test-results-wrap
+							p
+								| Not shown: 999 filtered ports
+							p
+								| PORT     STATE SERVICE
+							p
+								| 3389/tcp open  ms-term-serv
+							p
+								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+							p
+								| Not shown: 999 filtered ports
+							p
+								| PORT     STATE SERVICE
+							p
+								| 3389/tcp open  ms-term-serv
+							p
+								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+					p.info
+						| * Если результат «Host seems down», значит фаерволл или роутер проверяемого и IP блокирует пинги.
 
-			.hide-ip-table__scroll-table.proxy-checker-table
-				| Листайте таблицу
-				i.fa.fa-arrow-right
 			.main__table-wrap.port-scanner
+				p Какие порты проверяются:
+				.hide-ip-table__scroll-table.proxy-checker-table
+					| Листайте таблицу
+					i.fa.fa-arrow-right
 				table.port-scanner-table
 					thead
 						th

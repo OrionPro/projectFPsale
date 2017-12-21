@@ -1559,7 +1559,8 @@ img.img-flag
 		margin-bottom: 40px
 
 // Блок .port-scanner__
-
+.port-scanner
+	margin-bottom: 55px
 .port-scanner__enter-the-IP-address-or-domain
 	margin-bottom: 30px
 	padding: 30px 20px
@@ -1597,8 +1598,32 @@ img.img-flag
 		&:focus
 			outline: 0
 			text-decoration: none
-
-
+.port-scanner__test-results
+	margin-bottom: 30px
+	padding: 30px 20px
+	border: 1px solid #e0e0e0
+	.title
+		font-family: $font_OpenSansSemiBold
+		margin-bottom: 5px
+	&+ .info
+		font-size: 14px
+.port-scanner__test-results-wrap
+	height: 138px
+	overflow: auto
+	padding: 20px
+	background-color: #f6f6f6
+	//внешний вид скроллбара
+	scrollbar-base-color: $main_color   //для IE
+	scrollbar-arrow-color: $main_color	//для IE
+	//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+	&::-webkit-scrollbar
+		width: 5px
+	&::-webkit-scrollbar-thumb
+		background-color: $main_color
+		&:hover
+			background-color: darken($main_color, 10%)
+	&::-webkit-scrollbar-track-piece
+		background-color: #e0e0e0
 //	Секция
 //	Секция
 
