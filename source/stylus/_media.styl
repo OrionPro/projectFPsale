@@ -65,6 +65,9 @@
 				margin-left: 10px
 				color $main_color
 				animation arrow-right 0.5s infinite alternate
+	.port-scanner
+		button[type=submit]
+			min-width 289px
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
@@ -97,6 +100,9 @@
 		margin-bottom: 10px
 	.proxy-checker__download-scan-results-title
 		margin-bottom: 10px
+	.port-scanner
+		button[type=submit]
+			margin-bottom: 30px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -161,6 +167,10 @@
 		table
 			width: 700px
 			margin-bottom: 16px
+			thead
+				tr
+					th
+						font-size: 14px
 	.main__scroll-table
 		display: block
 		position: absolute
@@ -222,6 +232,9 @@
 	.hide-ip-table__bottom-info-block-btn-wrap
 		button
 			min-width: 100%
+	.port-scanner__test-results-wrap
+		padding: 10px
+
 /* Custom */
 @media only screen and (max-width : 380px)
 	/**/

@@ -694,7 +694,11 @@ nav[canvas]
 		&:hover
 			background-color: darken($main_color, 10%)
 	&::-webkit-scrollbar-track-piece
-		background-color: lighten($main_color, 60%)
+		background-color: #e0e0e0
+	&.port-scanner
+		&> p
+			margin-bottom: 20px
+			font-family: $font_OpenSansSemiBold
 	table
 		width: 100%
 		border: 1px solid #e0e0e0
@@ -715,7 +719,31 @@ nav[canvas]
 				text-decoration: none
 			&:focus
 				text-decoration: none
-
+		&.port-scanner-table
+			.row
+				margin-right: 0
+				margin-left: 0
+				align-items: center
+				border-bottom: 1px solid whitesmoke
+			tbody,thead
+				display: block
+			tbody
+				height: 290px
+				overflow: auto
+				//внешний вид скроллбара
+				scrollbar-base-color: $main_color   //для IE
+				scrollbar-arrow-color: $main_color	//для IE
+				//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+				&::-webkit-scrollbar
+					width: 9px
+				&::-webkit-scrollbar-thumb
+					background-color: $main_color
+					&:hover
+						background-color: darken($main_color, 10%)
+				&::-webkit-scrollbar-track-piece
+					background-color: #e0e0e0
+				td
+					border-bottom: none
 		thead
 			background: #f6f6f6
 			font-size: 16px
@@ -1566,6 +1594,7 @@ img.img-flag
 	padding: 30px 20px
 	border: 1px solid #e0e0e0
 	label
+		display: block
 		font-size: 16px
 		font-family: $font_OpenSansSemiBold
 		margin-bottom: 8px
@@ -1624,6 +1653,8 @@ img.img-flag
 			background-color: darken($main_color, 10%)
 	&::-webkit-scrollbar-track-piece
 		background-color: #e0e0e0
+	p
+		font-size: 14px
 //	Секция
 //	Секция
 
