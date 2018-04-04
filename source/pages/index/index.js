@@ -56,7 +56,7 @@ $(document).ready(function () {
 		}
 		var baseUrl = "img";
 		var $state = $(
-			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '.jpg" class="img-flag" /> ' + state.text + '</span>'
+			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '" class="img-flag" /> ' + state.text + '</span>'
 		);
 		return $state;
 	};
@@ -78,7 +78,7 @@ $(document).ready(function () {
 		}
 		var baseUrl = "img";
 		var $state = $(
-			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-language') + '.jpg" class="img-flag" /> ' + state.text + '</span>'
+			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-language') + '" class="img-flag" /> ' + state.text + '</span>'
 		);
 		return $state;
 	};
@@ -106,7 +106,9 @@ $(document).ready(function () {
 		templateResult: formatLanguage,
 		templateSelection: formatLanguage
 	});
-
+	$('.select2-language').on('select2:select', function (e) {
+		window.location.assign($(this).find('option').attr('data-href'));
+	});
 	$(".select2-modal").select2({
 		minimumResultsForSearch: -1, // выключам поле ввода поиска
 		tags: false,
@@ -139,5 +141,5 @@ $(window).scroll(function () {
 
 setTimeout(function () {
 	$(".loader_inner").fadeOut();
-	$(".loader").fadeOut("slow");
-}, 500);
+	$(".loader").fadeOut("fast");
+}, 200);
