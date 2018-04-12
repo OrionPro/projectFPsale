@@ -54,7 +54,7 @@ $(document).ready(function () {
 		if (!state.id) {
 			return state.text;
 		}
-		var baseUrl = "img";
+		var baseUrl = "/img";
 		var $state = $(
 			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '" class="img-flag" /> ' + state.text + '</span>'
 		);
@@ -65,7 +65,7 @@ $(document).ready(function () {
 		if (!state.id) {
 			return state.text;
 		}
-		var baseUrl = "img";
+		var baseUrl = "/img";
 		var $state = $(
 			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-purse') + '.jpg" class="img-purse" /> ' + '</span>'
 		);
@@ -76,7 +76,7 @@ $(document).ready(function () {
 		if (!state.id) {
 			return state.text;
 		}
-		var baseUrl = "img";
+		var baseUrl = "/img";
 		var $state = $(
 			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-language') + '" class="img-flag" /> ' + state.text + '</span>'
 		);
@@ -107,7 +107,8 @@ $(document).ready(function () {
 		templateSelection: formatLanguage
 	});
 	$('.select2-language').on('select2:select', function (e) {
-		window.location.assign($(this).find('option').attr('data-href'));
+		var data = e.params.data.element.getAttribute('data-href');
+		window.location.assign(data);
 	});
 	$(".select2-modal").select2({
 		minimumResultsForSearch: -1, // выключам поле ввода поиска
