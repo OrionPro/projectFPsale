@@ -130,6 +130,28 @@ $(document).ready(function () {
 	});
 	// Инициализация маски в input
 	$(".mask").mask("+38(999) 999-99-99");
+	// клик на .main__top-select button . Клонирование элементов с инициализацией нового select.select2.select2-country
+	$(document).on('click', '.main__top-select button', function (e) {
+		e.preventDefault();
+		const parentClone = $(this).parent().clone();
+		const btnClone = $(this).clone();
+		const thisSelect = $(this).parent().find('.select2-country');
+		const parentAll = $(this).parents('.main__top-select-wrap');
+		const cloneSelect = thisSelect.clone();
+		parentClone.empty();
+		cloneSelect.appendTo(parentClone);
+		btnClone.appendTo(parentClone);
+		parentClone.appendTo(parentAll);
+		parentAll.find('.main__top-select').last().find('.select2-country').wrap('<div class="select2-wrap"></div>');
+		$(".select2-country").select2({
+			//minimumResultsForSearch: -1, // выключам поле ввода поиска
+			tags: false,
+			placeholder: "Выберите страну",
+			width: '100%',
+			templateResult: formatCountry,
+			templateSelection: formatCountry
+		});
+	});
 });
 
 $(window).resize(function () {
