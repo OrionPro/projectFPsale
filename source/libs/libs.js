@@ -51,4 +51,3 @@ exports.mCustomScrollbar = function () {
 	return require("../libs/jquery.mCustomScrollbar.concat.min");
 };
 
-
