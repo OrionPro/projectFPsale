@@ -54,9 +54,9 @@ $(document).ready(function () {
 		if (!state.id) {
 			return state.text;
 		}
-		var baseUrl = "/img";
+		var baseUrl = "img";
 		var $state = $(
-			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '" class="img-flag" /> ' + state.text + '</span>'
+			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '.png' + '" class="img-flag" /> ' + state.text + '</span>'
 		);
 		return $state;
 	};
@@ -65,7 +65,7 @@ $(document).ready(function () {
 		if (!state.id) {
 			return state.text;
 		}
-		var baseUrl = "/img";
+		var baseUrl = "img";
 		var $state = $(
 			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-purse') + '.jpg" class="img-purse" /> ' + '</span>'
 		);
@@ -76,7 +76,7 @@ $(document).ready(function () {
 		if (!state.id) {
 			return state.text;
 		}
-		var baseUrl = "/img";
+		var baseUrl = "img";
 		var $state = $(
 			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-language') + '" class="img-flag" /> ' + state.text + '</span>'
 		);
