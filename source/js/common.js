@@ -284,9 +284,9 @@ $(document).ready(function () {
 	$('#fps-filter-submit-button').on( 'click', function(e){
 		var uri = URI( $(location).attr( 'href' ) );
 
-		var country_filter = [];
-		var type_filter = [];
-		var anonymity_filter = [];
+		var country_filter = [],
+			type_filter = [],
+			anonymity_filter = [];
 
 		//страны
 		$('.fps-filter-country').each(function(){

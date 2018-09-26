@@ -39,32 +39,32 @@ block main
 					dt.
 						Рабочих прокси:
 					dd
-						a(href="#") 256
+						a(href="#" class="fps-sort fps-sort-counter fps-sort-all") 256
 				dl
 					dt.
 						Анонимных:
 					dd
-						a(href="#") 256
+						a(href="#" class="fps-sort fps-sort-counter fps-sort-anonymity") 256
 				dl
 					dt.
 						Sock5:
 					dd
-						a(href="#") 256
+						a(href="#" class="fps-sort fps-sort-counter fps-sort-socks5") 256
 				dl
 					dt.
 						HTTP:
 					dd
-						a(href="#") 256
+						a(href="#" class="fps-sort fps-sort-counter fps-sort-http") 256
 				dl
 					dt.
 						HTTPS:
 					dd
-						a(href="#") 256
+						a(href="#" class="fps-sort fps-sort-counter fps-sort-https") 256
 				dl.last
 					dt.
 						Прокси в базе:
 					dd
-						a(href="#") 256
+						a(href="http://104.248.37.4") 256
 				.main__scroll-table
 					| Листайте таблицу
 					i.fa.fa-arrow-right
@@ -316,10 +316,10 @@ block main
 					.main__update-proxy-list
 						a(href="#") Обновить список прокси
 				.col-lg-4
-					.main__filter
+					.main__filter.fps-filter-block
 						form
 							.main__top-select-wrap
-								.main__top-select
+								.main__top-select.fps-filter-country
 									.select2-wrap
 										select.select2.select2-country
 											option
@@ -377,7 +377,7 @@ block main
 								.main__filter-link-item
 									a(href="#") В новом окне
 							.main__btn-wrap
-								button(type="submit" class="main_btn") Применить фильтр
+								button(type="submit" class="main_btn" id="fps-filter-submit-button") Применить фильтр
 							.main__clean-the-filter
 								a(href="#") Очистить фильтр
 							.main__subscribe-to-update-filter
