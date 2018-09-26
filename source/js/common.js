@@ -429,34 +429,6 @@ $(document).ready(function () {
 		var proxy_sort_url_https = proxy_sort_url.clone();
 		$('.fps-sort-https').attr( 'href', proxy_sort_url_https.addSearch( 'proxy_sort', 'https' ) );
 	}
-
-
-	//кнопка в фильтре Добавить новую страну
-	/*
-	$('.fps-filter-country-add-new').on( 'click', function(){
-		var clone_html = $(this).parents( '.fps-filter-country' ).html();
-
-		$(this).parents( '.fps-filter-country' )
-			.after('<div class="main__top-select fps-filter-country fps_filter_country_counter_' + fps_filter_country_counter + '">' + clone_html + '</div>');
-		$('.fps_filter_country_counter_' + fps_filter_country_counter).find('.fps-filter-country-add-new').remove();
-
-		fps_filter_country_counter++;
-	});
-	*/
-
-	/*
-	$('.fps-filter-country-add-new').on( 'click', function(){
-		var clone_html = $(this).parents( '.fps-filter-country' ).html();
-
-		$(this).parents( '.fps-filter-country:last' )
-			.after('<div class="main__top-select fps-filter-country fps_filter_country_counter_' + fps_filter_country_counter + '">' + clone_html + '</div>');
-		$('.fps_filter_country_counter_' + fps_filter_country_counter).find('.fps-filter-country-add-new').remove();
-		$('.fps_filter_country_counter_' + fps_filter_country_counter).find('.select2-container').remove();
-		$('.fps_filter_country_counter_' + fps_filter_country_counter).find('.select2-country').removeClass( 'select2-hidden-accessible');
-
-		fps_filter_country_counter++;
-	});
-	*/
 });
 
 $(window).resize(function () {
