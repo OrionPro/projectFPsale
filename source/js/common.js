@@ -327,9 +327,12 @@ $(document).ready(function () {
 	if ( $( "#fps-filter-block" ).length ) {
 		var uri = URI( $(location).attr( 'href' ) );
 		var parsed_query = URI.parseQuery(URI.parse($(location).attr( 'href' )).query);
-		var country_filter = type_filter = anonymity_filter = [];
+		var country_filter = [],
+			type_filter = [],
+			anonymity_filter = [];
 
 		if ( typeof( parsed_query.proxy_country ) != 'undefined' ) {
+
 			country_filter = JSON.parse( parsed_query.proxy_country );
 		}
 
