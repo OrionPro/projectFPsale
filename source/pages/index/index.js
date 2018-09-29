@@ -273,12 +273,13 @@ $(document).ready(function () {
 				setTimeout(function () {
 					$('.fps-filter-country:last')
 						.after(`
-							<div class="main__top-select fps-filter-country fps_filter_country_counter_${fps_filter_country_counter}"><div class="select2-wrap">
-                        <select class="select2 select2-country select2-hidden-accessible" tabindex="-1" aria-hidden="true">
-                          ${clone_fps_filter_country}
-                        </select>
-                      </div>
-                      <button type="button"><i class="fa fa-plus"></i></button>
+							<div class="main__top-select fps-filter-country fps_filter_country_counter_${fps_filter_country_counter}">
+								<div class="select2-wrap">
+									<select class="select2 select2-country select2-hidden-accessible" tabindex="-1" aria-hidden="true">
+									  ${clone_fps_filter_country}
+									</select>
+								 </div>
+                     		 <button type="button"><i class="fa fa-plus"></i></button>
                      		</div>`);
 					//$('.fps_filter_country_counter_' + fps_filter_country_counter).find('.fps-filter-country-add-new').remove();
 					//$('.fps_filter_country_counter_' + fps_filter_country_counter).find('.select2-container').remove();
