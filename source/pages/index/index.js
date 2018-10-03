@@ -61,7 +61,7 @@ $(document).ready(function () {
 			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '.png' + '" class="img-flag" /> ' + state.text + '</span>'
 		);
 		return $state;
-	};
+	}
 
 	function formatPurse(state) {
 		if (!state.id) {
@@ -72,7 +72,7 @@ $(document).ready(function () {
 			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-purse') + '.jpg" class="img-purse" /> ' + '</span>'
 		);
 		return $state;
-	};
+	}
 
 	function formatLanguage(state) {
 		if (!state.id) {
@@ -80,10 +80,11 @@ $(document).ready(function () {
 		}
 		var baseUrl = "img";
 		var $state = $(
-			'<span><img src="' + baseUrl + '/' + state.element.getAttribute('data-language') + '" class="img-flag" /> ' + state.text + '</span>'
+			'<span><img src="' + state.element.getAttribute('data-language') + '" class="img-flag" /> ' + state.text + '</span>'
 		);
 		return $state;
-	};
+	}
+
 	$(".select2-country").select2({
 		//minimumResultsForSearch: -1, // выключам поле ввода поиска
 		tags: false,
