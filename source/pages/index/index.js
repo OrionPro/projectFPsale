@@ -58,7 +58,7 @@ $(document).ready(function () {
 		}
 		var baseUrl = "img";
 		var $state = $(
-			'<span><img src="' + baseUrl + '/' + state.element.value.toLowerCase().replace(/\s+/g, '') + '.png' + '" class="img-flag" /> ' + state.text + '</span>'
+			'<span><img src="' + state.element.getAttribute('data-country')  + '" class="img-flag" /> ' + state.text + '</span>'
 		);
 		return $state;
 	}
