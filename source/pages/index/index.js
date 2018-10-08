@@ -91,7 +91,20 @@ $(document).ready(function () {
 		placeholder: "Выберите страну",
 		width: '100%',
 		templateResult: formatCountry,
-		templateSelection: formatCountry
+		templateSelection: formatCountry,
+		// sorter: function(data) {
+		// 	/* Sort data using lowercase comparison Тут сортируем страны */
+		// 	return data.sort(function (a, b) {
+		// 		a = a.text.toLowerCase();
+		// 		b = b.text.toLowerCase();
+		// 		if (a > b) {
+		// 			return 1;
+		// 		} else if (a < b) {
+		// 			return -1;
+		// 		}
+		// 		return 0;
+		// 	});
+		// }
 	});
 	$(".select2-purse").select2({
 		minimumResultsForSearch: -1, // выключам поле ввода поиска
