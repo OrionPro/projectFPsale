@@ -54,15 +54,15 @@ function accordion(obj) {
 			$(this).children().removeClass("active"); //убираем активный класс у стрелки к примеру
 
 		} else {
+			content.slideDown();//показываем
 			$(titleClick).removeClass('active');
-			$(allContent).slideUp("slow"); //если невидимый, прячем все скрытые
 			$(allContent).addClass('active');
 			$(titleClick).children() //убираем активный класс у стрелки к примеру
 				.removeClass("active");
-			content.slideToggle("slow"); //открываем скрытый блок у того что нажали
 			$(this).addClass("active");
 			$(this).children().addClass("active"); //добавляем активный класс у стрекли к примеру
 		}
+		$(titleClick).not(this).next().stop(true,true).slideUp();
 	});
 }
 
