@@ -103,6 +103,11 @@
 	.port-scanner
 		button[type=submit]
 			margin-bottom: 30px
+	.share-page
+		margin-bottom: 0
+	.main.share
+		h1
+			margin-bottom: 30px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -184,10 +189,29 @@
 		font-size: 30px
 	.proxy-checker__download-scan-results-item
 		margin-bottom: 10px
-// Extra small devices (portrait phones, less than 576px)
+// Extra small devices (portrait phones, less than 700px)
+@media only screen and (max-width : 700px)// Extra small devices (portrait phones, less than 576px)
+	.share-page__social-item
+		margin-right: 0
+		padding-left: 15px
+		padding-right: 15px
+	.share-page__social
+		align-items: center
+		justify-content: center
 @media only screen and (max-width : 575px)
 	/**/
-
+	.share-page__social-item
+		padding-left: 10px
+		padding-right: 10px
+	.share-page__social-item-counter
+		width: 22px
+		height: 22px
+		font-size: 11px
+	.share-page__social-item-circle
+		width: 22px
+		height: 22px
+		i
+			font-size: 11px
 // Extra small devices (portrait phones, less than 521px)
 @media only screen and (max-width : 520px)
 	/**/
