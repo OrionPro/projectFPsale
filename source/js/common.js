@@ -49,12 +49,15 @@ function accordion(obj) {
 		if (content.is(":visible")) { //если нажали на title аккордеона,
 			content.slideUp(500, function () { //и если контент аккордеона видимый, то
 			}); //убираем его
+
+			$('.main.share h1').removeClass('active');
 			$(allContent).removeClass('active');
 			$(this).removeClass("active");
 			$(this).children().removeClass("active"); //убираем активный класс у стрелки к примеру
 
 		} else {
 			content.slideDown();//показываем
+			$('.main.share h1').addClass('active');
 			$(titleClick).removeClass('active');
 			$(allContent).addClass('active');
 			$(titleClick).children() //убираем активный класс у стрелки к примеру
@@ -146,7 +149,11 @@ $(document).ready(function () {
 		titleClick: '.accordion .accordion_title',
 		allContent: '.accordion .accordion_content'
 	});
-
+	// аккордеон на странице index ( Поделиться страницей ) в итоге можно использовать где нужно , главное дабовить к секции .main класс share
+	accordion({
+		titleClick: '.share-page__link',
+		allContent: '.share-page__social'
+	});
 	customScrollbar();
 	// вызов tabs
 	tabs({

@@ -104,10 +104,16 @@
 		button[type=submit]
 			margin-bottom: 30px
 	.share-page
+		min-height: 100%
 		margin-bottom: 0
 	.main.share
 		h1
 			margin-bottom: 30px
+	.main
+		&.share
+			h1
+				&.active
+					margin-bottom: 30px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -195,7 +201,7 @@
 		margin-right: 0
 		padding-left: 15px
 		padding-right: 15px
-	.share-page__social
+	.share-page__social-inner
 		align-items: center
 		justify-content: center
 @media only screen and (max-width : 575px)
