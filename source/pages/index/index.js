@@ -2,11 +2,11 @@ import '../../js/common';
 
 //import '../../libs/owl.carousel.min';
 //import Swiper from 'swiper/dist/js/swiper.js';
-import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
-import '../../pages/hide-ip/hide-ip.pug';
-import '../../pages/proxy-checker/proxy-checker.pug';
-import '../../pages/port-scanner/port-scanner.pug';
-import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
+//import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
+//import '../../pages/hide-ip/hide-ip.pug';
+//import '../../pages/proxy-checker/proxy-checker.pug';
+//import '../../pages/port-scanner/port-scanner.pug';
+//import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import './index.styl';
 import URI from "urijs";
 //import '../../js/animate';

@@ -689,8 +689,8 @@ nav[canvas]
 		h1
 			margin-bottom: 30px
 			transition: margin 0.5s
-			&.active
-				margin-bottom: 50px
+			//&.active
+			//	margin-bottom: 50px
 @keyframes table-ip-check
 	from
 		transform rotate(0deg)
@@ -709,7 +709,7 @@ nav[canvas]
 .share-page__link
 	display: flex
 	align-items: center
-	margin-bottom: 10px
+	margin-bottom: 8px
 	margin-left: auto
 	a
 		text-decoration: underline
@@ -734,12 +734,12 @@ nav[canvas]
 .share-page__social-item
 	display: flex
 	margin-right: 20px
-	margin-bottom: 15px
+	margin-bottom: 10px
 	&:last-of-type
 		margin-right: 0
 .share-page__social-item-counter
-	min-width: 30px
-	height: 30px
+	min-width: 22px
+	height: 22px
 	margin-right: 10px
 	padding-left: 3px
 	padding-right: 3px
@@ -749,7 +749,7 @@ nav[canvas]
 	justify-content: center
 	background-color: #f6f6f6
 	border: 1px solid  rgb(205, 205, 205)
-	font-size: 14px
+	font-size: 12px
 	&:after
 		content: ""
 		display: block
@@ -757,11 +757,11 @@ nav[canvas]
 		width: 6px
 		height: 10px
 		right: -6px
-		top: 11px
+		top: 6.5px
 		background: url(../img/share-page__social-item-counter-triangle.jpg) center top no-repeat
 .share-page__social-item-circle
-	width: 30px
-	height: 30px
+	width: 22px
+	height: 22px
 	border-radius: 50%
 	background-color: $main_txt_color
 	border: 1px solid transparent
@@ -797,7 +797,7 @@ nav[canvas]
 			text-decoration: none
 
 	i
-		font-size: 14px
+		font-size: 13px
 		color: #fff
 		transition: color 0.5s
 .main__table-wrap
@@ -1715,9 +1715,42 @@ img.img-flag
 
 // Блок .port-scanner__
 .port-scanner
-	margin-bottom: 55px
+	margin-bottom: 35px
+	&.flex
+		display: flex
+	&.mb10
+		margin-bottom: 10px
+	&.mb60
+		margin-bottom: 60px
+	form
+		overflow: hidden
+.dig-dns-wrap
+	height: 100%
+	&.IP-traceroute-wrap
+		.port-scanner__enter-the-IP-address-or-domain
+			margin-bottom: 18px
+		.port-scanner__btn
+			flex-direction: column
+			button
+				margin-right: 0
+		.btn-info
+			margin-bottom: 8px
+			color: #616060
+			font-size: 12px
+	.port-scanner__enter-the-IP-address-or-domain
+		height initial
+		margin-bottom: 30px
+		.dig-dns-wrap--title
+			margin-bottom: 10px
+			font-family $font_OpenSansSemiBold
+		label
+			font-family: $font_OpenSansRegular
+		input
+			margin-bottom: 10px
+			&.mb5
+				margin-bottom: 5px
 .port-scanner__enter-the-IP-address-or-domain
-	margin-bottom: 30px
+	height: 100%
 	padding: 30px 20px
 	border: 1px solid #e0e0e0
 	label
@@ -1745,7 +1778,7 @@ img.img-flag
 		font-size: 14px
 		text-decoration underline
 		color: $main_color
-		transition: 0.5s
+		transition: color 0.4s
 		&:hover
 			color: $main_txt_color
 			text-decoration: none
@@ -1754,20 +1787,41 @@ img.img-flag
 		&:focus
 			outline: 0
 			text-decoration: none
+	.mt25
+		margin-top: 25px
+	.port-scanner__btn
+		button
+			min-width 100%
 .port-scanner__test-results
-	margin-bottom: 30px
+	display: flex
+	flex-direction: column
 	padding: 30px 20px
 	border: 1px solid #e0e0e0
 	.title
 		font-family: $font_OpenSansSemiBold
 		margin-bottom: 5px
-	&+ .info
+.port-scanner__btn
+	display: flex
+	align-items: center
+	button
+		min-width: 370px
+		margin-right: 30px
+	.info
 		font-size: 14px
 .port-scanner__test-results-wrap
-	height: 138px
+	height: 100%
 	overflow: auto
 	padding: 20px
 	background-color: #f6f6f6
+	&.port-scanner-wrap
+		min-height 136px
+		max-height: 138px
+	&.IP-ping-wrap
+		min-height 235px
+		max-height: 247px
+	&.dig-dns-block
+		min-height 299px
+		max-height: 299px
 	//внешний вид скроллбара
 	scrollbar-base-color: $main_color   //для IE
 	scrollbar-arrow-color: $main_color	//для IE
@@ -1782,6 +1836,23 @@ img.img-flag
 		background-color: #e0e0e0
 	p
 		font-size: 14px
+.NS-or-domain-info
+	margin-bottom: 25px
+	font-size: 12.5px
+	a
+		margin: 0
+		font-size: 12px
+		&.main_txt
+			color: $main_txt_color
+			&:hover
+				color: $main_color
+				text-decoration: none
+			&:active
+				color: $main_color
+				text-decoration: none
+			&:focus
+				text-decoration: none
+
 //	Секция стилей от программиста бек енд
 .fps-proxy-settings-item-icon {
 	width: 22px;
