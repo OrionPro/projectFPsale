@@ -84,6 +84,11 @@ const common = merge([
 				chunks: ['index'],
 				template: PATHS.source + '/pages/IP-traceroute/IP-traceroute.pug'
 			}),
+			new HtmlWebpackPlugin({
+				filename: 'speed-test.html',
+				chunks: ['index'],
+				template: PATHS.source + '/pages/speed-test/speed-test.pug'
+			}),
 			//new webpack.optimize.CommonsChunkPlugin({
 			//	name: 'common'
 			//}),

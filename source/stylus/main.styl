@@ -1572,6 +1572,8 @@ img.img-flag
 	&.proxy-checker
 		.main__title
 			margin-bottom: 10px
+			&.main__title_long
+				max-width: 56%
 // Блок proxy-checker
 .proxy-checker__list
 	margin-bottom: 40px
@@ -1724,6 +1726,20 @@ img.img-flag
 		margin-bottom: 60px
 	form
 		overflow: hidden
+.proxy-checker__list
+	padding-left: 20px
+	margin: 0 0 35px
+	li
+		&:before
+			content: ""
+			display: inline-block
+			width: 9px
+			height: 9px
+			margin-right: 10px
+			position: relative
+			top: -1px
+			background-color: $main_color
+			border-radius: 50%
 .dig-dns-wrap
 	height: 100%
 	&.IP-traceroute-wrap
@@ -1753,11 +1769,21 @@ img.img-flag
 	height: 100%
 	padding: 30px 20px
 	border: 1px solid #e0e0e0
+	.main__filter--default
+		margin-bottom: 15px
+		flex-direction: column
+		align-items: self-start
+		h4
+			margin-bottom: 5px
+	.proxy-type-checks
+		display: flex
 	label
 		display: block
 		font-size: 16px
 		font-family: $font_OpenSansSemiBold
 		margin-bottom: 8px
+		a
+			margin-bottom: 0
 	input
 		width: 100%
 		height: 30px
@@ -1779,6 +1805,10 @@ img.img-flag
 		text-decoration underline
 		color: $main_color
 		transition: color 0.4s
+		&.gray
+			color: #888888
+			&:hover
+				color: $main_color
 		&:hover
 			color: $main_txt_color
 			text-decoration: none
@@ -1793,9 +1823,10 @@ img.img-flag
 		button
 			min-width 100%
 .port-scanner__test-results
+	height: 100%
 	display: flex
 	flex-direction: column
-	padding: 30px 20px
+	padding: 30px 20px 45px
 	border: 1px solid #e0e0e0
 	.title
 		font-family: $font_OpenSansSemiBold
@@ -1809,19 +1840,21 @@ img.img-flag
 	.info
 		font-size: 14px
 .port-scanner__test-results-wrap
-	height: 100%
 	overflow: auto
 	padding: 20px
 	background-color: #f6f6f6
 	&.port-scanner-wrap
-		min-height 136px
+		min-height 100%
 		max-height: 138px
 	&.IP-ping-wrap
-		min-height 235px
+		min-height 100%
 		max-height: 247px
 	&.dig-dns-block
-		min-height 299px
-		max-height: 299px
+		min-height 100%
+		max-height: 284px
+	&.speed-test
+		min-height 100%
+		max-height: 552px
 	//внешний вид скроллбара
 	scrollbar-base-color: $main_color   //для IE
 	scrollbar-arrow-color: $main_color	//для IE

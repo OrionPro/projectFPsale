@@ -17,12 +17,11 @@
 	// для фиксированного сайта
 	// body
 	// 	width: 1200px
-	.port-scanner__test-results-wrap.dig-dns-block
-		min-height: 332px
-		max-height 332px
-	.dig-dns-wrap
-		.port-scanner__btn
-			margin-bottom: 30px
+	.share-page.title_long
+		min-height: 100%
+		margin-bottom: 0
+	.main.proxy-checker .main__title.main__title_long
+		max-width 100%
 	.header__modal
 		margin-top: 20px
 	.intermediate
@@ -104,6 +103,18 @@
 		margin-left: auto
 	nav[canvas]
 		display: block
+	.dig-dns-wrap .port-scanner__btn
+		margin-bottom: 30px
+	.port-scanner__test-results-wrap
+		&.port-scanner-wrap
+			min-height 100%
+			max-height: 300px
+		&.IP-ping-wrap
+			min-height 100%
+			max-height: 300px
+		&.dig-dns-block
+			min-height 100%
+			max-height: 300px
 	.info-blocks__item-txt-block
 		margin-bottom: 20px
 	.footer
@@ -177,13 +188,18 @@
 		transform translate(-50%,9%)
 	.port-scanner__btn
 		flex-wrap wrap
-		button
-			margin-bottom: 20px
 	[off-canvas*=left]
 		width: 255px
-	.react
-		h2
-			font-size: 20px
+	.port-scanner__test-results-wrap
+		&.port-scanner-wrap
+			min-height 100%
+			max-height: 260px
+		&.IP-ping-wrap
+			min-height 100%
+			max-height: 260px
+		&.dig-dns-block
+			min-height 100%
+			max-height: 260px
 	.file_wrap
 		input
 			width: 80%
@@ -192,6 +208,8 @@
 		padding: 20px 10px 20px 10px
 		textarea
 			min-height: 80px
+	.port-scanner__btn .info
+		padding-top: 5px
 	.main__setting-up-a-proxy-in-the-browser
 		margin-bottom: 20px
 	.main__proxy-list
