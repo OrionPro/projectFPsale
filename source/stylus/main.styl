@@ -49,7 +49,7 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.2
-	font-family: $font_OpenSansRegular
+	font-family: $font_Circe-Regular
 	overflow-x: hidden
 	color: $main_txt_color
 	-webkit-tap-highlight-color: transparent
@@ -70,11 +70,11 @@ body
 
 h1
 	margin-bottom: 30px
-	font($main_txt_color, 24, $font_OpenSansSemiBold)
+	font($main_txt_color, 24, $font_Circe-Bold)
 h2
-	font($main_txt_color, 22, $font_OpenSansSemiBold)
+	font($main_txt_color, 22, $font_Circe-Bold)
 h3
-	font($main_txt_color, 20, $font_OpenSansSemiBold)
+	font($main_txt_color, 20, $font_Circe-Bold)
 p,ul
 	padding: 0
 	margin: 0
@@ -196,11 +196,11 @@ li
 	transition: 0.5s
 	.modal-title
 		margin-bottom: 30px
-		font($main_txt_color, 20, $font_OpenSansSemiBold, 1.4)
+		font($main_txt_color, 20, $font_Circe-Bold, 1.4)
 	.modal-paragraph
 		margin-bottom: 30px
 	p
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 		margin-bottom: 15px
 	&#popup-success
 		p.success_mail
@@ -263,7 +263,7 @@ li
 		margin-left: 5px
 		text-align: left
 		display: block
-		font-family: $font_OpenSansRegular
+		font-family: $font_Circe-Regular
 		fz(14)
 		color: $main_txt_color
 		&.active
@@ -276,7 +276,7 @@ li
 		padding-right: 37px
 		color: #3a4763
 		fz(14)
-		font-family: $font_OpenSansRegular
+		font-family: $font_Circe-Regular
 		border: 1px solid #cdcdcd
 		background-color: #ffffff
 		border-radius: 5px
@@ -298,7 +298,7 @@ li
 		&:focus
 			outline: 0
 	.success_mail
-		font($main_color, 24, $font_OpenSansRegular, 1.1)
+		font($main_color, 24, $font_Circe-Regular, 1.1)
 		display: none
 		&.active
 			display: block
@@ -561,7 +561,7 @@ nav[canvas]
 // Header
 .header
 	width: 100%
-	height: 140px
+	height: 90px
 	display: flex
 	align-items: center
 	background-color: #fff
@@ -573,112 +573,150 @@ nav[canvas]
 .header__logo
 	display: inline-block
 	margin-left: 15px
+	font-family: $font_Circe-ExtraBold
+	a
+		color: $main_txt_color
+		text-decoration: none
+		&:hover
+			text-decoration: none
+		&:active
+			text-decoration: none
+		&:focus
+			text-decoration: none
+
+	img
+		padding-right: 10px
 .header__nav
 	display: inline-block
 	position: relative
 	margin-left: auto
 	ul
 		li
+			margin-bottom: 5px
+			position: relative
 			list-style: none
 			display: inline-block
+			&:last-of-type
+				margin-bottom: 0
+			&:last-of-type a
+				margin-right: 0
+			&:hover > i.fa
+				transform rotate(180deg)
+			&:hover > .header__dropdown
+				visibility visible
+				opacity: 1
+				pointer-events all
+			i.fa
+				margin-left: 9px
+				font-size: 14px
+				color: $main_color
+				transition transform 0.4s
 			a
 				margin-right: 30px
 				color: $main_txt_color
 				fz(16)
+				font-family: $font_Circe-Bold
 				position: relative
 				text-decoration: none
-				transition: .5s
+				transition: color .5s
 				&:hover
+					color: $main_color
 					text-decoration: none
 				&:active
+					color: $main_color
 					text-decoration: none
 				&:focus
+					color: $main_color
 					text-decoration: none
-				&:hover:after
-					transform scale(1)
-				&:after
-					content: ""
-					display: block
-					position: absolute
-					top: 23px
-					left: 0
-					width: 100%
-					height: 2px
-					transform scale(0)
-					background-color: $main_color
-					transition: .5s
-.header__authorization
-	position: relative
-	a
-		color $main_color
-		font-family: $font_OpenSansSemiBold
-		transition: 0.3s
-		position: relative
-		&:hover
-			text-decoration: none
-			color: $main_txt_color
-		&:active
-			text-decoration: none
-			color: $main_txt_color
-		&:focus
-			text-decoration: none
-			color: $main_txt_color
-		&:hover:after
-			transform scale(0)
-		&:after
-			content: ""
-			display: block
-			position: absolute
-			top: 23px
-			left: 0
-			width: 100%
-			height: 2px
-			transform scale(1)
-			background-color: $main_color
-			transition: .5s
-.header__autorization-dropdown
-	width: 280px
-	min-height: 185px
-	padding: 20px 10px
+.header__dropdown
+	min-width: 130px
+	padding: 10px
+	visibility hidden
+	opacity: 0
+	pointer-events none
 	position: absolute
-	bottom: -200px
-	right: 0
+	border-radius: 4px
 	background-color: white
-	border: 1px solid #e0e0e0
-	border-radius: 5px
-	font-size: 14px
-	transition: 0.5s
-	animation: fade-out
-	animation-duration: 0.5s
-	animation-fill-mode: forwards
-	&.header__autorization-dropdown--active
-		animation: fade
-		animation-duration: 0.5s
-	.title
-		margin-bottom: 10px
-		font-family: $font_OpenSansSemiBold
-	.input_wrap
-		margin-bottom: 10px
-		i
-			top: 8px
-	input
-		width: 100%
-		height: 30px
-		padding-left: 10px
-		line-height: 28px
-		border: 1px solid #d6d6d6
-		transition: 0.5s
-		&:hover
-			outline: 0
-		&:active
-			outline: 0
-			border: 1px solid $main_color
-		&:focus
-			outline: 0
-			border: 1px solid $main_color
-
-	button
-		min-width: 100%
+	top: 20px
+	left: 0
+	box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
+	z-index: 100
+	transition: 0.3s
+	li
+		a
+			font-size: 15px
+//.header__authorization
+//	position: relative
+//	a
+//		color $main_color
+//		font-family: $font_Circe-Bold
+//		transition: 0.3s
+//		position: relative
+//		&:hover
+//			text-decoration: none
+//			color: $main_txt_color
+//		&:active
+//			text-decoration: none
+//			color: $main_txt_color
+//		&:focus
+//			text-decoration: none
+//			color: $main_txt_color
+//		&:hover:after
+//			transform scale(0)
+//		&:after
+//			content: ""
+//			display: block
+//			position: absolute
+//			top: 23px
+//			left: 0
+//			width: 100%
+//			height: 2px
+//			transform scale(1)
+//			background-color: $main_color
+//			transition: .5s
+//.header__autorization-dropdown
+//	width: 280px
+//	min-height: 185px
+//	padding: 20px 10px
+//	position: absolute
+//	bottom: -200px
+//	right: 0
+//	background-color: white
+//	border: 1px solid #e0e0e0
+//	border-radius: 5px
+//	font-size: 14px
+//	transition: 0.5s
+//	animation: fade-out
+//	animation-duration: 0.5s
+//	animation-fill-mode: forwards
+//	&.header__autorization-dropdown--active
+//		animation: fade
+//		animation-duration: 0.5s
+//	.title
+//		margin-bottom: 10px
+//		font-family: $font_Circe-Bold
+//	.input_wrap
+//		margin-bottom: 10px
+//		i
+//			top: 8px
+//	input
+//		width: 100%
+//		height: 30px
+//		padding-left: 10px
+//		line-height: 28px
+//		border: 1px solid #d6d6d6
+//		transition: 0.5s
+//		&:hover
+//			outline: 0
+//		&:active
+//			outline: 0
+//			border: 1px solid $main_color
+//		&:focus
+//			outline: 0
+//			border: 1px solid $main_color
+//
+//	button
+//		min-width: 100%
 // Секция main
 .main
 	background-color: #fff
@@ -817,7 +855,7 @@ nav[canvas]
 	&.port-scanner
 		&> p
 			margin-bottom: 20px
-			font-family: $font_OpenSansSemiBold
+			font-family: $font_Circe-Bold
 	table
 		width: 100%
 		border: 1px solid #e0e0e0
@@ -866,7 +904,7 @@ nav[canvas]
 		thead
 			background: #f6f6f6
 			font-size: 16px
-			font-family $font_OpenSansSemiBold
+			font-family $font_Circe-Bold
 			tr
 				box-shadow: 0px 5px 15px 0px rgba(208,208,208,0.9)
 				th
@@ -1096,7 +1134,7 @@ nav[canvas]
 	span
 		margin-right: 10px
 		fz(14)
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 .main__setting-up-a-proxy-in-the-browser-items
 	display: flex
 	align-items: center
@@ -1154,7 +1192,7 @@ nav[canvas]
 			a
 				border: 1px solid $main_color
 			dt
-				font-family $font_OpenSansSemiBold
+				font-family $font_Circe-Bold
 		a
 			padding: 0 17px
 			background-color: transparent
@@ -1233,7 +1271,7 @@ img.img-flag
 	h4
 		margin: 0
 		margin-right: 15px
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 		font-size: 14px
 .main__filter-type
 	align-items: center
@@ -1469,11 +1507,11 @@ img.img-flag
 .your-ip__title
 	margin-bottom: 20px
 	font-size: 17.5px
-	font-family: $font_OpenSansSemiBold
+	font-family: $font_Circe-Bold
 .your-ip__numbers
 	margin-right: 20px
 	font-size: 50px
-	font-family: $font_OpenSansSemiBold
+	font-family: $font_Circe-Bold
 	color: #161616
 //	Секция .hide-ip-table
 .hide-ip-table
@@ -1483,7 +1521,7 @@ img.img-flag
 	.title
 		margin-bottom: 15px
 		font-size: 16px
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 .hide-ip-table__table-wrap
 	margin-bottom: 40px
 	//внешний вид скроллбара
@@ -1503,7 +1541,7 @@ img.img-flag
 		border: 1px solid #e0e0e0
 		tbody
 			font-size: 14px
-			font-family $font_OpenSansRegular
+			font-family $font_Circe-Regular
 			td
 				padding: 17px 30px
 				border-bottom: 1px solid #e0e0e0
@@ -1513,7 +1551,7 @@ img.img-flag
 					background-color: #f6f6f6
 					font-size: 16px
 					border: none
-					font-family $font_OpenSansSemiBold
+					font-family $font_Circe-Bold
 					box-shadow: 5px 0px 15px 0px rgba(208,208,208,0.9)
 					position: relative
 					&:after
@@ -1538,7 +1576,7 @@ img.img-flag
 		margin-bottom: 17px
 	.hide-ip-table__your-location-title
 		font-size: 16px
-		font-family $font_OpenSansSemiBold
+		font-family $font_Circe-Bold
 		margin-bottom: 20px
 .hide-ip-table__your-location-map
 	margin-bottom: 25px
@@ -1602,7 +1640,7 @@ img.img-flag
 		margin-bottom: 20px
 	b
 		font-weight normal
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 		color #0e0e0e
 	.margin-bottom
 		margin-bottom: 20px
@@ -1633,10 +1671,10 @@ img.img-flag
 			margin-bottom: 30px
 .proxy-checker__enter-the-proxy-list-title
 	margin-bottom: 20px
-	font-family: $font_OpenSansSemiBold
+	font-family: $font_Circe-Bold
 .proxy-checker__enter-the-proxy-list-check-title
 	margin-right: 30px
-	font-family: $font_OpenSansSemiBold
+	font-family: $font_Circe-Bold
 .proxy-checker__enter-the-proxy-list-check
 	display: flex
 .proxy-checker__enter-the-proxy-list-check-list
@@ -1655,13 +1693,13 @@ img.img-flag
 		dd
 			margin: 0
 		span
-			font-family: $font_OpenSansSemiBold
+			font-family: $font_Circe-Bold
 			&.workers
 				color #019315
 			&.not-workers
 				color #ae0025
 .proxy-checker__test-results-title
-	font-family: $font_OpenSansSemiBold
+	font-family: $font_Circe-Bold
 .proxy-checker__test-results-items
 	margin-bottom: 30px
 	button
@@ -1679,7 +1717,7 @@ img.img-flag
 		align-items: center
 .proxy-checker__download-scan-results-title
 	font-size: 16px
-	font-family: $font_OpenSansSemiBold
+	font-family: $font_Circe-Bold
 .proxy-checker__download-scan-results-item
 	img
 		margin-right: 10px
@@ -1758,9 +1796,9 @@ img.img-flag
 		margin-bottom: 30px
 		.dig-dns-wrap--title
 			margin-bottom: 10px
-			font-family $font_OpenSansSemiBold
+			font-family $font_Circe-Bold
 		label
-			font-family: $font_OpenSansRegular
+			font-family: $font_Circe-Regular
 		input
 			margin-bottom: 10px
 			&.mb5
@@ -1780,7 +1818,7 @@ img.img-flag
 	label
 		display: block
 		font-size: 16px
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 		margin-bottom: 8px
 		a
 			margin-bottom: 0
@@ -1829,7 +1867,7 @@ img.img-flag
 	padding: 30px 20px 45px
 	border: 1px solid #e0e0e0
 	.title
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 		margin-bottom: 5px
 .port-scanner__btn
 	display: flex
@@ -1931,7 +1969,7 @@ img.img-flag
 	.title
 		margin-bottom: 5px
 		font-size: 16px
-		font-family: $font_OpenSansSemiBold
+		font-family: $font_Circe-Bold
 .footer__item-divider
 	height: 2px
 	margin-bottom: 15px

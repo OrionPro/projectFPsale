@@ -62,25 +62,21 @@ html(class="no-js" lang="ru")
 							.header__logo
 								a(href="/" class="logo" title="Логотип")
 									img(src=require("../../img/logo.png"))
+									| PROXYSELLER
 							nav.header__nav
 								ul
-									-var links = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Прокси-чекер', href:'#'},{title:'Мой IP', href:'#'}, {title:'Компания', href:'#'},{title:'Доп. услуги', href:'#'}];
+									-var links = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Прокси-чекер', href:'#'},{title:'Мой IP', href:'#'}, {title:'Компания', href:'#', dropDown: 1,drop: {'1': {title:'Доп. услуги', href:'#'},'2': {title:'Доп. услуги', href:'#'}}}];
 									each i in links
 										li
 											a(href=i.href)= i.title
-							.header__authorization
-								a(href="#") ВОЙТИ
-								.header__autorization-dropdown
-									form
-										p.title
-											| Авторизация
-										.input_wrap
-											i.fa.fa-check
-											input(name="name" type="text" placeholder="Имя")
-										.input_wrap
-											i.fa.fa-check
-											input(name="email" type="email" placeholder="Ваш E-mail")
-										button(type="submit" class="main_btn") Войти
+											case i.dropDown
+												when 1
+													i.fa.fa-angle-down
+													.header__dropdown
+														ul
+															each a in i.drop
+																li
+																	a(href=a.href)= a.title
 
 			block main
 			block footer
