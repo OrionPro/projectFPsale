@@ -3,7 +3,7 @@ block title
 	| Index page
 block main
 	// Секция main
-	section.main.share
+	section.main
 		.container
 			.share-page
 				.share-page__link
@@ -58,34 +58,41 @@ block main
 									i.fa.fa-linkedin
 
 			.main__title
-				h1 Бесплатные прокси сервера онлайн
-				p
-					| Прокси-сервер – это, ваш посредник в сети, выполняющий целый ряд задач и делающий ваши интернет-путешествия более свободными и
-					| защищёнными. В вашем распоряжении есть список бесплатных прокси серверов, а так же услуга персональных прокси, что является нашей
-					| основной деятельностью.
+				h1 БЕСПЛАТНЫЕ ПРОКСИ #[br] СЕРВЕРА ОНЛАЙН
+			.row.main__txt-img
+				.col-lg-7.offset-xl-2.offset-lg-1.no-relative
+					p
+						| Прокси-сервер – это, ваш посредник в сети, выполняющий целый рядзадач и делающий ваши интернет-путешествия более свободными и защищёнными.
+						| В вашем распоряжении есть список бесплатных прокси серверов, а так же услуга персональных прокси, что является нашей основной деятельностью.
+					.main__img-robot
+						img(src=require("../../img/robot.png"))
 			.row.main__setting-up-a-proxy-in-the-browser-wrap
-				.col-md-7.col-lg-6.col-xl-5
+				.col-12
 					.main__setting-up-a-proxy-in-the-browser
-						span Настройка прокси в браузере:
+						p Настройка прокси в браузере:
 						.main__setting-up-a-proxy-in-the-browser-items
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.google
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.firefox
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.safari
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.opera
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.yandex
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.ie
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.android
-							a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
-								i.pc
-				.col-md-5.col-lg-4.col-xl-3
-					a(href="#" class="main__setting-up-a-proxy-in-the-browser-link") Другие способы настройки
+							.main__setting-up-a-proxy-in-the-browser-items-link
+								a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
+									span
+										i.google
+									| Google Chrome
+								a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
+									span
+										i.firefox
+									| Mozilla Firefox
+								a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
+									span
+										i.safari
+									| Safari Browser
+								a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
+									span
+										i.opera
+									| Opera Browser
+								a(href="#" title="Инструменты → Настройки → Дополнительно → Сеть → Настроить → Ручная настройка")
+									span
+										i.yandex
+									| Yandex Browser
+							a(href="#" class="main__setting-up-a-proxy-in-the-browser-link") Другие способы #[br] настройки
 			.main__proxy-list
 				dl
 					dt.
@@ -99,7 +106,7 @@ block main
 						a(href="#" class="fps-sort fps-sort-counter fps-sort-anonymity") 256
 				dl
 					dt.
-						Sock5:
+						Sock(s)5:
 					dd
 						a(href="#" class="fps-sort fps-sort-counter fps-sort-socks5") 256
 				dl
@@ -109,19 +116,90 @@ block main
 						a(href="#" class="fps-sort fps-sort-counter fps-sort-http") 256
 				dl
 					dt.
-						HTTPS:
+						HTTP(s):
 					dd
 						a(href="#" class="fps-sort fps-sort-counter fps-sort-https") 256
 				dl.last
 					dt.
 						Прокси в базе:
 					dd
-						a(href="http://104.248.37.4") 256
-				.main__scroll-table
-					| Листайте таблицу
-					i.fa.fa-arrow-right
+						a(href="http://104.248.37.4") 1256
+			.main__scroll-table
+				| Листайте таблицу
+				i.fa.fa-arrow-right
 			.row
-				.col-lg-8
+				.col-lg-12
+					.main__filter#fps-filter-block
+						.main__filter-title
+							| Фильтры:
+							.main__filter--default.filter-title
+								h4 Экспорт:
+								.main__filter-link-items
+									.main__filter-link-item
+										a(href="#") IP:Port
+									.main__filter-link-item
+										a(href="#") Excel
+									.main__filter-link-item
+										a(href="#") В новом окне
+						form
+							.main__top-select-wrap
+								.main__top-select.fps-filter-country
+									.main__top-select-title
+										| Страна:
+									.select2-wrap
+										select.select2.select2-country
+											option
+											option(data-country="img/algeria.png") Algeria
+											option(data-country="img/ukraine.png") Ukraine
+											option(data-country="img/japan.png") Japan
+											option(data-country="img/unitedkingdom.png") United Kingdom
+											option(data-country="img/algeria.png") Algeria
+											option(data-country="img/ukraine.png") Ukraine
+											option(data-country="img/japan.png") Japan
+									//button(type="button")
+									//	i.fa.fa-plus
+							.main__filter-type.main__filter--default
+								h4 Тип:
+								.main__filter-anonymity-inner
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-square-o
+										i.fa.fa-2.fa-check-square
+										span HTTP
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-square-o
+										i.fa.fa-2.fa-check-square
+										span HTTPS
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-square-o
+										i.fa.fa-2.fa-check-square
+										span Socks5
+							.main__filter-anonymity.main__filter--default
+								h4 Анонимность:
+								.main__filter-anonymity-inner
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-square-o
+										i.fa.fa-2.fa-check-square
+										span Анонимный
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-square-o
+										i.fa.fa-2.fa-check-square
+										span Элитный
+									label.check.noselect
+										input(type='checkbox')
+										i.fa.fa-1.fa-square-o
+										i.fa.fa-2.fa-check-square
+										span Прозрачный
+							.main__btn-wrap
+								button(type="submit" class="main_btn" id="fps-filter-submit-button") Применить фильтр
+							.main__clean-the-filter
+								a(href="#")
+									i.fa.fa-times
+				.col-lg-12
 					.main__table-wrap
 						table
 							thead
@@ -150,7 +228,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -161,7 +239,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#")
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 144.132.129.54
@@ -173,7 +251,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -184,7 +262,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#")
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 164.132.199.54
@@ -196,7 +274,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -207,7 +285,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#") 
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 144.132.129.54
@@ -219,7 +297,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -230,7 +308,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#") 
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 164.132.199.54
@@ -242,7 +320,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -253,7 +331,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#")
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 144.132.129.54
@@ -265,7 +343,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -276,7 +354,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#")
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 164.132.199.54
@@ -288,7 +366,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -299,7 +377,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#")
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 144.133.129.54
@@ -311,7 +389,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -322,7 +400,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#")
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 								tr
 									td.ip
 										a(href="#") 144.132.129.33
@@ -334,7 +412,7 @@ block main
 										img(src=require("../../img/imgport.png"))
 									td.country
 										img(src=require("../../img/flag_ukraine.jpg"))
-										| Азербaйджан
+										a(href="#") Азербaйджан
 									td
 										a(href="#") HTTP
 									td
@@ -345,7 +423,7 @@ block main
 									td.check
 										| 3 мин. назад
 										a(href="#")
-											i.fa.fa-repeat
+											i.fa.fa-refresh
 					.main__pagination
 						ul.pagination
 							li
@@ -367,99 +445,7 @@ block main
 								a(href="#") Последняя
 					.main__update-proxy-list
 						a(href="#") Обновить список прокси
-				.col-lg-4
-					.main__filter#fps-filter-block
-						form
-							.main__top-select-wrap
-								.main__top-select.fps-filter-country
-									.select2-wrap
-										select.select2.select2-country
-											option
-											option(data-country="img/algeria.png") Algeria
-											option(data-country="img/ukraine.png") Ukraine
-											option(data-country="img/japan.png") Japan
-											option(data-country="img/unitedkingdom.png") United Kingdom
-											option(data-country="img/algeria.png") Algeria
-											option(data-country="img/ukraine.png") Ukraine
-											option(data-country="img/japan.png") Japan
-									button(type="button")
-										i.fa.fa-plus
-							.main__filter-type.main__filter--default
-								h4 Тип:
-								label.check.noselect
-									input(type='checkbox')
-									i.fa.fa-1.fa-circle-o
-									i.fa.fa-2.fa-circle
-									span HTTP
-								label.check.noselect
-									input(type='checkbox')
-									i.fa.fa-1.fa-circle-o
-									i.fa.fa-2.fa-circle
-									span HTTPS
-								label.check.noselect
-									input(type='checkbox')
-									i.fa.fa-1.fa-circle-o
-									i.fa.fa-2.fa-circle
-									span Socks5
-							.main__filter-anonymity.main__filter--default
-								h4 Анонимность:
-								.main__filter-anonymity-inner
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span Анонимный
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span Элитный
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span Прозрачный
-							.main__filter--default
-								h4 Экспорт:
-								.main__filter-link-item
-									a(href="#") IP:Port
-								.main__filter-link-item
-									a(href="#") Excel
-								.main__filter-link-item
-									a(href="#") В новом окне
-							.main__btn-wrap
-								button(type="submit" class="main_btn" id="fps-filter-submit-button") Применить фильтр
-							.main__clean-the-filter
-								a(href="#") Очистить фильтр
-							.main__subscribe-to-update-filter
-								a(href="#popup" class="open-popup-link" data-effect="mfp-zoom-in" data-info="Подписаться на обновление списка") Подписаться на обновление списка
-							.main__filter-divider
-							.main__filter-info
-								p
-									| Бесплатно предоставляется к просмотру только
-									| первая страница списка.
-								p
-									| Купите доступ или войдите, чтобы получить
-									| полный доступ к сервису.
-							.main__btn-wrap
-								button(type="button" class="main_btn") Получить полный доступ
-							.main__filter-divider
-							.main__filter-info.info-attention
-								i.fa.fa-exclamation-circle
-								.main__filter-info-inner
-									p
-										| Бесплатные прокси исключают любую
-										| возможность работы с социальными сетями,
-										| парсинга поисковых систем и работы с
-										| приватным софтом.
-									p
-										| Мы не несем ответственности за использова-
-										| ние списка бесплатных прокси.
-										| Список IP предоставляется в ознакоми-
-										| тельных целях.
-							.main__btn-wrap.personal
-								button(type="button" class="main_btn") Купить персональные прокси
-								i.fa.fa-question-circle(title="Налетай! Покупай персональные прокси под новый год и не забывай купить на следующий!")
+
 	// Секция info-blocks
 	section.info-blocks
 		.container

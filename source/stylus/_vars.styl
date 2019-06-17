@@ -2,6 +2,7 @@
 @import 'sprite.styl'
 
 $main_color = #12b9ff
+$bg_sections = transparent
 $main_txt_color = #3e3e3e
 $auxiliary_txt_color = #443133
 $main_bg_color = #fff
@@ -83,31 +84,29 @@ truncate($truncation-boundary)
 	overflow: hidden
 	text-overflow: ellipsis
 .main_btn
-	min-width: 330px
-	height: 40px
-	border: 1px solid #f1c654
+	min-width: 200px
+	height: 34px
+	border: 1px solid $main_color
 	border-radius: 20px
 	text-transform: none
-	background-color: #fff
-	font($main_txt_color, 14, $font_main_regular)
-	line-height: 38px
+	background-color: $main_color
+	font(#fff, 14, $font_Circe-Bold)
+	line-height: 32px
+	box-shadow: 0px 9px 9.4px 0.6px rgba(4, 74, 103, 0.19)
 	transition: 0.5s
 	&:hover
-		background-color: $main_color
-		border: 1px solid $main_color
-		color: $main_txt_color
+		background-color: $main_txt_color
+		border: 1px solid $main_txt_color
 		text-decoration: none
 		outline: 0
 	&:active
-		background-color: $main_color
-		border: 1px solid $main_color
-		color: $main_txt_color
+		background-color: $main_txt_color
+		border: 1px solid $main_txt_color
 		text-decoration: none
 		outline: 0
 	&:focus
-		background-color: $main_color
-		border: 1px solid $main_color
-		color: $main_txt_color
+		background-color: $main_txt_color
+		border: 1px solid $main_txt_color
 		text-decoration: none
 		outline: 0
 .main_btn2

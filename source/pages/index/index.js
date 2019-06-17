@@ -21,17 +21,17 @@ $(document).ready(function () {
 		widthFromWrapper: false
 	});
 	// блок .main__setting-up-a-proxy-in-the-browser-items затемнение всех браузеров кроме того на который навели
-	$('.main__setting-up-a-proxy-in-the-browser-items a').hover(function () {
-		$('.main__setting-up-a-proxy-in-the-browser-items a').addClass('active');
+	$('.main__setting-up-a-proxy-in-the-browser-items .main__setting-up-a-proxy-in-the-browser-items-link a').hover(function () {
+		$('.main__setting-up-a-proxy-in-the-browser-items .main__setting-up-a-proxy-in-the-browser-items-link a').addClass('active');
 		$(this).removeClass('active');
 		$(this).addClass('big');
 	}, function () {
-		$('.main__setting-up-a-proxy-in-the-browser-items a').removeClass('active');
-		$('.main__setting-up-a-proxy-in-the-browser-items a').removeClass('big');
+		$('.main__setting-up-a-proxy-in-the-browser-items .main__setting-up-a-proxy-in-the-browser-items-link a').removeClass('active');
+		$('.main__setting-up-a-proxy-in-the-browser-items .main__setting-up-a-proxy-in-the-browser-items-link a').removeClass('big');
 	});
 
 	// инициализация tooltipster
-	$(".main__setting-up-a-proxy-in-the-browser-items a, .main__btn-wrap.personal i").tooltipster({
+	$(".main__setting-up-a-proxy-in-the-browser-items .main__setting-up-a-proxy-in-the-browser-items-link a, .main__btn-wrap.personal i").tooltipster({
 		theme: 'tooltipster-shadow',
 		maxWidth: 280,
 		delay: 100
@@ -147,27 +147,27 @@ $(document).ready(function () {
 	// Инициализация маски в input
 	$(".mask").mask("+38(999) 999-99-99");
 	// клик на .main__top-select button . Клонирование элементов с инициализацией нового select.select2.select2-country
-	$(document).on('click', '.main__top-select button', function (e) {
-		e.preventDefault();
-		const parentClone = $(this).parent().clone();
-		const btnClone = $(this).clone();
-		const thisSelect = $(this).parent().find('.select2-country');
-		const parentAll = $(this).parents('.main__top-select-wrap');
-		const cloneSelect = thisSelect.clone();
-		parentClone.empty();
-		cloneSelect.appendTo(parentClone);
-		btnClone.appendTo(parentClone);
-		parentClone.appendTo(parentAll);
-		parentAll.find('.main__top-select').last().find('.select2-country').wrap('<div class="select2-wrap"></div>');
-		$(".select2-country").select2({
-			//minimumResultsForSearch: -1, // выключам поле ввода поиска
-			tags: false,
-			placeholder: "Выберите страну",
-			width: '100%',
-			templateResult: formatCountry,
-			templateSelection: formatCountry
-		});
-	});
+	// $(document).on('click', '.main__top-select button', function (e) {
+	// 	e.preventDefault();
+	// 	const parentClone = $(this).parent().clone();
+	// 	const btnClone = $(this).clone();
+	// 	const thisSelect = $(this).parent().find('.select2-country');
+	// 	const parentAll = $(this).parents('.main__top-select-wrap');
+	// 	const cloneSelect = thisSelect.clone();
+	// 	parentClone.empty();
+	// 	cloneSelect.appendTo(parentClone);
+	// 	btnClone.appendTo(parentClone);
+	// 	parentClone.appendTo(parentAll);
+	// 	parentAll.find('.main__top-select').last().find('.select2-country').wrap('<div class="select2-wrap"></div>');
+	// 	$(".select2-country").select2({
+	// 		//minimumResultsForSearch: -1, // выключам поле ввода поиска
+	// 		tags: false,
+	// 		placeholder: "Выберите страну",
+	// 		width: '100%',
+	// 		templateResult: formatCountry,
+	// 		templateSelection: formatCountry
+	// 	});
+	// });
 	// код от бек енд программиста
 	//проверка прокси на главной
 
