@@ -124,9 +124,6 @@ block main
 						Прокси в базе:
 					dd
 						a(href="http://104.248.37.4") 1256
-			.main__scroll-table
-				| Листайте таблицу
-				i.fa.fa-arrow-right
 			.row
 				.col-lg-12
 					.main__filter#fps-filter-block
@@ -200,6 +197,9 @@ block main
 								a(href="#")
 									i.fa.fa-times
 				.col-lg-12
+					.main__scroll-table
+						| Листайте таблицу
+						i.fa.fa-arrow-right
 					.main__table-wrap
 						table
 							thead
@@ -211,8 +211,9 @@ block main
 									| Страна
 								th
 									| Тип
-								th.anonim
+								th
 									| Анонимность
+								th
 									| Скорость
 								th
 									| Проверка
@@ -233,13 +234,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.blue.stripes
 											span(style="width: 50%")
 											i 184 мс
 									td.check
-										| 3 мин. назад
 										a(href="#")
 											i.fa.fa-refresh
+										| 3 мин. назад
 								tr
 									td.ip
 										a(href="#") 144.132.129.54
@@ -256,13 +258,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.blue.stripes
 											span(style="width: 70%")
 											i 84 мс
 									td.check
-										| 3 мин. назад
 										a(href="#")
 											i.fa.fa-refresh
+										| 1 мин. назад
 								tr
 									td.ip
 										a(href="#") 164.132.199.54
@@ -279,13 +282,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.blue.stripes
 											span(style="width: 40%")
 											i 284 мс
 									td.check
-										| 3 мин. назад
 										a(href="#") 
 											i.fa.fa-refresh
+										| 1 день назад
 								tr
 									td.ip
 										a(href="#") 144.132.129.54
@@ -302,13 +306,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.blue.stripes
 											span(style="width: 40%")
 											i 284 мс
 									td.check
-										| 3 мин. назад
 										a(href="#") 
 											i.fa.fa-refresh
+										| 2 дня назад
 								tr
 									td.ip
 										a(href="#") 164.132.199.54
@@ -325,13 +330,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.blue.stripes
 											span(style="width: 40%")
 											i 284 мс
 									td.check
-										| 3 мин. назад
 										a(href="#")
 											i.fa.fa-refresh
+										| 5 мин. назад
 								tr
 									td.ip
 										a(href="#") 144.132.129.54
@@ -348,13 +354,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.orange.stripes
 											span(style="width: 90%")
 											i 1584 мс
 									td.check
-										| 3 мин. назад
 										a(href="#")
 											i.fa.fa-refresh
+										| 2 часа назад
 								tr
 									td.ip
 										a(href="#") 164.132.199.54
@@ -371,13 +378,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.green.stripes
 											span(style="width: 10%")
 											i 10 мс
 									td.check
-										| 3 мин. назад
 										a(href="#")
 											i.fa.fa-refresh
+										| 1 час назад
 								tr
 									td.ip
 										a(href="#") 144.133.129.54
@@ -394,13 +402,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.blue.stripes
 											span(style="width: 40%")
 											i 284 мс
 									td.check
-										| 3 мин. назад
 										a(href="#")
 											i.fa.fa-refresh
+										| 3 мин. назад
 								tr
 									td.ip
 										a(href="#") 144.132.129.33
@@ -417,13 +426,14 @@ block main
 										a(href="#") HTTP
 									td
 										| Анонимный
+									td
 										.progress-bar.blue.stripes
 											span(style="width: 40%")
 											i 284 мс
 									td.check
-										| 3 мин. назад
 										a(href="#")
 											i.fa.fa-refresh
+										| 3 часа  назад
 					.main__pagination
 						ul.pagination
 							li
@@ -443,40 +453,33 @@ block main
 									i.fa.fa-long-arrow-right
 							li
 								a(href="#") Последняя
-					.main__update-proxy-list
-						a(href="#") Обновить список прокси
+					//.main__update-proxy-list
+					//	a(href="#") Обновить список прокси
 
 	// Секция info-blocks
 	section.info-blocks
 		.container
-			.info-blocks__item
-				.row
-					.col-lg-9
-						.info-blocks__item-txt-block.info-blocks__item-txt-block1
-							i.fa.fa-exclamation-circle
-							p
-								| Бесплатно предоставляется к просмотру только первая страница списка. Купите доступ или войдите, чтобы получить полный доступ к сервису.
-					.col-lg-3
+			.row
+				.col-md-4.offset-md-4.col-lg-4.offset-lg-3.col-xl-5.offset-xl-2.info-blocks__item
+					.info-blocks__item-txt-block.info-blocks__item-txt-block1
+						p
+							| Избавьте себя от ограничений и неудобств, риска быть забаненым или неудобства в постоянной смене IP адреса. Персональные прокси для работы с социальными сетями, avito, keykollector и прочие цели использования.
 						.info-blocks__btn.info-blocks__btn1
-							button(type="button" class="main_btn") Получить полный доступ
-			.info-blocks__item
-				.row
-					.col-lg-9
-						.info-blocks__item-txt-block.info-blocks__item-txt-block2
-							i.fa.fa-exclamation-circle
-							p
-								| Избавьте себя от ограничений и неудобств, риска быть забаненым или неудобства в постоянной смене IP адреса.
-								| Персональные прокси для работы с социальными сетями, avito, keykollector и прочие цели использования.
-					.col-lg-3
-						.info-blocks__btn.info-blocks__btn2
 							button(type="button" class="main_btn") Купить безопасность
+				.col-md-4.col-xl-5.info-blocks__item
+					.info-blocks__item-txt-block.info-blocks__item-txt-block2
+						p
+							| Бесплатные прокси исключают любую возможность работы с социальными сетями, парсинга поисковых систем и работы с приватным софтом. Мы не несем
+							| ответственности за использование списка бесплатных прокси. Список IP предоставляется в ознакомительных целях.
+						.info-blocks__btn.info-blocks__btn2
+							button(type="button" class="main_btn") Купить персональные прокси
+
 	// Секция answer-your-questions
 	section.answer-your-questions
 		.container
 			h2 Отвечаем на ваши вопросы
 			.accordion
 				.accordion_title
-					i.fa.fa-question-circle
 					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
 					span
 						i.fa.fa-chevron-down
@@ -487,7 +490,6 @@ block main
 						| cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda
 			.accordion
 				.accordion_title
-					i.fa.fa-question-circle
 					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua? Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
 					span
 						i.fa.fa-chevron-down
@@ -501,7 +503,6 @@ block main
 						| sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
 			.accordion
 				.accordion_title
-					i.fa.fa-question-circle
 					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
 					span
 						i.fa.fa-chevron-down
@@ -515,7 +516,6 @@ block main
 						| sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
 			.accordion
 				.accordion_title
-					i.fa.fa-question-circle
 					p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua?
 					span
 						i.fa.fa-chevron-down

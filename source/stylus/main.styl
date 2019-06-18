@@ -72,7 +72,7 @@ body
 h1
 	font($main_txt_color, 50, $font_Circe-ExtraBold)
 h2
-	font($main_txt_color, 22, $font_Circe-Bold)
+	font($main_txt_color, 26, $font_Circe-Bold)
 h3
 	font($main_txt_color, 20, $font_Circe-Bold)
 p,ul
@@ -855,6 +855,7 @@ nav[canvas]
 			font-family: $font_Circe-Bold
 	table
 		width: 100%
+		box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
 		&.proxy-checker-table
 			margin-bottom: 16px
 			tbody
@@ -902,15 +903,16 @@ nav[canvas]
 			font-size: 16px
 			font-family $font_Circe-Bold
 			tr
-				background-color: #f9fafc;
-				box-shadow: 0px 5px 15px 0px rgba(208,208,208,0.9)
+				background-color: #f9fafc
 				th
-					text-align: center
+					font-family: $font_Circe-Bold
+					font-size: 18px
+					text-align: left
 					padding: 10px
-					&.anonim
-						width: 20%
+					&:first-of-type
+						padding: 19.5px 10px 19.5px 30px
 		tbody
-			font-size: 14px
+			font-size: 16px
 			tr
 				background-color: #f2f7fb
 				transition: 0.5s
@@ -922,12 +924,16 @@ nav[canvas]
 						border-bottom: none
 				&:hover
 					background: #ffffff
-					box-shadow: 0px 5px 15px 0px rgba(208,208,208,0.9)
+					box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
+					position: relative
+					z-index: 10
 			td
-				text-align: center
+				text-align: left
 				padding: 19.5px 10px
 				border-bottom: 1px solid whitesmoke
 				line-height: 1.5
+				&:first-of-type
+					padding: 19.5px 10px 19.5px 30px
 				&.table-password
 					div
 						width: 110px
@@ -935,7 +941,7 @@ nav[canvas]
 				&.check
 					a
 						text-decoration: none
-						margin-left: 10px
+						margin-right: 10px
 						&:hover i
 							animation: table-ip-check 0.5s infinite linear
 							animation-fill-mode: none
@@ -945,6 +951,7 @@ nav[canvas]
 				.copy-buffer
 					width: 186px
 					height: 37px
+					padding-left: 5px
 					opacity: 0
 					visibility: hidden
 					line-height: 34px
@@ -1035,7 +1042,6 @@ nav[canvas]
 		background-color: #f5f5f5;
 		height: 20px;
 		width: 100px;
-		margin: auto
 		border-radius: 5px;
 		box-shadow: 0 1px 1px #ccc, 0 1px 0 #444;
 		position: relative;
@@ -1053,6 +1059,7 @@ nav[canvas]
 			position: absolute
 			top: calc(50% - 10px)
 			left: calc(50% - 18px)
+			font-size: 16px
 		}
 		&.blue span {
 			background-color: #34c2e3;
@@ -1145,6 +1152,7 @@ nav[canvas]
 	display: flex
 	flex-direction: column
 	background-color: #ffffff
+	box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
 	& > p
 		margin-bottom: 15px
 		fz(22)
@@ -1293,13 +1301,15 @@ img.img-flag
 	margin-bottom: 40px
 	padding: 20px
 	background-color: #ffffff
-	border: 1px solid #e0e0e0
+	box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
 	form
 		display: flex
 		align-items: flex-start
 		flex-wrap wrap
 	.main__btn-wrap
 		margin-right: 30px
+		margin-bottom: 0
+		margin-top: 17px
 		button
 			min-width: 170px
 .main__top-select-title
@@ -1394,6 +1404,7 @@ img.img-flag
 .main__clean-the-filter
 	width: 34px
 	height: 34px
+	margin-top: 17px
 	border: 1px solid transparent
 	background-color: $main_color
 	box-shadow: 0px 9px 9.4px 0.6px rgba(4, 74, 103, 0.19)
@@ -1454,38 +1465,35 @@ img.img-flag
 .info-blocks
 	background-color: $bg_sections
 	padding-bottom: 40px
-.info-blocks__item
-	margin-bottom: 30px
-	&:last-of-type
-		margin-bottom: 0
+	.row
+		background: $bg_sections url(../img/info-blocks-robot.png) left top no-repeat
 .info-blocks__item-txt-block
-	min-height: 53px
-	padding-top: 10px
-	padding-bottom: 10px
+	height: 100%
+	padding: 30px 24px
 	display: flex
+	flex-direction: column
 	align-items: center
-	padding-left: 10px
-	font-size: 14px
+	font-size: 18px
 	background-color: white
-	border: 1px solid #e0e0e0
-	border-radius: 5px
-	i
-		flex-shrink 0
-		margin-right: 5px
-		color $main_color
+	box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
+	p
+		width: 100%
+		margin-bottom: 15px
+		text-align: center
 .info-blocks__btn
 	height: 100%
 	display: flex
-	align-items: center
+	align-items: flex-end
 	button
-		min-width 100%
+		min-width 200px
 //	Секция .answer-your-questions
 .answer-your-questions
 	padding-top: 40px
 	padding-bottom: 40px
 	background-color: $bg_sections
 	h2
-		margin-bottom: 30px
+		margin-bottom: 25px
+		font-size: 26px
 .accordion {
 	margin-bottom: 30px;
 	&:last-of-type {
@@ -1493,11 +1501,10 @@ img.img-flag
 	}
 }
 .accordion_title {
-	min-height: 37px;
-	border: 1px solid #e0e0e0;
+	min-height: 70px;
 	border-bottom none;
 	border-radius: 5px
-	padding-left: 10px;
+	padding-left: 30px;
 	padding-right: 30px
 	cursor: pointer;
 	display: flex;
@@ -1505,23 +1512,14 @@ img.img-flag
 	background-color: #fff;
 	position: relative;
 	color: $main_txt_color;
-	box-shadow: 0px 15px 25px 0px rgba(208,208,208,0.9);
+	box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
 	transition: box-shadow 0.5s, background 0.5s, border-radius 0.5s;
 	&:hover {
-		background-color: #f6f6f6
-	}
-	&.active {
-		border-bottom-left-radius 0
-		border-bottom-right-radius 0
-		box-shadow: 0px 0px 0px 0px rgba(208,208,208,0.9)
-	}
-	i {
-		margin-right: 5px
-		font-size: 14px
-		color: $main_color;
+		background-color: $main_color
 	}
 	p {
-		font-size: 14px
+		font-size: 18px
+		font-family: $font_Circe-Bold
 		padding-top: 5px
 		padding-bottom: 5px
 	}
@@ -1533,7 +1531,7 @@ img.img-flag
 }
 .accordion_title span i {
 	font-size: 14px
-	color: $main_color;
+	color: $main_txt_color
 	transform-origin: 50% 50% 0px;
 	transition: 0.5s;
 }
@@ -1543,25 +1541,19 @@ img.img-flag
 // у контента ни в коем случае не ставим transition: all , он начнёт выезжать дёргаясь, ибо мы перехватываем плавность
 .accordion_content {
 	display: none;
-	background-color: #fff;
+	background-color: transparent
 	position: relative
-	border: 1px solid #e0e0e0
 	border-top: none
-	box-shadow: 0px 0px 0x 0px rgba(208,208,208,0.9)
 	z-index: 10
 	transition: box-shadow 0.5s
-	&.active {
-		box-shadow: 0px 15px 25px 0px rgba(208,208,208,0.9)
-	}
 }
 .accordion_content p{
-	line-height: 1.5
-	color: lighten($main_txt_color, 60%)
-	font-size: 14px
+	color: $main_txt_color
+	font-size: 16px
 	margin: 0;
 	padding-left: 30px;
-	padding-top: 10px;
-	padding-bottom: 20px;
+	padding-top: 25px;
+	padding-bottom: 25px;
 }
 
 //	Секция  .why-our-proxies-are-better
@@ -1577,10 +1569,10 @@ img.img-flag
 		margin-bottom: 25px
 	p
 		margin-bottom: 15px
-		font-size: 14px
+		font-size: 16px
 	ul
 		margin-bottom: 15px
-		font-size: 14px
+		font-size: 16px
 		i
 			display: inline
 			margin-top: -2px
@@ -2048,14 +2040,17 @@ img.img-flag
 	padding-bottom: 35px
 	background-color: #ffffff
 	nav
-		font-size: 14px
-		margin-right: 40px
-		&:last-of-type
-			margin-right: 0
+		font-size: 16px
 		ul
-			width: 170px
+			display: flex
+			flex-wrap wrap
 			li
+				width: 170px
+				padding-left: 10px
+				margin-right: 30px
 				margin-bottom: 15px
+				&.w200
+					width: 200px
 				a
 					color $main_txt_color
 					transition: 0.5s
@@ -2070,15 +2065,10 @@ img.img-flag
 
 .footer__item-title
 	.title
-		margin-bottom: 5px
+		margin-bottom: 10px
 		font-size: 16px
 		font-family: $font_Circe-Bold
-.footer__item-divider
-	height: 2px
-	margin-bottom: 15px
-	background-color: #f0c654
-.footer__item-nav
-	display: flex
+		text-transform: uppercase
 
 // чтобы отображались svg иконки от fontawesome
 svg:not(:root).svg-inline--fa

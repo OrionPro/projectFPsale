@@ -84,56 +84,38 @@ html(class="no-js" lang="ru")
 				footer.footer
 					.container
 						.row
-							.col-lg-4
+							.col-lg-7
 								.footer__default-item
 									.footer__item-title
-										p.title Инструменты
-									.footer__item-divider
-									.footer__item-nav
-										nav
-											ul
-												li
-													a(href="#") Персональные прокси
-												li
-													a(href="#") Прокси IPv6
-												li
-													a(href="#") Прокси-чекер
-										nav
-											ul
-												li
-													a(href="#") Сканер портов
-												li
-													a(href="#") Мой IP-адрес
-												li
-													a(href="#") API
-							.col-lg-5.col-xl-4
+										p.title инструменты:
+									nav.footer__item-nav
+										ul
+											li
+												a(href="#") Персональные прокси
+											li
+												a(href="#") Прокси-чекер
+											li
+												a(href="#") Мой IP-адрес
+											li
+												a(href="#") Прокси IPv6
+											li
+												a(href="#") Сканер портов
+											li
+												a(href="#") API
+							.col-lg-5
 								.footer__default-item
 									.footer__item-title
-										p.title Компания
-									.footer__item-divider
-									.footer__item-nav
-										nav
-											ul
-												li
-													a(href="#") Статьи
-												li
-													a(href="#") Контакты
-										nav
-											ul
-												li
-													a(href="#") Партнерская программа
-												li
-													a(href="#") Сервис аккаунтов
-							.col-lg-3.offset-xl-1
-								.footer__default-item
-									.footer__item-title
-										p.title Выбрать язык
-									.footer__item-divider
-									// в опциях языка в data-language можно указать то название картинки, которое будет в папке img лежать - нужный флаг
-									.select2-wrap
-										select.select2.select2-language(name="modal-select-language")
-											option(data-href="http://xtz4ever.pickcase.com.ua/ru" data-language="img/ru.png") Русский
-											option(data-href="http://xtz4ever.pickcase.com.ua/en" data-language="img/en.png" selected="selected") Английский
+										p.title Компания:
+									nav.footer__item-nav
+										ul
+											li
+												a(href="#") Статьи
+											li.w200
+												a(href="#") Партнерская программа
+											li
+												a(href="#") Контакты
+											li
+												a(href="#") Сервис аккаунтов
 		div(off-canvas='id-1 left shift')
 			nav.header_nav_mobile
 				ul.menu
