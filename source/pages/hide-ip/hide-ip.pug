@@ -3,7 +3,7 @@ block title
 	| Index page
 block main
 	// Секция main
-	section.main
+	section.main.hide-ip
 		.container
 			.share-page
 				.share-page__link
@@ -58,29 +58,28 @@ block main
 									i.fa.fa-linkedin
 
 			.main__title
-				h1 Бесплатные прокси сервера онлайн
-				p
-					| Прокси-сервер – это, ваш посредник в сети, выполняющий целый ряд задач и делающий ваши интернет-путешествия более свободными и
-					| защищёнными. В вашем распоряжении есть список бесплатных прокси серверов, а так же услуга персональных прокси, что является нашей
-					| основной деятельностью.
+				h1 Мой IP
+			.row.main__txt-img
+				.col-lg-12.no-relative
+					p
+						| Зная ваш IP-адрес, злоумышленники могут получить о вас очень много информации. Ниже лишь малая часть.
+
 	section.your-ip
 		.container
-			p.your-ip__title
-				| Ваш IP-адрес:
-			.your-ip__wrap
-				span.your-ip__numbers
-					| 37.57.19.30
-				i.fa.fa-copy.copy-buffer(data-clipboard-text="" title="Скопировано в буфер")
-			.your-ip__btn
-				button(type="button" class="main_btn2 open-popup-link" data-effect="mfp-zoom-in" data-mfp-src="#popup2") Изменить свой IP-адрес
-	section.hide-ip-table
-		.container
-			p.title И это лишь малая часть информации, которую можно отследить по вашему IP-адресу:
-			.hide-ip-table__scroll-table
-				| Листайте таблицу
-				i.fa.fa-arrow-right
-			.row
-				.col-md-7.col-lg-9
+			.your-ip__all-wrap
+				.row
+					.your-ip__inner
+						p.your-ip__title
+							| Ваш IP-адрес:
+						.your-ip__wrap
+							span.your-ip__numbers
+								| 37.57.19.30
+							i.fa.fa-copy.copy-buffer(data-clipboard-text="" title="Скопировано в буфер")
+						.your-ip__btn
+							button(type="button" class="main_btn2 open-popup-link" data-effect="mfp-zoom-in" data-mfp-src="#popup2") Изменить свой IP-адрес
+					.hide-ip-table__scroll-table
+						| Листайте таблицу
+						i.fa.fa-arrow-right
 					.hide-ip-table__table-wrap
 						table
 							tbody
@@ -103,69 +102,139 @@ block main
 											| Ваш браузер
 										td
 											i
-												img(src=require("../../img/hide-ip-table__table3.png"))
-											| Chrome 62.0
+												img(src=require("../../img/hide-ip-table__table5.png"))
+											| Internet Explorer 11
 									tr
 										td
 											| Откуда Вы
 										td
 											i
 												img(src=require("../../img/hide-ip-table__table4.png"))
-											| Ukraine (UA), Kharkivs'ka Oblast', Kharkiv
+											| RU (EU), Moscow, Moscow
 									tr
 										td
 											| Провайдер
 										td
 											i
-												img(src=require("../../img/hide-ip-table__table5.png"))
-											| Triolan
-									tr
-										td
-											| DNS
-										td
-											i
 												img(src=require("../../img/hide-ip-table__table6.png"))
-											| 37.57.0.210  Ukraine
-									tr
-										td
-											| Анонимайзер
-										td
-											i
-												img(src=require("../../img/hide-ip-table__table7.png"))
-											| Нет
-									tr
-										td
-											| Прокси
-										td
-											i
-												img(src=require("../../img/hide-ip-table__table8.png"))
-											| Нет
-									tr
-										td
-											| Протокол
-										td
-											i
-												img(src=require("../../img/hide-ip-table__table9.png"))
-											| HTTP/1.1
+											| 2COM Co Ltd.
+									//tr
+									//	td
+									//		| DNS
+									//	td
+									//		i
+									//			img(src=require("../../img/hide-ip-table__table6.png"))
+									//		| 37.57.0.210  Ukraine
+									//tr
+									//	td
+									//		| Анонимайзер
+									//	td
+									//		i
+									//			img(src=require("../../img/hide-ip-table__table7.png"))
+									//		| Нет
+									//tr
+									//	td
+									//		| Прокси
+									//	td
+									//		i
+									//			img(src=require("../../img/hide-ip-table__table8.png"))
+									//		| Нет
+									//tr
+									//	td
+									//		| Протокол
+									//	td
+									//		i
+									//			img(src=require("../../img/hide-ip-table__table9.png"))
+									//		| HTTP/1.1
 
-				.col-md-5.col-lg-3
-					.hide-ip-table__your-location
-						p.hide-ip-table__your-location-title
-							| Ваше расположение на карте!
-						.hide-ip-table__your-location-map
-							a(href="#")
-								img(src=require("../../img/hide-ip-table__your-location-map.jpg") class="img-fluid")
-						p.hide-ip-table__your-location-title
-							| Вы можете скрыть все это!
-						p
-							| Достаточно воспользоваться
-							| нашим простым, удобным и
-							| надежным инструментом.
-							| Скройте личные данные, защити-
-							| те трафик и снимите все лимиты
-							| со своего интернета!
-						.hide-ip-table__your-location-btn
-							button(type="button" class="main_btn2") Скрыть IP-aдрес
+				.row
+					.col-lg-8.browser-details
+						p.title Подробные сведения, предоставленные вашим браузером
+						.hide-ip-table__scroll-table
+							| Листайте таблицу
+							i.fa.fa-arrow-right
+						.browser-details__table-wrap
+							table
+								tbody
+									tr
+										td
+											| X-Forwarded-For
+										td
+											| 37.57.3.238
+									tr
+										td
+											| SERVER_PORT
+										td
+											| 433
+									tr
+										td
+											| Connection
+										td
+											| close
+									tr
+										td
+											| Accept-Encoding
+										td
+											| gzip
+									tr
+										td
+											| X-Forwarded-Proto
+										td
+											| https
+									tr
+										td
+											| upgrade-insecure-requests
+										td
+											| https
+									tr
+										td
+											| user-agent
+										td
+											| Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36
+									tr
+										td
+											| accept
+										td
+											| text/html,application/xhtml+xml,application/xml; #[br] q=0.9,image/webp,image/apng,*/*; #[br]q=0.8,application/signed-exchange;v=b3
+									tr
+										td
+											| referer
+										td
+											| https://www.google.com/
+									tr
+										td
+											| accept-language
+										td
+											| ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7
+									tr
+										td
+											| cookie
+										td
+											| __cfduid=dc02138e9a56b90095d548bac66bb191d1557398720; t=116523315; #[br] PAPVisitorId=28f8b2b3b1dc187a2519347fnRUvgDK0; _ga=GA1.2.289666601.1557398722; #[br] _gid=GA1.2.1269713198.1557398722; #[br]_ym_uid=1557398722962252880; _ym_d=1557398722;#[br]#[br]_ym_wasSynced=%7B%22time%22%3A1557398722751%2C%22params%22%3A%7B%22eu%22%3A0%7D%2C%22bkParams%22%3A%7B%7D%7D;#[br] _fbp=fb.1.1557398722887.640305050;#[br] _ym_hostIndex=0-2%2C1-0; jv_visits_count_PeHzjrJoSL=1
+									tr
+										td
+											| CDN-Loop
+										td
+											| cloudflare
+					.col-lg-3.offset-lg-1
+						.hide-ip-table__your-location
+							p.hide-ip-table__your-location-title
+								| Ваше расположение на карте!
+							.hide-ip-table__your-location-map
+								a(href="#")
+									img(src=require("../../img/hide-ip-table__your-location-map.jpg") class="img-fluid")
+							p.hide-ip-table__your-location-title
+								| Вы можете скрыть все это!
+							p
+								| Достаточно воспользоваться
+								| нашим простым, удобным и
+								| надежным инструментом.
+								| Скройте личные данные, защити-
+								| те трафик и снимите все лимиты
+								| со своего интернета!
+							.hide-ip-table__your-location-btn
+								button(type="button" class="main_btn2") Скрыть IP-aдрес
+	section
 			.hide-ip-table__bottom-info-block
 				.hide-ip-table__bottom-info-block-txt-wrap
 					i.fa.fa-exclamation-circle

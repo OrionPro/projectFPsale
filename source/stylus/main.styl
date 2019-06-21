@@ -70,9 +70,9 @@ body
 //-moz-osx-font-smoothing: grayscale
 
 h1
-	font($main_txt_color, 50, $font_Circe-ExtraBold)
+	font($main_txt_color, 26, $font_Circe-ExtraBold)
 h2
-	font($main_txt_color, 26, $font_Circe-Bold)
+	font($main_txt_color, 24, $font_Circe-Bold)
 h3
 	font($main_txt_color, 20, $font_Circe-Bold)
 p,ul
@@ -736,8 +736,11 @@ nav[canvas]
 	to
 		transform rotate(360deg)
 .share-page
+	min-height: 71px
+	margin-bottom: -73px
 	display: flex
 	flex-direction: column
+	align-items: flex-end
 	flex-wrap: wrap
 	padding-left: 15px
 	padding-right: 15px
@@ -1135,18 +1138,18 @@ nav[canvas]
 				background-color: #f2f2f2
 				color: $main_txt_color
 .main__title
-	margin-bottom: 15px
+	margin-bottom: 20px
+	display: flex
+	h1
+		position: relative
+		z-index: 1
 .main__txt-img
-	margin-bottom: 130px
+	margin-bottom: 30px
 	position: relative
 	p
 		font-size: 18px
 	.no-relative
 		position: static
-.main__img-robot
-	position: absolute
-	top: -160px
-	right: 0
 .main__setting-up-a-proxy-in-the-browser
 	padding: 15px 20px
 	display: flex
@@ -1491,9 +1494,10 @@ img.img-flag
 	padding-top: 40px
 	padding-bottom: 40px
 	background-color: $bg_sections
-	h2
+	.title_h2
 		margin-bottom: 25px
-		font-size: 26px
+		font-size: 24px
+		font-family:$font_Circe-Bold
 .accordion {
 	margin-bottom: 30px;
 	&:last-of-type {
@@ -1583,42 +1587,50 @@ img.img-flag
 			top: -1px
 //	Секция your-ip
 .your-ip
-	padding-top: 35px
 	padding-bottom: 35px
-	text-align: center
-	background: #fff url(../img/your-ip__bg.png) center top no-repeat
+	text-align: left
+.your-ip__all-wrap
+	box-shadow: 0px 10px 29.37px 3.63px rgba(4, 74, 103, 0.09)
+.your-ip__inner
+	width: 570px
+	margin-left: 15px
+	padding: 40px 55px
+	background-color: #f8fcff
 .your-ip__wrap
 	display: flex
-	align-items: center
-	justify-content: center
-	margin-bottom: 30px
 	i
+		margin-top: 9px
 		font-size: 17.5px
-		color: $main_color
+		color: #b0b3b5
 		cursor: pointer
 		transition: 0.5s
 		&:hover
 			color: $main_txt_color
 .your-ip__title
-	margin-bottom: 20px
-	font-size: 17.5px
+	margin-bottom: 15px
+	font-size: 18px
 	font-family: $font_Circe-Bold
 .your-ip__numbers
+	margin-bottom: 20px
 	margin-right: 20px
-	font-size: 50px
+	font-size: 48px
 	font-family: $font_Circe-Bold
-	color: #161616
+	color: $main_color
+.your-ip__btn
+	button
+		min-width 266px
+		color: #fff
 //	Секция .hide-ip-table
-.hide-ip-table
+.browser-details
 	padding-top: 35px
-	padding-bottom: 35px
-	background: #fff
+	margin-left: 15px
+	background-color: #ffffff
 	.title
 		margin-bottom: 15px
-		font-size: 16px
+		font-size: 20px
 		font-family: $font_Circe-Bold
-.hide-ip-table__table-wrap
-	margin-bottom: 40px
+.browser-details__table-wrap
+	padding-left: 50px
 	//внешний вид скроллбара
 	scrollbar-base-color: $main_color   //для IE
 	scrollbar-arrow-color: $main_color	//для IE
@@ -1633,32 +1645,44 @@ img.img-flag
 		background-color: lighten($main_color, 60%)
 	table
 		width: 100%
-		border: 1px solid #e0e0e0
 		tbody
-			font-size: 14px
+			font-size: 16px
 			font-family $font_Circe-Regular
+			tr
+				td
+					word-break: break-word
+					&:first-of-type
+						width: 220px
+						padding-right: 30px
+						padding-top: 5px
+						padding-bottom: 5px
+.hide-ip-table__table-wrap
+	width: 600px
+	//внешний вид скроллбара
+	scrollbar-base-color: $main_color   //для IE
+	scrollbar-arrow-color: $main_color	//для IE
+	//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+	&::-webkit-scrollbar
+		height: 10px
+	&::-webkit-scrollbar-thumb
+		background-color: $main_color
+		&:hover
+			background-color: darken($main_color, 10%)
+	&::-webkit-scrollbar-track-piece
+		background-color: lighten($main_color, 60%)
+	table
+		width: 100%
+		tbody
+			font-size: 16px
+			font-family $font_Circe-Regular
+			tr
+				&:nth-of-type(odd) td
+					background-color: #f8fcff
 			td
-				padding: 17px 30px
-				border-bottom: 1px solid #e0e0e0
+				padding: 13px 30px
 				&:first-of-type
-					width: 170px
-					padding: 17px 20px
-					background-color: #f6f6f6
-					font-size: 16px
-					border: none
 					font-family $font_Circe-Bold
-					box-shadow: 5px 0px 15px 0px rgba(208,208,208,0.9)
-					position: relative
-					&:after
-						content: ""
-						display: block
-						position: absolute
-						bottom: 0
-						left: 0
-						width: 100%
-						height: 8px
-						background: #f6f6f6
-						z-index: 10
+					font-size: 18px
 				i
 					width: 20px
 					display: inline-block
@@ -1700,6 +1724,9 @@ img.img-flag
 	text-align: center
 .hide-ip-table__scroll-table
 	display: none
+	margin-top: 10px
+	padding-left: 15px
+	padding-right: 15px
 //	Секция .main__title.proxy-checker
 .main
 	&.proxy-checker
@@ -1707,6 +1734,8 @@ img.img-flag
 			margin-bottom: 10px
 			&.main__title_long
 				max-width: 56%
+	&.hide-ip
+		padding-bottom: 20px
 // Блок proxy-checker
 .proxy-checker__list
 	margin-bottom: 40px
@@ -1843,7 +1872,7 @@ img.img-flag
 .security-and-anonymity
 	padding-top: 35px
 	padding-bottom: 35px
-	background: #f6f6f6 url(../img/your-ip__bg.png) center top no-repeat
+	background: #f6f6f6
 	text-align: center
 	h2
 		margin-bottom: 40px

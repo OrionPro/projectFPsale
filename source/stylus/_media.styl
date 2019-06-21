@@ -11,6 +11,13 @@
 			top: 10px
 			i
 				color: #000000
+// Large devices (desktops, less than 1399)
+@media only screen and (max-width : 1399px)
+	.header__dropdown
+		top: 20px
+		right: 100%
+		left: 0
+		transform: translate(-50px, 0px)
 // Large devices (desktops, less than 1200px)
 @media only screen and (max-width : 1199px)
 	/**/
@@ -107,17 +114,34 @@
 			margin-bottom: 15px
 	.main__top-select-wrap
 		margin-right: 25px
+	.hide-ip-table__table-wrap
+		width: calc(50% - 15px)
+	.your-ip__inner
+		width: calc(50% - 15px)
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
 	h1
 		font-size: 30px
+	.hide-ip-table__table-wrap
+		width: calc(60% - 15px)
+		table
+			tbody
+				font-size: 14px
+				td
+					&:first-of-type
+						font-size: 16px
+	.your-ip__inner
+		width: calc(40% - 15px)
+		padding: 20px 25px
+	.your-ip__numbers
+		font-size: 40px
+	.your-ip__btn button
+		min-width: 225px
 	.main__filter--default
 		margin-bottom: 15px
 	.main__txt-img
 		margin-bottom: 40px
-	.main__img-robot
-		display: none
 	.main__setting-up-a-proxy-in-the-browser-items-link
 		justify-content: space-around
 	.main__setting-up-a-proxy-in-the-browser-items-link > a
@@ -207,6 +231,8 @@
 	.main__top-select
 		&.fps-filter-country
 			margin-bottom: 15px
+	.your-ip
+		padding-top: 30px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -230,6 +256,14 @@
 		-o-animation: none !important
 		-ms-animation: none !important
 		animation: none !important
+
+	.hide-ip-table__table-wrap
+		width: 100%
+		margin-right: 15px
+		margin-left: 15px
+	.your-ip__inner
+		width: 100%
+		margin-right: 15px
 	.info-blocks .row
 		background: none
 	.header
@@ -386,7 +420,7 @@
 		font-size: 12px
 	.your-ip__btn
 		button
-			min-width 270px
+			min-width 100%
 	.hide-ip-table__table-wrap
 		overflow: auto
 
