@@ -57,6 +57,7 @@ html(class="no-js" lang="ru")
 		div(canvas='container')
 			block header
 				header(class="header")
+					.header__gray-divider
 					.container
 						.row
 							.header__logo
@@ -65,18 +66,48 @@ html(class="no-js" lang="ru")
 									| PROXYSELLER
 							nav.header__nav
 								ul
-									-var links = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Прокси-чекер', href:'#'},{title:'Мой IP', href:'#'}, {title:'Компания', href:'#', dropDown: 1,drop: {'1': {title:'Доп. услуги', href:'#'},'2': {title:'Доп. услуги', href:'#'}}}];
+									-var links = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Статьи', href:'#'},{title:'Контакты', href:'#'}];
 									each i in links
 										li
 											a(href=i.href)= i.title
-											case i.dropDown
-												when 1
-													i.fa.fa-angle-down
-													.header__dropdown
-														ul
-															each a in i.drop
-																li
-																	a(href=a.href)= a.title
+						.row.mt-a
+							nav.header__bot-nav
+								ul
+									li
+										a(href="#")
+											img(src=require("../../img/checked-symbol.png"))
+											| Прокси чекер
+									li
+										a(href="#")
+											img(src=require("../../img/header-icon-ip.png"))
+											| Мой IP
+									li
+										a(href="#")
+											img(src=require("../../img/wifi-signal-waves.png"))
+											| Сканер портов
+									li
+										a(href="#")
+											img(src=require("../../img/header-icon-global.png"))
+											| Пинг IP
+									li
+										a(href="#")
+											img(src=require("../../img/header-icon-speed-meter.png"))
+											| Скорость
+									li
+										a(href="#")
+											img(src=require("../../img/header-icon-cloud-computing.png"))
+											| Трассировка
+									li.header__bot-nav-dropdown
+										a(href="#")
+											| Другое
+											i.fa.fa-angle-down
+										ul
+											li
+												a(href="#") Поддержка DNS
+											li
+												a(href="#") Поддержка IPv6
+											li
+												a(href="#") IP в спам базе
 
 			block main
 			block footer
@@ -119,7 +150,7 @@ html(class="no-js" lang="ru")
 		div(off-canvas='id-1 left shift')
 			nav.header_nav_mobile
 				ul.menu
-					-var obj1 = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Прокси-чекер', href:'#'},{title:'Мой IP', href:'#'}, {title:'Компания', href:'#'},{title:'Доп. услуги', href:'#'}];
+					-var obj1 = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Прокси-чекер', href:'#'},{title:'Мой IP', href:'#'}, {title:'Компания', href:'#'},{title:'Сканер портов', href:'#'},{title:'Пинг IP', href:'#'},{title:'Скорость', href:'#'},{title:'Трассировка', href:'#'},{title:'Поддержка DNS', href:'#'},{title:'Поддержка IPv6', href:'#'},{title:'IP в спам базе', href:'#'}];
 					each i in obj1
 						li
 							a(href=i.href)= i.title

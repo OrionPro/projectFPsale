@@ -24,6 +24,15 @@
 	// для фиксированного сайта
 	// body
 	// 	width: 1200px
+	.proxy-checker__enter-the-proxy-list-textarea
+		width: 70%
+	.browser-details__inner
+		&.scroll-table
+			width: 660px
+		&.hide-ip
+			width: 270px
+	.hide-ip-table__your-location
+		padding-left: 15px
 	.share-page.title_long
 		min-height: 100%
 		margin-bottom: 0
@@ -123,6 +132,11 @@
 	/**/
 	h1
 		font-size: 30px
+	.proxy-checker__enter-the-proxy-list-textarea
+		margin-bottom: 0
+	.browser-details__table-wrap table tbody tr td:first-of-type
+		padding-top: 6px
+		padding-bottom: 6px
 	.hide-ip-table__table-wrap
 		width: calc(60% - 15px)
 		table
@@ -131,6 +145,17 @@
 				td
 					&:first-of-type
 						font-size: 16px
+	.browser-details__inner
+		&.scroll-table
+			width: calc(100% - 30px)
+			padding-left: 25px
+		&.hide-ip
+			width: calc(100% - 30px)
+			margin-left: 15px
+			padding-bottom: 25px
+			padding-left: 30px
+	.hide-ip-table__your-location
+		padding-left: 15px
 	.your-ip__inner
 		width: calc(40% - 15px)
 		padding: 20px 25px
@@ -157,6 +182,15 @@
 		height: 100px
 	.header__nav
 		display: none
+	.header__bot-nav
+		display: none
+	.header__gray-divider
+		display: none
+	.header
+		.row
+			height: 100%
+			&.mt-a
+				display: none
 	.header__logo
 		display: block
 	.header__authorization
@@ -233,6 +267,12 @@
 			margin-bottom: 15px
 	.your-ip
 		padding-top: 30px
+	.proxy-checker__test-results-items
+		flex-wrap wrap
+		.last
+			margin-left: 0
+	nav[canvas]
+		top: 30px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -257,6 +297,12 @@
 		-ms-animation: none !important
 		animation: none !important
 
+	nav[canvas]
+		top: 15px
+	.proxy-checker__enter-the-proxy-list-textarea
+		width: 60%
+	.proxy-checker__enter-the-proxy-list-check-list .check span
+		font-size: 14px
 	.hide-ip-table__table-wrap
 		width: 100%
 		margin-right: 15px
@@ -340,6 +386,17 @@
 		margin-bottom: 10px
 	.main__filter
 		margin-bottom: 20px
+	.browser-details__table-wrap
+		overflow: auto
+		table
+			width: 700px
+	.hide-ip-table__scroll-table
+		&.browser-details__scroll-table
+			display: block
+			padding-left: 0
+			i
+				color: $main_color
+				animation arrow-right 0.5s infinite alternate
 // Extra small devices (portrait phones, less than 700px)
 @media only screen and (max-width : 700px)// Extra small devices (portrait phones, less than 576px)
 	.share-page__social-item
@@ -373,6 +430,9 @@
 		height: 22px
 		i
 			font-size: 11px
+	.why-our-proxies-are-better h2
+		font-size: 20px
+		line-height: 1.3
 // Extra small devices (portrait phones, less than 521px)
 @media only screen and (max-width : 520px)
 	/**/
@@ -385,6 +445,22 @@
 // Extra small devices (portrait phones, less than 481px)
 @media only screen and (max-width : 480px)
 	/**/
+	.proxy-checker__enter-the-proxy-list-textarea
+		width: 100%
+	.proxy-checker__enter-the-proxy-list
+		padding: 20px 0 0 20px
+	.proxy-checker__enter-the-proxy-list-btn
+		width: calc(100% + 20px)
+		margin-left: -20px
+		padding: 20px 0 5px 20px
+		.main_btn2
+			margin-bottom: 15px
+	.why-our-proxies-are-better
+		h2
+			font-size: 19px
+			line-height: 1.2
+		p
+			font-size: 15px
 	.footer
 		nav
 			font-size: 14px

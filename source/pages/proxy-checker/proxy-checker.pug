@@ -65,15 +65,16 @@ block main
 				ul
 					li
 						i.fa.fa-circle
-						| Скорость проверки прокси и многопоточность - 64 потока и более 100 мбит;
+						| Высокая скорость проверки в 64 потока и умные алгоритмы распознавания прокси в списках;
 					li
 						i.fa.fa-circle
-						| Есть возможность получить информацию о прокси: состояние, пинг, скорость, геолокацию, тип;
+						| Проверка прокси по множеству параметров, включая пинг, скорость соединения и степень анонимности;
 					li
 						i.fa.fa-circle
-						| Удобный вывод результатов с помощью фильтра отабражения.
+						| Потоковый вывод результатов с гибкой настройкой и экспорт только необходимых результатов.
 			.proxy-checker__in-which-format-to-add-a-proxy
-				i.fa.fa-exclamation-circle
+				i
+					img(src=require("img/icon-info.svg"))
 				.proxy-checker__in-which-format-to-add-a-proxy-txt
 					p.title
 						| В каком формате добавлять прокси в чекер?
@@ -94,50 +95,50 @@ block main
 						|
 						b IP:PORT:USER:PASS
 					p
-						b P.S.: Если вы купили прокси у нас, то они приватные!
+						b.main-color P.S.: Если вы купили прокси у нас, то они приватные!
 			.proxy-checker__enter-the-proxy-list
-				.proxy-checker__enter-the-proxy-list-title
-					| Введите список прокси сюда:
 				form
-					.row
-						.col-lg-8
-							textarea
-						.col-lg-4
-							.proxy-checker__enter-the-proxy-list-check
-								.proxy-checker__enter-the-proxy-list-check-title
-									| Отображать:
-								.proxy-checker__enter-the-proxy-list-check-list
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span HTTP | HTTPS
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span SOCKS 4
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span SOCKS 5
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span Нерабочие
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span Непроверенные
-					button(type="submit" class="main_btn") Проверить прокси
+					.proxy-checker__enter-the-proxy-list-textarea
+						.proxy-checker__enter-the-proxy-list-title
+							| Список прокси:
+						textarea
+					.proxy-checker__enter-the-proxy-list-check
+						.proxy-checker__enter-the-proxy-list-check-title
+							| Отображать:
+						.proxy-checker__enter-the-proxy-list-check-list
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-check-square
+								i.fa.fa-2.fa-square-o
+								span HTTP | HTTPS
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-check-square
+								i.fa.fa-2.fa-square-o
+								span SOCKS 4
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-check-square
+								i.fa.fa-2.fa-square-o
+								span SOCKS 5
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-check-square
+								i.fa.fa-2.fa-square-o
+								span Нерабочие
+							label.check.noselect
+								input(type='checkbox')
+								i.fa.fa-1.fa-check-square
+								i.fa.fa-2.fa-square-o
+								span Непроверенные
+					.proxy-checker__enter-the-proxy-list-btn
+						button(type="submit" class="main_btn2") Начать проверку
+						button(type="button" class="main_btn") Отмена
 			.proxy-checker__test-results
 				.proxy-checker__test-results-title
 					| Результаты проверки:
-				.row.proxy-checker__test-results-items
-					.col-md-3.col-lg-2.proxy-checker__test-results-item
+				.proxy-checker__test-results-items
+					.proxy-checker__test-results-item
 						dl
 							dt
 								| Проверено:
@@ -145,19 +146,19 @@ block main
 								span 3
 								|
 								| из 5
-					.col-md-3.col-lg-2.proxy-checker__test-results-item
+					.proxy-checker__test-results-item
 						dl
 							dt
 								| Рабочих:
 							dd
 								span.workers 2
-					.col-md-3.col-lg-2.proxy-checker__test-results-item
+					.proxy-checker__test-results-item
 						dl
 							dt
 								| Нерабочих:
 							dd
 								span.not-workers 1
-					.col-md-12.col-lg-3.last
+					.proxy-checker__test-results-btn.last
 						button(type="button" class="main_btn2") Купить рабочие прокси
 			.hide-ip-table__scroll-table.proxy-checker-table
 				| Листайте таблицу
@@ -166,21 +167,17 @@ block main
 				table.proxy-checker-table
 					thead
 						th
-							| IP
+							| IP адрес
 						th
 							| Port
 						th
 							| Страна
 						th
-							| Логин
-						th
-							| Пароль
-						th
 							| Тип
 						th
-							| Скорость
-						th
 							| Анонимность
+						th
+							| Скорость
 						th
 							| Состояние
 					tbody
@@ -197,18 +194,13 @@ block main
 								img(src=require("../../img/flag_ukraine.jpg"))
 								| Азербaйджан
 							td
-								| -
-							td.table-password
-								div
-									| -
-							td
 								a(href="#") HTTP
+							td
+								| Анонимный
 							td
 								.progress-bar.blue.stripes
 									span(style="width: 50%")
 									i 184 мс
-							td
-								| Анонимный
 							td
 								| Рабочий
 								a(href="#")
@@ -225,19 +217,14 @@ block main
 								img(src=require("../../img/flag_ukraine.jpg"))
 								| Азербaйджан
 							td
-								| passanet456hui
-							td.table-password
-								div
-									| asdefswedfsd
-							td
 								a(href="#") HTTP
+							td
+								p
+									| Анонимный
 							td
 								.progress-bar.blue.stripes
 									span(style="width: 50%")
 									i 184 мс
-							td
-								p
-									| Анонимный
 							td
 								p
 									| Не рабочий
@@ -256,47 +243,37 @@ block main
 								img(src=require("../../img/flag_ukraine.jpg"))
 								| Азербaйджан
 							td
-								| passanet456hui
-							td.table-password
-								div
-									| asdefswedfsd
-							td
 								a(href="#") HTTP
-							td
-								.progress-bar.blue.stripes
-									span(style="width: 50%")
-									i 184 мс
 							td
 								p
 									| Нет
 								p
 									a(href="#") Купить анонимный
 							td
+								.progress-bar.blue.stripes
+									span(style="width: 50%")
+									i 184 мс
+							td
 								p
 									| Рабочий
 			.proxy-checker__download-scan-results
-				.row
-					.col-md-12.col-lg-4.col-xl-3
-						.proxy-checker__download-scan-results-title
-							| Скачать результаты проверки:
-					.col-md-4.col-lg-2.col-xl-2
-						.proxy-checker__download-scan-results-item
-							img(src=require("../../img/proxy-checker__download-scan-results-item.png"))
-							a(href="#") скачать в .txt
-					.col-md-4.col-lg-3.col-xl-2
-						.proxy-checker__download-scan-results-item
-							img(src=require("../../img/proxy-checker__download-scan-results-item2.png"))
-							a(href="#") таблицей в .scv
-					.col-md-4.col-lg-3.col-xl-3
-						.proxy-checker__download-scan-results-item
-							img(src=require("../../img/proxy-checker__download-scan-results-item3.png"))
-							a(href="#") открыть в новой вкладке
+				.proxy-checker__download-scan-results-title
+					| Скачать результаты проверки:
+				.proxy-checker__download-scan-results-item
+					img(src=require("../../img/proxy-checker__download-scan-results-item.svg"))
+					a(href="#") скачать в .txt
+				.proxy-checker__download-scan-results-item
+					img(src=require("../../img/proxy-checker__download-scan-results-item2.svg"))
+					a(href="#") таблицей в .scv
+				.proxy-checker__download-scan-results-item
+					img(src=require("../../img/proxy-checker__download-scan-results-item3.svg"))
+					a(href="#") открыть в новой вкладке
 	// Секция Looking for stable personal proxies
 	section.looking-for-stable-personal-proxies
 		.container
 			h2 Нужны стабильные персональные прокси?
 		.looking-for-stable-personal-proxies__btn
-			button(type="button" class="main_btn2") Подробнее
+			button(type="button" class="main_btn3") Подробнее
 	// Секция why-our-proxies-are-better
 	section.why-our-proxies-are-better.proxy-checker
 		.container
