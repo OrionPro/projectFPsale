@@ -12,14 +12,49 @@ import URI from "urijs";
 //import '../../js/animate';
 //import App from '../../js/react';    // разкомментировать, чтобы включить react
 
+// функция throttle
+function throttle(func, ms) {
+
+	var isThrottled = false,
+		savedArgs,
+		savedThis;
+
+	function wrapper() {
+
+		if (isThrottled) { // (2)В этом состоянии все новые вызовы запоминаются в замыкании через savedArgs/savedThis. Обратим внимание, что и контекст вызова и аргументы для нас одинаково важны и запоминаются одновременно. Только зная и то и другое, можно воспроизвести вызов правильно.
+			savedArgs = arguments;
+			savedThis = this;
+			return;
+		}
+
+		func.apply(this, arguments); // (1)Декоратор throttle возвращает функцию-обёртку wrapper, которая при первом вызове запускает func и переходит в состояние «паузы» (isThrottled = true).
+
+		isThrottled = true;
+
+		setTimeout(function () {
+			isThrottled = false; // (3)Далее, когда пройдёт таймаут ms миллисекунд – пауза будет снята, а wrapper – запущен с последними аргументами и контекстом (если во время паузы были вызовы).
+			if (savedArgs) {
+				wrapper.apply(savedThis, savedArgs);
+				savedArgs = savedThis = null;
+			}
+		}, ms);
+	}
+
+	return wrapper;
+}
 
 $(document).ready(function () {
 
 	$("body").addClass("index ink-transition");
-	$(".sticky").sticky({
-		topSpacing: 0,
-		widthFromWrapper: false
-	});
+	if (window.matchMedia("(min-width: 992px)").matches) {
+		$(".sticky").sticky({
+			topSpacing: 0,
+			wrapperClassName: 'mt-a',
+			getWidthFrom: '.header .row',
+			responsiveWidth: true
+		});
+
+	}
 	// блок .main__setting-up-a-proxy-in-the-browser-items затемнение всех браузеров кроме того на который навели
 	$('.main__setting-up-a-proxy-in-the-browser-items .main__setting-up-a-proxy-in-the-browser-items-link a').hover(function () {
 		$('.main__setting-up-a-proxy-in-the-browser-items .main__setting-up-a-proxy-in-the-browser-items-link a').addClass('active');
@@ -370,9 +405,18 @@ $(document).ready(function () {
 	}
 });
 
-$(window).resize(function () {
+$(window).on('resize', throttle(function () {
+	if (window.matchMedia("(min-width: 992px)").matches) {
+		$(".sticky").sticky({
+			topSpacing: 0,
+			wrapperClassName: 'mt-a',
+			getWidthFrom: '.header .row',
+			responsiveWidth: true
+		});
 
-});
+	}
+
+}, 150));
 
 $(window).scroll(function () {
 

@@ -142,10 +142,12 @@ li
 	&:focus
 		outline-color: $main_color
 .select2-container--default .select2-selection--single
-	font-size: 14px
+	height: 42px
+	font-size: 16px
 	border-radius: 4px
-	line-height: 27px
+	line-height: 42px
 	padding-left: 20px
+	border: 1px solid #D9DDE0
 	outline-color: transparent
 	&:hover
 		outline-color: transparent
@@ -154,10 +156,15 @@ li
 	&:focus
 		outline none
 		outline-color: transparent
+	.select2-selection__rendered
+		line-height: 42px
+	.select2-selection__arrow
+		height: 42px
 .select2-container--default .select2-results__option
-	height: 28px
+	height: 42px
+	line-height: 30px
 	transition: 0.3s
-	font-size: 14px
+	font-size: 16px
 	padding-left: 28px
 	span
 		truncate(100%)
@@ -572,12 +579,15 @@ nav[canvas]
 	z-index: 10
 	.row
 		align-items: center
-		&.mt-a
-			margin-top: auto
+	.mt-a
+		margin-top: auto
 	.container
 		height: 100%
 		display: flex
 		flex-direction: column
+	.is-sticky
+		.header__bot-nav > ul
+			background-color: #ffffff
 .header__gray-divider
 	width: 100%
 	height: 1px
@@ -1432,7 +1442,20 @@ img.img-flag
 	.select2-wrap
 		width: 220px
 		margin-right: 30px
-
+	.select2-container--default
+		.select2-selection--single
+			height: 30px
+			line-height: 30px
+			.select2-selection__rendered
+				line-height: 30px
+			.select2-selection__arrow
+				height: 26px
+		.select2-results__option
+			height: 30px
+			line-height: 18px
+	.select2-container--default .select2-results__option
+		height: 30px
+		line-height: 18px
 .main__filter--default
 	margin-right: 30px
 	display: flex
@@ -2007,14 +2030,13 @@ img.img-flag
 		margin-bottom: 40px
 
 // Блок .port-scanner__
+.port-scanner-wrap
+	background: #F9FAFC
+	border: 1px solid #D9DDE0
 .port-scanner
-	margin-bottom: 35px
 	&.flex
 		display: flex
-	&.mb10
-		margin-bottom: 10px
-	&.mb60
-		margin-bottom: 60px
+		margin-bottom: 20px
 	form
 		overflow: hidden
 .dig-dns-wrap
@@ -2044,8 +2066,7 @@ img.img-flag
 				margin-bottom: 5px
 .port-scanner__enter-the-IP-address-or-domain
 	height: 100%
-	padding: 30px 20px
-	border: 1px solid #e0e0e0
+	padding: 30px 0px 20px 38px
 	.main__filter--default
 		margin-bottom: 15px
 		flex-direction: column
@@ -2056,17 +2077,17 @@ img.img-flag
 		display: flex
 	label
 		display: block
-		font-size: 16px
+		font-size: 18px
 		font-family: $font_Circe-Bold
 		margin-bottom: 8px
 		a
 			margin-bottom: 0
 	input
 		width: 100%
-		height: 30px
+		height: 42px
 		padding-left: 20px
 		margin-bottom: 5px
-		border: 1px solid #d6d6d6
+		border: 1px solid #D9DDE0
 		&:hover
 			outline: 0
 		&:active
@@ -2103,26 +2124,29 @@ img.img-flag
 	height: 100%
 	display: flex
 	flex-direction: column
-	padding: 30px 20px 45px
-	border: 1px solid #e0e0e0
+	padding: 30px 37px 45px 0
 	.title
 		font-family: $font_Circe-Bold
 		margin-bottom: 5px
 .port-scanner__btn
+	padding: 35px 38px
 	display: flex
 	align-items: center
+	background: #F2F7FB
 	button
-		min-width: 370px
+		min-width: 170px
 		margin-right: 30px
+		color: #ffffff
 	.info
 		font-size: 14px
 .port-scanner__test-results-wrap
 	overflow: auto
 	padding: 20px
-	background-color: #f6f6f6
-	&.port-scanner-wrap
+	background-color: #ffffff
+	border: 1px solid #D9DDE0
+	&.port-scanner
 		min-height 100%
-		max-height: 138px
+		max-height: 91px
 	&.IP-ping-wrap
 		min-height 100%
 		max-height: 247px

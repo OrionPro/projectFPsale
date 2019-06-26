@@ -54,7 +54,7 @@ html(class="no-js" lang="ru")
 						i.nav-line
 						i.nav-line
 
-		div(canvas='container')
+		div(canvas='container' )
 			block header
 				header(class="header")
 					.header__gray-divider
@@ -70,7 +70,7 @@ html(class="no-js" lang="ru")
 									each i in links
 										li
 											a(href=i.href)= i.title
-						.row.mt-a
+						.row.sticky
 							nav.header__bot-nav
 								ul
 									li

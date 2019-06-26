@@ -63,44 +63,47 @@ block main
 				p
 					| Показывает какие порты открыты на вашем или чужом компьютере и за что они отвечают. Проверка производится через сканер nmap и
 					| показывает, насколько открыт ваш доступ ПК для внешнего мира.
-			form.row.port-scanner.flex
-				.col-lg-4
-					.port-scanner__enter-the-IP-address-or-domain
-						label(for="enter-the-IP-address-or-domain") Введите IP-адрес или домен:
-						input(id="enter-the-IP-address-or-domain")
-						a(href="#") Вставить мой IP-адрес
-						label Тип сканируемых портов:
-						select(class="select2 select2-modal")
-							option Популярные порты
-							option Скрытые порты
-				.col-lg-8
-					.port-scanner__test-results
-						p.title
-							| Результаты проверки:
-						.port-scanner__test-results-wrap.port-scanner-wrap
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+			.port-scanner-wrap
+				form.row.port-scanner.flex
+					.col-lg-4
+						.port-scanner__enter-the-IP-address-or-domain
+							label(for="enter-the-IP-address-or-domain") Введите IP-адрес или домен:
+							input(id="enter-the-IP-address-or-domain")
+							a(href="#") Вставить мой IP-адрес
+							label Тип сканируемых портов:
+							select(class="select2 select2-modal")
+								option Популярные порты
+								option Скрытые порты
+					.col-lg-8
+						.port-scanner__test-results
+							p.title
+								| Результаты проверки:
+							.port-scanner__test-results-wrap.port-scanner
+								p
+									| Not shown: 999 filtered ports
+								p
+									| PORT     STATE SERVICE
+								p
+									| 3389/tcp open  ms-term-serv
+								p
+									| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+								p
+									| Not shown: 999 filtered ports
+								p
+									| PORT     STATE SERVICE
+								p
+									| 3389/tcp open  ms-term-serv
+								p
+									| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
 
-			.row.port-scanner.flex.mb60
-				.col-lg-12
-					.port-scanner__btn
-						button(class="main_btn2" type="submit") Начать сканирование
-						p.info
-							| * Если результат «Host seems down», значит фаерволл или роутер проверяемого и IP блокирует пинги.
+				.row.port-scanner.flex
+					.col-lg-12
+						.port-scanner__btn
+							button(class="main_btn2" type="submit") Сканировать
+							p.info
+								i
+									img(src=require("img/icon-info.svg"))
+								| Если результат «Host seems down», значит фаерволл или роутер проверяемого и IP блокирует пинги.
 			.main__table-wrap.port-scanner
 				p Какие порты проверяются:
 				.hide-ip-table__scroll-table.proxy-checker-table
