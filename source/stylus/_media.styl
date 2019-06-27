@@ -24,6 +24,9 @@
 	// для фиксированного сайта
 	// body
 	// 	width: 1200px
+	.port-scanner__btn
+		button
+			min-width: 251px
 	.proxy-checker__enter-the-proxy-list-textarea
 		width: 70%
 	.browser-details__inner
@@ -274,6 +277,27 @@
 			margin-left: 0
 	nav[canvas]
 		top: 30px
+	.port-scanner__test-results
+		padding: 20px
+	.port-scanner__enter-the-IP-address-or-domain
+		padding: 20px
+	.port-scanner__btn
+		padding: 20px
+	.main__table-wrap
+		overflow: auto
+		margin-bottom: 20px
+		table
+			width: 730px
+			overflow: hidden
+			margin-bottom: 0
+			thead
+				tr
+					th
+						font-size: 14px
+			tbody
+				font-size: 14px
+		.progress-bar i
+			font-size: 14px
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -298,6 +322,12 @@
 		-ms-animation: none !important
 		animation: none !important
 
+
+	.port-scanner__btn
+		justify-content: center
+		button
+			margin-right: 0
+			margin-bottom: 15px
 	nav[canvas]
 		top: 15px
 	.proxy-checker__enter-the-proxy-list-textarea
@@ -359,21 +389,6 @@
 		margin-bottom: 20px
 	.main__proxy-list
 		margin-bottom: 30px
-	.main__table-wrap
-		overflow: auto
-		margin-bottom: 20px
-		table
-			width: 730px
-			overflow: hidden
-			margin-bottom: 0
-			thead
-				tr
-					th
-						font-size: 14px
-			tbody
-				font-size: 14px
-		.progress-bar i
-			font-size: 14px
 	.main__scroll-table
 		margin-top: 30px
 		display: block
@@ -446,6 +461,8 @@
 // Extra small devices (portrait phones, less than 481px)
 @media only screen and (max-width : 480px)
 	/**/
+	.hide-ip-table__scroll-table.port-scanner
+		font-size: 14px
 	.proxy-checker__enter-the-proxy-list-textarea
 		width: 100%
 	.proxy-checker__enter-the-proxy-list
@@ -520,6 +537,8 @@
 /* Custom */
 @media only screen and (max-width : 380px)
 	/**/
+	.hide-ip-table__scroll-table.port-scanner
+		font-size: 13px
 	.main__pagination
 		.pagination
 			li

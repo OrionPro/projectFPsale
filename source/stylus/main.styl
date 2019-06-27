@@ -926,6 +926,17 @@ nav[canvas]
 		font-size: 13px
 		color: #fff
 		transition: color 0.5s
+.main__table-wrap-title
+	margin-bottom: 40px
+	padding: 23px 20px
+	display: flex
+	align-items: center
+	background: #FFFFFF
+	box-shadow: 0px 10px 29.4px rgba(4, 74, 103, 0.1)
+	border-radius: 4px
+	p
+		font-size: 20px
+		font-family: $font_Circe-Bold
 .main__table-wrap
 	margin-bottom: 30px
 	//внешний вид скроллбара
@@ -1841,6 +1852,8 @@ img.img-flag
 	margin-top: 10px
 	padding-left: 45px
 	padding-right: 15px
+	&.port-scanner
+		padding-left: 20px
 //	Секция .main__title.proxy-checker
 .main
 	&.proxy-checker
@@ -2031,6 +2044,7 @@ img.img-flag
 
 // Блок .port-scanner__
 .port-scanner-wrap
+	margin-bottom: 60px
 	background: #F9FAFC
 	border: 1px solid #D9DDE0
 .port-scanner
@@ -2134,11 +2148,15 @@ img.img-flag
 	align-items: center
 	background: #F2F7FB
 	button
-		min-width: 170px
+		min-width: 331px
 		margin-right: 30px
 		color: #ffffff
 	.info
+		display: flex
+		align-items: center
 		font-size: 14px
+		i
+			margin-right: 8px
 .port-scanner__test-results-wrap
 	overflow: auto
 	padding: 20px

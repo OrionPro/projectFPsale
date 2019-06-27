@@ -104,10 +104,11 @@ block main
 								i
 									img(src=require("img/icon-info.svg"))
 								| Если результат «Host seems down», значит фаерволл или роутер проверяемого и IP блокирует пинги.
-			.main__table-wrap.port-scanner
+			.main__table-wrap-title
 				p Какие порты проверяются:
-				.hide-ip-table__scroll-table.proxy-checker-table
-					| Листайте таблицу
+			.main__table-wrap.port-scanner
+				.hide-ip-table__scroll-table.proxy-checker-table.port-scanner
+					| Листайте таблицу ps есть скролл вниз
 					i.fa.fa-arrow-right
 				table.port-scanner-table
 					thead
@@ -231,12 +232,12 @@ block main
 					a(href="#") таблицей в .scv
 				.proxy-checker__download-scan-results-item
 					img(src=require("../../img/proxy-checker__download-scan-results-item3.svg"))
-	// Секция security-and-anonymity
-	section.security-and-anonymity
+	// Секция Looking for stable personal proxies
+	section.looking-for-stable-personal-proxies
 		.container
-			h2 VPN — ваша безопасность и анонимность в интернете
-		.security-and-anonymity__btn
-			button(type="button" class="main_btn2") Подробнее
+			h2 Нужны стабильные персональные прокси?
+		.looking-for-stable-personal-proxies__btn
+			button(type="button" class="main_btn3") Подробнее
 	// Секция why-our-proxies-are-better
 	section.why-our-proxies-are-better.proxy-checker
 		.container
