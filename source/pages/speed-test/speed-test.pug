@@ -59,97 +59,108 @@ block main
 
 			.main__title.main__title_long
 				h1 Проверить скорость прокси, скорость доступа к сайту через прокси, проверка скорости через proxy
-			ul.proxy-checker__list
-				li
-					| Определение скорости передачи данных через HTTP и SOCKS прокси
-				li
-					| Возможность определения скорости загрузки страниц сайта напрямую
-				li
-					| Проверка доступа к сайту
-			form.row.port-scanner.flex
-				.col-lg-4
-					.dig-dns-wrap.IP-traceroute-wrap
-						.port-scanner__enter-the-IP-address-or-domain
-							label(for="enter-the-test-speed") Введите адрес сайта для проверки скорости
-							input(id="enter-the-test-speed")
-							label(for="enter-the-proxy-speed-format")
-								| Адрес прокси в формате
-								|
-								a.gray(href="#")  127.0.0.1:8080
-							input(id="enter-the-proxy-speed-format" class="mb5")
-							.NS-or-domain-info
-								p Для теста скорости передачи данных через прокси введите адрес и порт прокси сервера
-								p Для обычного теста скорости загрузки страниц сайта оставьте это поле пустым
-							.main__filter-type.main__filter--default
-								h4 Тип прокси сервера
-								.proxy-type-checks
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span HTTP
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span SOCKS 4
-									label.check.noselect
-										input(type='checkbox')
-										i.fa.fa-1.fa-circle-o
-										i.fa.fa-2.fa-circle
-										span SOCKS 5
-							label Таймаут
-							select(class="select2 select2-modal")
-								option(selected) 15 сек
-								option 20 сек
-							label.mt25 Режим проверки скорости
-							select(class="select2 select2-modal")
-								option(selected) Быстро
-								option Очень быстро
-							label.mt25 Проверить доступ к сайту
-							select(class="select2 select2-modal")
-								option(selected) Да
-								option Нет
+			.proxy-checker__list
+				ul
+					li
+						i.fa.fa-circle
+						| Определение скорости передачи данных через HTTP и SOCKS прокси
+					li
+						i.fa.fa-circle
+						| Возможность определения скорости загрузки страниц сайта напрямую
+					li
+						i.fa.fa-circle
+						| Проверка доступа к сайту
+			.port-scanner-wrap
+				form.row.port-scanner.flex
+					.col-lg-4
+						.dig-dns-wrap.IP-traceroute-wrap
+							.port-scanner__enter-the-IP-address-or-domain
+								label(for="enter-the-test-speed") Введите адрес сайта для проверки скорости
+								input(id="enter-the-test-speed")
+								label(for="enter-the-proxy-speed-format")
+									| Адрес прокси в формате
+									|
+									a(href="#")  127.0.0.1:8080
+								input(id="enter-the-proxy-speed-format" class="mb5")
+								.NS-or-domain-info
+									p Для теста скорости передачи данных через прокси введите адрес и порт прокси сервера. Для обычного теста скорости загрузки страниц сайта оставьте это поле пустым
+								.main__filter-type.main__filter--default
+									h4 Тип прокси сервера
+									.proxy-type-checks
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square
+											span HTTP
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square
+											span SOCKS 4
+										label.check.noselect
+											input(type='checkbox')
+											i.fa.fa-1.fa-square-o
+											i.fa.fa-2.fa-check-square
+											span SOCKS 5
+								label Таймаут
+								select(class="select2 select2-modal")
+									option(selected) 15 сек
+									option 20 сек
+								label.mt25 Режим проверки скорости
+								select(class="select2 select2-modal")
+									option(selected) Быстро
+									option Очень быстро
+								label.mt25 Проверить доступ к сайту
+								select(class="select2 select2-modal")
+									option(selected) Да
+									option Нет
+
+					.col-lg-8
+						.port-scanner__test-results
+							p.title
+								| Результаты проверки:
+							.port-scanner__test-results-wrap.speed-test
+								p
+									| Not shown: 999 filtered ports
+								p
+									| PORT     STATE SERVICE
+								p
+									| 3389/tcp open  ms-term-serv
+								p
+									| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+								p
+									| Not shown: 999 filtered ports
+								p
+									| PORT     STATE SERVICE
+								p
+									| 3389/tcp open  ms-term-serv
+								p
+									| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+								p
+									| Not shown: 999 filtered ports
+								p
+									| PORT     STATE SERVICE
+								p
+									| 3389/tcp open  ms-term-serv
+								p
+									| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+								p
+									| Not shown: 999 filtered ports
+								p
+									| PORT     STATE SERVICE
+								p
+									| 3389/tcp open  ms-term-serv
+								p
+									| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+				.row.port-scanner.flex
+					.col-lg-12
 						.port-scanner__btn
-							.btn-info Проверка доступа и скорости может занять некоторое время
-							button(class="main_btn2" type="submit") Проверить скорость
-				.col-lg-8
-					.port-scanner__test-results
-						p.title
-							| Результаты проверки:
-						.port-scanner__test-results-wrap.speed-test
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+							button(class="main_btn2" type="submit") Проверить
+							p.info
+								i
+									img(src=require("img/icon-info.svg"))
+								| Проверка доступа и скорости может занять некоторое время
+
 	// Секция security-and-anonymity
 	section.security-and-anonymity
 		.container

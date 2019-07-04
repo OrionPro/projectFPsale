@@ -2046,18 +2046,17 @@ img.img-flag
 .port-scanner-wrap
 	margin-bottom: 60px
 	background: #F9FAFC
-	border: 1px solid #D9DDE0
+	box-shadow: 0px 10px 29.4px rgba(0, 0, 0, 0.1)
 .port-scanner
 	&.flex
 		display: flex
-		margin-bottom: 20px
 	form
 		overflow: hidden
 .dig-dns-wrap
 	height: 100%
 	&.IP-traceroute-wrap
 		.port-scanner__enter-the-IP-address-or-domain
-			margin-bottom: 18px
+			margin-bottom: 0
 		.port-scanner__btn
 			flex-direction: column
 			button
@@ -2117,10 +2116,6 @@ img.img-flag
 		text-decoration underline
 		color: $main_color
 		transition: color 0.4s
-		&.gray
-			color: #888888
-			&:hover
-				color: $main_color
 		&:hover
 			color: $main_txt_color
 			text-decoration: none
@@ -2191,6 +2186,8 @@ img.img-flag
 .NS-or-domain-info
 	margin-bottom: 25px
 	font-size: 12.5px
+	p
+		color: $main_color
 	a
 		margin: 0
 		font-size: 12px

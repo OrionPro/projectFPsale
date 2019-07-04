@@ -44,7 +44,8 @@ function accordion(obj) {
 	const titleClick = obj.titleClick,
 		allContent = obj.allContent;
 
-	$(titleClick).click(function () {
+	$(titleClick).click(function (e) {
+		e.preventDefault();
 		let content = $(this).next();
 		if (content.is(":visible")) { //если нажали на title аккордеона,
 			content.slideUp(500, function () { //и если контент аккордеона видимый, то
