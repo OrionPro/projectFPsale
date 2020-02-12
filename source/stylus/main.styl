@@ -52,7 +52,7 @@ body
 	font-family: $font_Circe-Regular
 	overflow-x: hidden
 	color: $main_txt_color
-	background: #f8fcff url(../img/strip-bg.png) center 110px repeat
+	background: #f9fdfb url(../img/strip-bg.png) center 110px repeat
 	-webkit-tap-highlight-color: transparent
 	//внешний вид скроллбара
 	scrollbar-base-color: $main_color   //для IE
@@ -517,6 +517,37 @@ label.check, label.radio
 		opacity: 1
 		transform: translateY(0)
 
+body
+	&.container-left
+		header
+			display: none
+		.container
+			margin-left: 0
+.main-wrap
+	display: flex
+	background: #f8fcff
+	.sidebar
+		width: 358px
+		padding-top: 40px
+		padding-left: 0
+		flex-shrink: 0
+		background-color: #ffffff
+.sidebar-list-item
+	padding-top: 35px
+.sidebar-list-item-dropdown
+	width: 245px
+	margin-left: 60px
+	display: flex
+	align-items: center
+	padding: 1px
+	background: $main_color
+	border-radius: 20px
+	span
+		margin-right: 15px
+	i
+		color: #fff
+.sidebar-list-dropdown-img
+	margin-right: 15px
 // Оформление слайдбара
 [canvas]
 	transform: inherit
@@ -596,7 +627,8 @@ nav[canvas]
 	background-color: #e6e6e6
 .header__logo
 	display: inline-block
-	margin-left: 15px
+	margin-bottom: 25px
+	margin-left: 65px
 	font-family: $font_Circe-ExtraBold
 	a
 		color: $main_txt_color
@@ -806,7 +838,9 @@ nav[canvas]
 //
 //	button
 //		min-width: 100%
-// Секция main
+
+
+	// Секция main
 .main
 	background: $bg_sections
 	padding-top: 45px

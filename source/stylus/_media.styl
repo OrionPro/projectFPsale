@@ -11,6 +11,18 @@
 			top: 10px
 			i
 				color: #000000
+// Large devices (desktops, less than 1600)
+@media only screen and (max-width : 1600px)
+	.hide-ip-table__table-wrap
+		width: calc(50% - 15px)
+	.your-ip__inner
+		width: calc(50% - 15px)
+	.proxy-checker__download-scan-results-title
+		width: 100%
+	.main-wrap .sidebar
+		width: 300px
+		padding-left: 30px
+
 // Large devices (desktops, less than 1399)
 @media only screen and (max-width : 1399px)
 	.header__dropdown
@@ -123,12 +135,7 @@
 			margin-bottom: 15px
 	.main__top-select-wrap
 		margin-right: 25px
-	.hide-ip-table__table-wrap
-		width: calc(50% - 15px)
-	.your-ip__inner
-		width: calc(50% - 15px)
-	.proxy-checker__download-scan-results-title
-		width: 100%
+
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
@@ -298,6 +305,12 @@
 				font-size: 14px
 		.progress-bar i
 			font-size: 14px
+	.main-wrap
+		display: block
+	.main-wrap .sidebar
+		display: none
+	body.container-left .container
+		margin-left: auto
 // Small devices (landscape phones, less than 768px)
 @media only screen and (max-width : 767px)
 	
@@ -576,10 +589,13 @@
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px)
 	/**/
-
+	.container
+		width: 100%
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px)
 	/**/
-
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1600px)
+	/**/
 
 
