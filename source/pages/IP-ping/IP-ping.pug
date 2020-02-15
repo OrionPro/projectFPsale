@@ -1,141 +1,183 @@
 extends ../base
 block title
-	| Index page
+	| IP ping
+block variables
+	- var pageClass = 'container-left'
 block main
-	// Секция main
-	section.main.proxy-checker
-		.container
-			.share-page
-				.share-page__link
-					a(href='#')
-						i.fa.fa-share
-						|                            Поделиться страницей
-				.share-page__social
-					.share-page__social-inner
-						.share-page__social-item
-							.share-page__social-item-counter
-								| 16
-							.share-page__social-item-circle
-								a(href='#')
-									i.fa.fa-facebook
-						.share-page__social-item
-							.share-page__social-item-counter
-								| 16
-							.share-page__social-item-circle
-								a(href='#')
-									i.fa.fa-vk
-						.share-page__social-item
-							.share-page__social-item-counter
-								| 16
-							.share-page__social-item-circle
-								a(href='#')
-									i.fa.fa-twitter
-						.share-page__social-item
-							.share-page__social-item-counter
-								| 16
-							.share-page__social-item-circle
-								a(href='#')
-									i.fa.fa-paper-plane
-						.share-page__social-item
-							.share-page__social-item-counter
-								| 16
-							.share-page__social-item-circle
-								a(href='#')
-									i.fa.fa-at
-						.share-page__social-item
-							.share-page__social-item-counter
-								| 16
-							.share-page__social-item-circle
-								a(href='#')
-									i.fa
-										svg.svg-inline--fa.fa-deskpro.fa-w-15.fa-3x(aria-hidden='true', focusable='false', data-prefix='fab', data-icon='deskpro', role='img', xmlns='http://www.w3.org/2000/svg', viewBox='0 0 480 512')
-											path(fill='currentColor', d='M205.9 512l31.1-38.4c12.3-.2 25.6-1.4 36.5-6.6 38.9-18.6 38.4-61.9 38.3-63.8-.1-5-.8-4.4-28.9-37.4H362c-.2 50.1-7.3 68.5-10.2 75.7-9.4 23.7-43.9 62.8-95.2 69.4-8.7 1.1-32.8 1.2-50.7 1.1zm200.4-167.7c38.6 0 58.5-13.6 73.7-30.9l-175.5-.3-17.4 31.3 119.2-.1zm-43.6-223.9v168.3h-73.5l-32.7 55.5H250c-52.3 0-58.1-56.5-58.3-58.9-1.2-13.2-21.3-11.6-20.1 1.8 1.4 15.8 8.8 40 26.4 57.1h-91c-25.5 0-110.8-26.8-107-114V16.9C0 .9 9.7.3 15 .1h82c.2 0 .3.1.5.1 4.3-.4 50.1-2.1 50.1 43.7 0 13.3 20.2 13.4 20.2 0 0-18.2-5.5-32.8-15.8-43.7h84.2c108.7-.4 126.5 79.4 126.5 120.2zm-132.5 56l64 29.3c13.3-45.5-42.2-71.7-64-29.3z')
-						.share-page__social-item
-							.share-page__social-item-counter
-								| 16
-							.share-page__social-item-circle
-								a(href='#')
-									i.fa.fa-linkedin
+	.main-wrap
+		aside.sidebar
+			.header__logo
+				a(href="/" class="logo" title="Логотип")
+					img(src=require("../../img/logo-green.png"))
+					| PROXYSELLER
+			.sidebar-list
+				.sidebar-list-item
+					.sidebar-list-item-dropdown
+						.sidebar-list-dropdown-img
+							img(src=require("../../img/sidebar-list-dropdown-services.png"))
+						span Услуги
+						i.fa.fa-angle-down
+					ul.sidebar-list-item-dropdown-content
+						li
+							a(href="#") Бесплатные прокси
+						li
+							a(href="#") Прокси IPv4
+						li
+							a(href="#") Прокси IPv6
+						li
+							a(href="#") Shared прокси
+						li
+							a(href="#") Мобильные прокси
+				.sidebar-list-item
+					.sidebar-list-item-dropdown
+						.sidebar-list-dropdown-img
+							img(src=require("../../img/sidebar-list-dropdown-tool.png"))
+						span Инструменты
+						i.fa.fa-angle-down
+					ul.sidebar-list-item-dropdown-content
+						li
+							a(href="#") Прокси-чекер
+						li
+							a(href="#") Сканер портов
+						li
+							a(href="#") Пинг IP
+						li
+							a(href="#") Мой IP
+		main.main-content
+			// Секция main
+			section.main.proxy-checker
+				.container
+					.share-page
+						.share-page__link
+							a(href='#')
+								i.fa.fa-share
+								|                            Поделиться страницей
+						.share-page__social
+							.share-page__social-inner
+								.share-page__social-item
+									.share-page__social-item-counter
+										| 16
+									.share-page__social-item-circle
+										a(href='#')
+											i.fa.fa-facebook
+								.share-page__social-item
+									.share-page__social-item-counter
+										| 16
+									.share-page__social-item-circle
+										a(href='#')
+											i.fa.fa-vk
+								.share-page__social-item
+									.share-page__social-item-counter
+										| 16
+									.share-page__social-item-circle
+										a(href='#')
+											i.fa.fa-twitter
+								.share-page__social-item
+									.share-page__social-item-counter
+										| 16
+									.share-page__social-item-circle
+										a(href='#')
+											i.fa.fa-paper-plane
+								.share-page__social-item
+									.share-page__social-item-counter
+										| 16
+									.share-page__social-item-circle
+										a(href='#')
+											i.fa.fa-at
+								.share-page__social-item
+									.share-page__social-item-counter
+										| 16
+									.share-page__social-item-circle
+										a(href='#')
+											i.fa
+												svg.svg-inline--fa.fa-deskpro.fa-w-15.fa-3x(aria-hidden='true', focusable='false', data-prefix='fab', data-icon='deskpro', role='img', xmlns='http://www.w3.org/2000/svg', viewBox='0 0 480 512')
+													path(fill='currentColor', d='M205.9 512l31.1-38.4c12.3-.2 25.6-1.4 36.5-6.6 38.9-18.6 38.4-61.9 38.3-63.8-.1-5-.8-4.4-28.9-37.4H362c-.2 50.1-7.3 68.5-10.2 75.7-9.4 23.7-43.9 62.8-95.2 69.4-8.7 1.1-32.8 1.2-50.7 1.1zm200.4-167.7c38.6 0 58.5-13.6 73.7-30.9l-175.5-.3-17.4 31.3 119.2-.1zm-43.6-223.9v168.3h-73.5l-32.7 55.5H250c-52.3 0-58.1-56.5-58.3-58.9-1.2-13.2-21.3-11.6-20.1 1.8 1.4 15.8 8.8 40 26.4 57.1h-91c-25.5 0-110.8-26.8-107-114V16.9C0 .9 9.7.3 15 .1h82c.2 0 .3.1.5.1 4.3-.4 50.1-2.1 50.1 43.7 0 13.3 20.2 13.4 20.2 0 0-18.2-5.5-32.8-15.8-43.7h84.2c108.7-.4 126.5 79.4 126.5 120.2zm-132.5 56l64 29.3c13.3-45.5-42.2-71.7-64-29.3z')
+								.share-page__social-item
+									.share-page__social-item-counter
+										| 16
+									.share-page__social-item-circle
+										a(href='#')
+											i.fa.fa-linkedin
 
-			.main__title
-				h1 IP ping, проверить пинг айпи адреса или сайта, ping IP
-			.proxy-checker__list
-				p
-					| Ping — утилита для проверки соединений в сетях на основе TCP/IP, а также обиходное наименование самого запроса. Утилита отправляет запросы (ICMP Echo-Request) протокола ICMP указанному узлу сети и фиксирует поступающие ответы (ICMP Echo-Reply). Время между отправкой запроса
-					| и получением ответа (RTT, от англ. Round Trip Time) позволяет определять двусторонние задержки (RTT) по маршруту и частоту потери пакетов,
-					| то есть косвенно определять загруженность на каналах передачи данных и промежуточных устройствах.
-			form.row.port-scanner.flex
-				.col-lg-4
-					.port-scanner__enter-the-IP-address-or-domain
-						label(for="enter-the-IP-address-or-domain") Введите корректный IP адрес (0.0.0.0) или имя хоста (host.com)
-						input(id="enter-the-IP-address-or-domain")
-						a(href="#") Вставить мой IP-адрес
-						label Пинговать с сервера
-						select(class="select2 select2-modal")
-							option(selected) SPYS.ONE (Франция)
-							option SPYS.ONE (Англия)
-						label.mt25 Тестовых пинг пакетов
-						select(class="select2 select2-modal")
-							option(selected) 1
-							option 2
-							option 3
-				.col-lg-8
-					.port-scanner__test-results
-						p.title
-							| Результаты проверки:
-						.port-scanner__test-results-wrap.IP-ping-wrap
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
-							p
-								| Not shown: 999 filtered ports
-							p
-								| PORT     STATE SERVICE
-							p
-								| 3389/tcp open  ms-term-serv
-							p
-								| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+					.main__title
+						h1 IP ping, проверить пинг айпи адреса или сайта, ping IP
+					.proxy-checker__list
+						p
+							| Ping — утилита для проверки соединений в сетях на основе TCP/IP, а также обиходное наименование самого запроса. Утилита отправляет запросы (ICMP Echo-Request) протокола ICMP указанному узлу сети и фиксирует поступающие ответы (ICMP Echo-Reply). Время между отправкой запроса
+							| и получением ответа (RTT, от англ. Round Trip Time) позволяет определять двусторонние задержки (RTT) по маршруту и частоту потери пакетов,
+							| то есть косвенно определять загруженность на каналах передачи данных и промежуточных устройствах.
+					form.row.port-scanner.flex
+						.col-lg-4
+							.port-scanner__enter-the-IP-address-or-domain
+								label(for="enter-the-IP-address-or-domain") Введите корректный IP адрес (0.0.0.0) или имя хоста (host.com)
+								input(id="enter-the-IP-address-or-domain")
+								a(href="#") Вставить мой IP-адрес
+								label Пинговать с сервера
+								select(class="select2 select2-modal")
+									option(selected) SPYS.ONE (Франция)
+									option SPYS.ONE (Англия)
+								label.mt25 Тестовых пинг пакетов
+								select(class="select2 select2-modal")
+									option(selected) 1
+									option 2
+									option 3
+						.col-lg-8
+							.port-scanner__test-results
+								p.title
+									| Результаты проверки:
+								.port-scanner__test-results-wrap.IP-ping-wrap
+									p
+										| Not shown: 999 filtered ports
+									p
+										| PORT     STATE SERVICE
+									p
+										| 3389/tcp open  ms-term-serv
+									p
+										| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+									p
+										| Not shown: 999 filtered ports
+									p
+										| PORT     STATE SERVICE
+									p
+										| 3389/tcp open  ms-term-serv
+									p
+										| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+									p
+										| Not shown: 999 filtered ports
+									p
+										| PORT     STATE SERVICE
+									p
+										| 3389/tcp open  ms-term-serv
+									p
+										| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
+									p
+										| Not shown: 999 filtered ports
+									p
+										| PORT     STATE SERVICE
+									p
+										| 3389/tcp open  ms-term-serv
+									p
+										| Nmap done: 1 IP address (1 host up) scanned in 20.38 seconds
 
-			.row.port-scanner.flex.mb10
-				.col-lg-12
-					.port-scanner__btn
-						button(class="main_btn2" type="submit") Пинг IP
-						p.info
-							| * Если результат «Host seems down», значит фаерволл или роутер проверяемого и IP блокирует пинги.
-	// Секция security-and-anonymity
-	section.security-and-anonymity
-		.container
-			h2 VPN — ваша безопасность и анонимность в интернете
-		.security-and-anonymity__btn
-			button(type="button" class="main_btn2") Подробнее
-	// Секция why-our-proxies-are-better
-	section.why-our-proxies-are-better.proxy-checker
-		.container
-			h2 Подробнее о IP ping.
-			p
-				| В разговорной речи пингом называют также время, затраченное на передачу пакета информации в компьютерных сетях от клиента к серверу и обратно от сервера к клиенту.
-			p
-				| Полное отсутствие ICMP-ответов может также означать, что удалённый узел (или какой-либо из промежуточных маршрутизаторов) блокирует ICMP Echo-Reply или игнорирует ICMP Echo-Request.
-			p
-				| Программа ping является одним из основных диагностических средств в сетях TCP/IP и входит в поставку всех современных сетевых операционных систем. Функциональность ping также реализована в некоторых встроенных ОС маршрутизаторах, доступ к результатам выполнения ping для таких устройств по протоколу SNMP.
+					.row.port-scanner.flex.mb10
+						.col-lg-12
+							.port-scanner__btn
+								button(class="main_btn2" type="submit") Пинг IP
+								p.info
+									| * Если результат «Host seems down», значит фаерволл или роутер проверяемого и IP блокирует пинги.
+			// Секция security-and-anonymity
+			section.security-and-anonymity
+				.container
+					h2 VPN — ваша безопасность и анонимность в интернете
+				.security-and-anonymity__btn
+					button(type="button" class="main_btn3") Подробнее
+			// Секция why-our-proxies-are-better
+			section.why-our-proxies-are-better.proxy-checker
+				.container
+					h2 Подробнее о IP ping.
+					p
+						| В разговорной речи пингом называют также время, затраченное на передачу пакета информации в компьютерных сетях от клиента к серверу и обратно от сервера к клиенту.
+					p
+						| Полное отсутствие ICMP-ответов может также означать, что удалённый узел (или какой-либо из промежуточных маршрутизаторов) блокирует ICMP Echo-Reply или игнорирует ICMP Echo-Request.
+					p
+						| Программа ping является одним из основных диагностических средств в сетях TCP/IP и входит в поставку всех современных сетевых операционных систем. Функциональность ping также реализована в некоторых встроенных ОС маршрутизаторах, доступ к результатам выполнения ping для таких устройств по протоколу SNMP.

@@ -18,7 +18,36 @@ import Clipboard from 'clipboard';
 import '../stylus/main.styl';
 import '../js/_functions.js';
 
+// функция throttle
+function throttle(func, ms) {
 
+  var isThrottled = false,
+    savedArgs,
+    savedThis;
+
+  function wrapper() {
+
+    if (isThrottled) { // (2)В этом состоянии все новые вызовы запоминаются в замыкании через savedArgs/savedThis. Обратим внимание, что и контекст вызова и аргументы для нас одинаково важны и запоминаются одновременно. Только зная и то и другое, можно воспроизвести вызов правильно.
+      savedArgs = arguments;
+      savedThis = this;
+      return;
+    }
+
+    func.apply(this, arguments); // (1)Декоратор throttle возвращает функцию-обёртку wrapper, которая при первом вызове запускает func и переходит в состояние «паузы» (isThrottled = true).
+
+    isThrottled = true;
+
+    setTimeout(function () {
+      isThrottled = false; // (3)Далее, когда пройдёт таймаут ms миллисекунд – пауза будет снята, а wrapper – запущен с последними аргументами и контекстом (если во время паузы были вызовы).
+      if (savedArgs) {
+        wrapper.apply(savedThis, savedArgs);
+        savedArgs = savedThis = null;
+      }
+    }, ms);
+  }
+
+  return wrapper;
+}
 
 // табы tabs
 function tabs(obj) {
@@ -68,6 +97,7 @@ function accordion(obj) {
 		}
 		$(titleClick).not(this).next().stop(true,true).slideUp();
 	});
+  $(titleClick).first().click();
 }
 
 // Определения браузера
@@ -155,6 +185,11 @@ $(document).ready(function () {
 		titleClick: '.share-page__link',
 		allContent: '.share-page__social'
 	});
+
+  accordion({
+    titleClick: '.sidebar-list-item-dropdown',
+    allContent: '.share-page__social'
+  });
 	customScrollbar();
 	// вызов tabs
 	tabs({
@@ -256,27 +291,34 @@ $(document).ready(function () {
 
 });
 
-$(window).resize(function () {
-	if (window.matchMedia("(min-width: 992px)").matches) {
-		if (get_name_browser() == "Safari") {
-			clipboard.on('success', function (e) {
-				e.clearSelection();
-				e.trigger.classList.add('active');
-				setTimeout(function () {
-					e.trigger.classList.remove('active');
-				}, 1500);
+$(window).on('resize', throttle(function () {
+  if (window.matchMedia("(min-width: 992px)").matches) {
 
-			});
-		}
-	}
-	if (window.matchMedia("(max-width: 992px)").matches) {
-		if (get_name_browser() == "Safari") {
-			clipboard.on('success', function (e) {
-				e.trigger.classList.remove('active');
-			});
-		}
-	}
-});
+    if($("#nav-button-label").hasClass('nav-on')) {
+      $("#nav-button-label").click();
+    }
+
+    if (get_name_browser() == "Safari") {
+      clipboard.on('success', function (e) {
+        e.clearSelection();
+        e.trigger.classList.add('active');
+        setTimeout(function () {
+          e.trigger.classList.remove('active');
+        }, 1500);
+
+      });
+    }
+  }
+  if (window.matchMedia("(max-width: 992px)").matches) {
+    if (get_name_browser() == "Safari") {
+      clipboard.on('success', function (e) {
+        e.trigger.classList.remove('active');
+      });
+    }
+  }
+
+}, 150));
+
 
 $(window).scroll(function () {
 

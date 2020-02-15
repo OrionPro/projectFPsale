@@ -150,12 +150,39 @@ html(class="no-js" lang="ru")
 											li
 												a(href="#") Сервис аккаунтов
 		div(off-canvas='id-1 left shift')
-			nav.header_nav_mobile
-				ul.menu
-					-var obj1 = [{title:'Персональные прокси', href:'#'},{title:'Прокси IPv6', href:'#'},{title:'Прокси-чекер', href:'#'},{title:'Мой IP', href:'#'}, {title:'Компания', href:'#'},{title:'Сканер портов', href:'#'},{title:'Пинг IP', href:'#'},{title:'Скорость', href:'#'},{title:'Трассировка', href:'#'},{title:'Поддержка DNS', href:'#'},{title:'Поддержка IPv6', href:'#'},{title:'IP в спам базе', href:'#'}];
-					each i in obj1
+			.sidebar-list
+				.sidebar-list-item
+					.sidebar-list-item-dropdown
+						.sidebar-list-dropdown-img
+							img(src=require("../../img/sidebar-list-dropdown-services.png"))
+						span Услуги
+						i.fa.fa-angle-down
+					ul.sidebar-list-item-dropdown-content
 						li
-							a(href=i.href)= i.title
+							a(href="#") Бесплатные прокси
+						li
+							a(href="#") Прокси IPv4
+						li
+							a(href="#") Прокси IPv6
+						li
+							a(href="#") Shared прокси
+						li
+							a(href="#") Мобильные прокси
+				.sidebar-list-item
+					.sidebar-list-item-dropdown
+						.sidebar-list-dropdown-img
+							img(src=require("../../img/sidebar-list-dropdown-tool.png"))
+						span Инструменты
+						i.fa.fa-angle-down
+					ul.sidebar-list-item-dropdown-content
+						li
+							a(href="#") Прокси-чекер
+						li
+							a(href="#") Сканер портов
+						li
+							a(href="#") Пинг IP
+						li
+							a(href="#") Мой IP
 		div(off-canvas='id-2 right push')
 		div(off-canvas='id-3 top overlay')
 		div(off-canvas='id-4 bottom shift')

@@ -21,8 +21,11 @@
 		width: 100%
 	.main-wrap .sidebar
 		width: 300px
-		padding-left: 30px
-
+	.sidebar-list-item-dropdown
+		width: 200px
+		margin-left: 20px
+	.sidebar-list-item-dropdown-content li a
+		padding-left: 74px
 // Large devices (desktops, less than 1399)
 @media only screen and (max-width : 1399px)
 	.header__dropdown
@@ -36,6 +39,8 @@
 	// для фиксированного сайта
 	// body
 	// 	width: 1200px
+	.hide-ip-table__table-wrap table tbody td
+		padding: 13px 15px
 	.port-scanner__btn
 		button
 			min-width: 251px
@@ -135,10 +140,35 @@
 			margin-bottom: 15px
 	.main__top-select-wrap
 		margin-right: 25px
-
+	.proxy-checker__test-results-items
+		flex-wrap wrap
+		.last
+			margin-left: 0
+	.main__table-wrap
+		&.proxy-checker-table
+			table
+				width: 100%
+		table
+			thead
+				tr
+					th
+						font-size: 15px
+						&:first-of-type
+							padding: 19.5px 10px
+			tbody
+				font-size: 15px
+				td:first-of-type
+					padding: 19.5px 10px
+		.progress-bar
+			width: 65px
+			height: 16px
+			i
+				font-size: 14px
 // Medium devices (tablets, less than 992px)
 @media only screen and (max-width : 991px)
 	/**/
+	.footer
+		padding-left: 0
 	h1
 		font-size: 30px
 	.proxy-checker__enter-the-proxy-list-textarea
@@ -250,9 +280,14 @@
 			h1
 				&.active
 					margin-bottom: 30px
+	.main-wrap .sidebar
+		width: 270px
 	.info-blocks,.answer-your-questions,.why-our-proxies-are-better,.info-blocks
 		background: $bg_sections
 	.main__table-wrap
+		&.proxy-checker-table
+			table
+				width: 1000px
 		table
 			thead
 				tr

@@ -516,7 +516,7 @@ label.check, label.radio
 	to
 		opacity: 1
 		transform: translateY(0)
-
+// Оформление слайдбара
 body
 	&.container-left
 		header
@@ -534,6 +534,9 @@ body
 		background-color: #ffffff
 .sidebar-list-item
 	padding-top: 35px
+	padding-bottom: 25px
+	&:not(:last-child)
+		border-bottom: 1px solid $main_color
 .sidebar-list-item-dropdown
 	width: 245px
 	margin-left: 60px
@@ -542,20 +545,61 @@ body
 	padding: 1px
 	background: $main_color
 	border-radius: 20px
+	cursor: pointer
+	transition: background 0.4s
+	&:hover
+		background: darken($main_color, 20%)
 	span
 		margin-right: 15px
-	i
 		color: #fff
+	i
+		transform: rotate(0deg)
+		color: #fff
+		transition: transform  0.4s
+		&.active
+			transform: rotate(180deg)
 .sidebar-list-dropdown-img
 	margin-right: 15px
-// Оформление слайдбара
+.sidebar-list-item-dropdown-content
+	padding-top: 6px
+	display: none
+	li
+		margin-bottom: 5px
+		a
+			width: 100%
+			padding-left: 114px
+			display: inline-flex
+			font-size: 16px
+			line-height: 42px
+			color: $main_txt_color
+			background: #fff
+			border-left: 4px solid transparent
+			transition: background 0.4s
+			position: relative
+			&:before
+				content: ""
+				display: block
+				position: absolute
+				top: 0
+				left: 0
+				width: 0
+				height: 100%
+				border-radius: 4px
+				background: $main_color
+				transition: width 0.4s
+			&:hover, &:focus
+				text-decoration: none
+				background: #eef3f0
+			&:hover:before
+				width: 4px
+// Оформление слайдбара мобильного
 [canvas]
 	transform: inherit
 [off-canvas]
 	transition: transform 0.4s
 	overflow: auto
 	-webkit-overflow-scrolling: touch
-	background-color: #f6f6f6
+	background-color: #fff
 [off-canvas*=left]
 	width: 255px
 [canvas=container]
@@ -1207,7 +1251,7 @@ nav[canvas]
 		}
 
 		&.green span {
-			background-color: #a5df41;
+			background-color: #35BE70;
 			background-image: linear-gradient(to top, #a5df41, #4ca916);
 		}
 		&.stripes span {
@@ -2060,22 +2104,24 @@ img.img-flag
 .looking-for-stable-personal-proxies
 	padding-top: 45px
 	padding-bottom: 45px
-	background: linear-gradient(180deg, #79D5F6 0%, #7BD5F6 34.38%, #12B9FF 100%)
+	background: linear-gradient(180deg, #92F3BC 0%, #64DD98 34.38%, #35BE70 100%)
 	box-shadow: 0px 10px 29.4px rgba(0, 0, 0, 0.1)
 	text-align: center
 	h2
 		margin-bottom: 40px
+		color: #fff
 .looking-for-stable-personal-proxies__btn
 	text-align: center
 //	Секция security-and-anonymity
 .security-and-anonymity
 	padding-top: 35px
 	padding-bottom: 35px
-	background: #f6f6f6
+	background: linear-gradient(180deg, #92F3BC 0%, #64DD98 34.38%, #35BE70 100%)
+	box-shadow: 0px 10px 29.4px rgba(0, 0, 0, 0.1)
 	text-align: center
 	h2
 		margin-bottom: 40px
-
+		color: #fff
 // Блок .port-scanner__
 .port-scanner-wrap
 	margin-bottom: 60px
@@ -2253,8 +2299,11 @@ img.img-flag
 
 // Секия footer 
 .footer
+	padding-left: 358px
 	padding-top: 35px
 	padding-bottom: 35px
+	box-shadow: 0px 10px 29.4px rgba(0, 0, 0, 0.1)
+	border-radius: 4px
 	background-color: #ffffff
 	nav
 		font-size: 16px
