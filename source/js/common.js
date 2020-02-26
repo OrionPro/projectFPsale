@@ -97,7 +97,7 @@ function accordion(obj) {
 		}
 		$(titleClick).not(this).next().stop(true,true).slideUp();
 	});
-  $(titleClick).first().click();
+  obj.sidebar == true ? null : $(titleClick).first().click();
 }
 
 // Определения браузера
@@ -188,7 +188,8 @@ $(document).ready(function () {
 
   accordion({
     titleClick: '.sidebar-list-item-dropdown',
-    allContent: '.share-page__social'
+    allContent: '.share-page__social',
+    sidebar: true
   });
 	customScrollbar();
 	// вызов tabs

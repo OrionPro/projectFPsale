@@ -563,6 +563,8 @@ body
 .sidebar-list-item-dropdown-content
 	padding-top: 6px
 	display: none
+	&.active
+		display: block
 	li
 		margin-bottom: 5px
 		a
@@ -1824,7 +1826,7 @@ img.img-flag
 	padding-top: 35px
 	background-color: #ffffff
 	&.scroll-table
-		width: 770px
+		width: calc(100% - 30px)
 		margin-left: 15px
 		padding-bottom: 30px
 		padding-left: 50px
@@ -1833,6 +1835,7 @@ img.img-flag
 		width: 400px
 		padding-left: 15px
 		padding-right: 45px
+		display: none
 .browser-details__table-wrap
 	//внешний вид скроллбара
 	scrollbar-base-color: $main_color   //для IE

@@ -114,7 +114,7 @@ html(class="no-js" lang="ru")
 			block main
 			block footer
 				// Секция footer
-				footer.footer
+				//footer.footer
 					.container
 						.row
 							.col-lg-7
@@ -152,12 +152,12 @@ html(class="no-js" lang="ru")
 		div(off-canvas='id-1 left shift')
 			.sidebar-list
 				.sidebar-list-item
-					.sidebar-list-item-dropdown
-						.sidebar-list-dropdown-img
+					.sidebar-list-item-dropdown.active
+						.sidebar-list-dropdown-img.active
 							img(src=require("../../img/sidebar-list-dropdown-services.png"))
-						span Услуги
-						i.fa.fa-angle-down
-					ul.sidebar-list-item-dropdown-content
+						span.active Услуги
+						i.fa.fa-angle-down.active
+					ul.sidebar-list-item-dropdown-content.active
 						li
 							a(href="#") Бесплатные прокси
 						li
@@ -169,12 +169,12 @@ html(class="no-js" lang="ru")
 						li
 							a(href="#") Мобильные прокси
 				.sidebar-list-item
-					.sidebar-list-item-dropdown
-						.sidebar-list-dropdown-img
+					.sidebar-list-item-dropdown.active
+						.sidebar-list-dropdown-img.active
 							img(src=require("../../img/sidebar-list-dropdown-tool.png"))
-						span Инструменты
-						i.fa.fa-angle-down
-					ul.sidebar-list-item-dropdown-content
+						span.active Инструменты
+						i.fa.fa-angle-down.active
+					ul.sidebar-list-item-dropdown-content.active
 						li
 							a(href="#") Прокси-чекер
 						li
