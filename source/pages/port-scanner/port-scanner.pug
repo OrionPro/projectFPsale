@@ -215,13 +215,17 @@ block main
 						.proxy-checker__download-scan-results-title
 							| Скачать результаты проверки:
 						.proxy-checker__download-scan-results-item
-							img(src=require("../../img/proxy-checker__download-scan-results-item.svg"))
-							a(href="#") скачать в .txt
+							a(href="#" target="_blank")
+								img(src=require("../../img/proxy-checker__download-scan-results-item.svg"))
+								| скачать в .txt
 						.proxy-checker__download-scan-results-item
-							img(src=require("../../img/proxy-checker__download-scan-results-item2.svg"))
-							a(href="#") таблицей в .scv
+							a(href="#" target="_blank")
+								img(src=require("../../img/proxy-checker__download-scan-results-item2.svg"))
+								| таблицей в .scv
 						.proxy-checker__download-scan-results-item
-							img(src=require("../../img/proxy-checker__download-scan-results-item3.svg"))
+							a(href="#" target="_blank")
+								img(src=require("../../img/proxy-checker__download-scan-results-item3.svg"))
+								| Открыть в новой вкладке
 			// Секция Looking for stable personal proxies
 			section.looking-for-stable-personal-proxies
 				.container

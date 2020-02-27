@@ -80,14 +80,14 @@ function accordion(obj) {
 			content.slideUp(500, function () { //и если контент аккордеона видимый, то
 			}); //убираем его
 
-			$('.main.share h1').removeClass('active');
-			$(allContent).removeClass('active');
+			//$('.main.share h1').removeClass('active');
+      obj.sidebar ? null : $(allContent).removeClass('active');
 			$(this).removeClass("active");
 			$(this).children().removeClass("active"); //убираем активный класс у стрелки к примеру
 
 		} else {
 			content.slideDown();//показываем
-			$('.main.share h1').addClass('active');
+			//$('.main.share h1').addClass('active');
 			$(titleClick).removeClass('active');
 			$(allContent).addClass('active');
 			$(titleClick).children() //убираем активный класс у стрелки к примеру
@@ -95,9 +95,9 @@ function accordion(obj) {
 			$(this).addClass("active");
 			$(this).children().addClass("active"); //добавляем активный класс у стрекли к примеру
 		}
-		$(titleClick).not(this).next().stop(true,true).slideUp();
+    obj.sidebar ? null : $(titleClick).not(this).next().stop(true,true).slideUp();
 	});
-  obj.sidebar == true ? null : $(titleClick).first().click();
+  obj.sidebar ? null : $(titleClick).first().click();
 }
 
 // Определения браузера
