@@ -22,6 +22,7 @@ const common = merge([
 	{
 		entry: {
 			'index': PATHS.source + '/pages/index/index.js',
+			'anonymity-tool': PATHS.source + '/pages/anonymity-tool/anonymity-tool.js',
 			//'hide-ip': PATHS.source + '/pages/hide-ip/hide-ip.js'
 		},
 		// убрать это если не нужен source-map (а на продакшене он в принципе не нужен)
@@ -88,6 +89,11 @@ const common = merge([
 				filename: 'speed-test.html',
 				chunks: ['index'],
 				template: PATHS.source + '/pages/speed-test/speed-test.pug'
+			}),
+			new HtmlWebpackPlugin({
+				filename: 'anonymity-tool.html',
+				chunks: ['index', 'anonymity-tool'],
+				template: PATHS.source + '/pages/anonymity-tool/anonymity-tool.pug'
 			}),
 			//new webpack.optimize.CommonsChunkPlugin({
 			//	name: 'common'

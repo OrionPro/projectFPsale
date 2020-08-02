@@ -1,0 +1,87 @@
+extends ../base
+block title
+	| IP ping
+block variables
+	- var pageClass = 'container-left'
+block main
+	.main-wrap
+		aside.sidebar
+			.header__logo
+				a(href="/" class="logo" title="Логотип")
+					img(src=require("../../img/logo-green.png"))
+					| PROXYSELLER
+			.sidebar-list
+				.sidebar-list-item
+					.sidebar-list-item-dropdown.active
+						.sidebar-list-dropdown-img.active
+							img(src=require("../../img/sidebar-list-dropdown-services.png"))
+						span.active Услуги
+						i.fa.fa-angle-down.active
+					ul.sidebar-list-item-dropdown-content.active
+						li
+							a(href="#") Бесплатные прокси
+						li
+							a(href="#") Прокси IPv4
+						li
+							a(href="#") Прокси IPv6
+						li
+							a(href="#") Shared прокси
+						li
+							a(href="#") Мобильные прокси
+				.sidebar-list-item
+					.sidebar-list-item-dropdown.active
+						.sidebar-list-dropdown-img.active
+							img(src=require("../../img/sidebar-list-dropdown-tool.png"))
+						span.active Инструменты
+						i.fa.fa-angle-down.active
+					ul.sidebar-list-item-dropdown-content.active
+						li
+							a(href="#") Прокси-чекер
+						li
+							a(href="#") Сканер портов
+						li
+							a(href="#") Пинг IP
+						li
+							a(href="#") Мой IP
+		main.main-content.anonymity-tool
+			// Секция main
+			section.main
+				.container
+					.main__title
+						img(src=require("../../img/ukraine-title.svg"))
+						h1 Мой IP: 188.239.96.73
+						a(href="#")
+							img(src=require("../../img/icon-copy.svg"))
+			// Секция why-our-proxies-are-better
+			section.why-our-proxies-are-better.proxy-checker
+				.container
+					h2 Онлайн прокси чекер для проверки адресов на валидность.
+					p
+						| Одним из главных недостатков многих бесплатных прокси-серверов, в том числе и российских, является их недостаточная скорость в совокупности с невысоким
+						| аптаймом (временем доступности). Подобные недостатки не позволяют комфортно выполнять необходимые пользователям задачи и сильно действуют на нервы.
+						| Но и тратить дополнительные средства для покупки платных прокси может позволить себе не каждый. Да и не всегда это целесообразно. Как поступить, как получить
+						| актуальный список валидных proxy и при этом не потратить денег??
+					p
+						| Для решения этой проблемы специалистами нашей компании был создан бесплатный прокси чекер онлайн, который поможет вам систематически проверять сервера
+						| на доступность и скорость, а также получать дполнительную информацию о них.
+					h2 Преимущества сервиса проверки proxy от компании ProxySale.
+					p
+						| Предлагаемый нами сервис обладает рядом уникальных возможностей:
+					ul
+						li
+							i.fa.fa-circle
+							| Имеется возможность получения подробной информации по каждому серверу – скорость, пинг, уровень анонимности, тип прокси, а также географическая
+							| принадлежность (страна и город);
+						li
+							i.fa.fa-circle
+							| Выдача аналитических данных чекера имеет тонкую настройку и позволяет экспортировать только ту часть результатов, которая реально вам необходима;
+						li
+							i.fa.fa-circle
+							| Наш сервис работает на достаточно мощном аппаратном комплексе, что позволяет ему уверенно справляться с обработкой большого количества запросов и
+							| выдавать результаты в кратчайшие сроки.
+						li
+							i.fa.fa-circle
+							| И еще наш сервис абсолютно бесплатный и, мы надеемся, будет таким всегда – разве это не существенное преимущество?
+					p
+						| Ищете чекер прокси для проверки на валидность? Мы разработали его для вас, пользуйтесь и наслаждайтесь возможностью получения быстрой и достоверной
+						| информации обо всех необходимых вам прокси-серверах!

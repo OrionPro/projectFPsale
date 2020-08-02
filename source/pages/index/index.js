@@ -45,6 +45,7 @@ function throttle(func, ms) {
 
 $(document).ready(function () {
 
+
 	$("body").addClass("index ink-transition");
 	if (window.matchMedia("(min-width: 992px)").matches) {
 		$(".sticky").sticky({
