@@ -72,7 +72,7 @@ $(document).ready(function () {
 		maxWidth: 280,
 		delay: 100
 	});
-	$(".your-ip__wrap i.copy-buffer").tooltipster({
+	$(".your-ip__wrap i.copy-buffer, .main-content.anonymity-tool .copy-buffer").tooltipster({
 		theme: 'tooltipster-shadow',
 		maxWidth: 280,
 		trigger: 'click',

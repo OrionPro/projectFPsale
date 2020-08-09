@@ -17,5 +17,46 @@
 				font-family: $font_Circe-Bold
 			a
 				margin-left: 12px
+		.main__tables
+			display: flex
+			justify-content space-between
+			table
+				width: 496px
+				tbody
+					tr
+						&:last-of-type {
+							td {
+								border-bottom: none
+							}
+						}
+
+					td
+						padding: 10px 25px
+						border-bottom: 1px solid #E2E2E2
+						fz(18)
+						&:first-of-type {
+							width: 150px
+							padding: 10px 0 13px
+							color: #858585;
+						}
+						.country
+							margin-left: 20px
+							img
+								margin-right: 5px
+						img
+							margin-right: 20px
+						a
+							display: inline-flex;
+							line-height: 15px
+							color: #3E3E3E
+							border-bottom: 1px dashed #3E3E3E
+							transition: border 0.4s
+							&:hover {
+								text-decoration none
+								border-bottom: 1px dashed transparent
+							}
+
+
+
 // media
 @import '../../stylus/_media.styl'

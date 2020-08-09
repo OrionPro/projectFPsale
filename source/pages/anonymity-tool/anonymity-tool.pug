@@ -50,8 +50,74 @@ block main
 					.main__title
 						img(src=require("../../img/ukraine-title.svg"))
 						h1 Мой IP: 188.239.96.73
-						a(href="#")
+						a(href="#" class="copy-buffer" data-clipboard-text="188.239.96.73" title="Скопировано в буфер")
 							img(src=require("../../img/icon-copy.svg"))
+					.main__tables
+						table
+							tbody
+								tr
+									td
+										| Провайдер:
+									td
+										i
+											img(src=require("../../img/tools-and-utensils.svg"))
+										| Cifrovye Dispetcherskie Sistemy
+									tr
+										td
+											| Хост:
+										td
+											i
+												img(src=require("../../img/monitor-img.svg"))
+											| 5-105-177-137.mytrinity.com.ua
+									tr
+										td
+											| ОС:
+										td
+											i
+												img(src=require("../../img/windows-icon.svg"))
+											| Win10.0
+									tr
+										td
+											| Браузер:
+										td
+											i
+												img(src=require("../../img/google-chrome-icon.svg"))
+											| Chrome 80.0
+						table
+							tbody
+								tr
+									td
+										| DNS:
+									td
+										i
+											img(src=require("../../img/web-design-icon.svg"))
+										a(href="#") 188.239.96.73
+										span.country
+											i.flag
+												img(src=require("../../img/ukraine.png"))
+											span
+												| Ukraine
+									tr
+										td
+											| Прокси:
+										td
+											i
+												img(src=require("../../img/coding-icon.svg"))
+											| Нет
+									tr
+										td
+											| Анонимайзер:
+										td
+											i
+												img(src=require("../../img/detective-icon.svg"))
+											| Нет
+									tr
+										td
+											| Черный список:
+										td
+											i
+												img(src=require("../../img/list-icon.svg"))
+											| Нет
 			// Секция why-our-proxies-are-better
 			section.why-our-proxies-are-better.proxy-checker
 				.container
